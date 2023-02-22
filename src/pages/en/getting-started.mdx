@@ -1,0 +1,154 @@
+---
+layout: ~/layouts/MainLayout.astro
+title: BrandHub Toolkit
+description: A basic intro to Astro.
+i18nReady: true
+---
+import Button from '../../components/Button.astro'
+import Card from '../../components/Card.astro'
+import ContributorList from '../../components/ContributorList.astro'
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
+
+
+
+<h2>What is a Toolkit?</h2>
+
+Astro is an **all-in-one** **web framework** for building **fast,** **content-focused** websites. 
+
+## Key Features
+
+<div class="block-wrapper" style="display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin: 0 auto;">
+  {/* <div class="block">
+    <h4>Resource</h4>
+    <Button>View Resource</Button>
+  </div> */}
+  <rux-card class="block">
+    <div slot="header"><h4>Brand Strategy</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  <rux-card class="block">
+    <div slot="header"><h4>Content Strategy</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  <rux-card class="block">
+    <div slot="header"><h4>Digital Media</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  <rux-card class="block">
+    <div slot="header"><h4>Omnichannel Creative</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  <rux-card class="block">
+    <div slot="header"><h4>Web Development</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  <rux-card class="block">
+    <div slot="header"><h4>Insights + Analytics</h4></div>
+    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
+  </rux-card>
+  
+  
+        
+
+</div>
+
+- **Component Islands:** A new web architecture for building faster websites.
+- **Server-first API design:** Move expensive hydration off of your users' devices.
+- **Zero JS, by default:** No JavaScript runtime overhead to slow you down.
+- **Edge-ready:** Deploy anywhere, even a global edge runtime like Deno or Cloudflare.
+- **Customizable:** Tailwind, MDX, and 100+ other integrations to choose from.
+- **UI-agnostic:** Supports React, Preact, Svelte, Vue, Solid, Lit and more.
+
+Check out our detailed [Why Astro](/en/concepts/why-astro/) breakdown to learn more about what makes Astro special. ✨
+
+
+## Try Grovery Toolkit in your browser
+
+Visit [astro.new](https://astro.new/) and choose from a variety of templates to get started. Play around with a full, working version of Astro right in your browser!
+
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+  <Button href="https://astro.new/basics?on=stackblitz">Launch basic template</Button>
+  <Button variant="outline" href="https://astro.new/">View all templates →</Button>
+</div>
+
+## Start your first project
+
+Get a new Astro project up and running locally with our helpful `create astro` CLI wizard!
+
+<PackageManagerTabs>
+  <Fragment slot="npm">
+  ```shell
+  # create a new project with npm
+  npm create astro@latest
+  ```
+  </Fragment>
+  <Fragment slot="pnpm">
+  ```shell
+  # create a new project with pnpm
+  pnpm create astro@latest
+  ```
+  </Fragment>
+  <Fragment slot="yarn">
+  ```shell
+  # create a new project with yarn
+  yarn create astro
+  ```
+  </Fragment>
+</PackageManagerTabs>
+
+Our [Installation Guide](/en/install/auto/) has full, step-by-step instructions for installing Astro using our CLI wizard, creating a new project from an existing Astro GitHub repository, and for installing Astro manually.
+
+
+## Learn Astro
+
+See examples of some of the key concepts and patterns of an Astro site!
+
+📚 [Add your first page](/en/core-concepts/astro-pages/) to your site.
+
+📚 Read more about Astro’s [project structure](/en/core-concepts/project-structure/).
+
+📚 Learn about Astro's [file-based routing](/en/core-concepts/routing/).
+
+*... find our full API documentation under the **Reference** tab.*
+
+
+## Extend Astro
+
+🧰 Start your next project with a [prebuilt theme](https://astro.build/themes/)
+
+🧰 Customize your site with official and community [plugins and components](https://astro.build/integrations/).
+
+🧰 Get inspired by visiting our [site showcase](https://astro.build/showcase/).
+
+*... see our [guide to using integrations](/en/guides/integrations-guide/)*.
+
+
+
+## Join our Community
+
+Join us in the [Astro Discord](https://astro.build/chat/) to share with and get help from an active, friendly community!
+
+💬 Say hi in our `#introduce-yourself` channel!
+
+💬 Ask our Support Squad a question in our `#support-threads` channel!
+
+💬 Share what you've been working on in our `#showcase` channel!
+
+
+## What's New?
+
+[Astro Blog](https://astro.build/blog/)
+
+[Astro changelog](https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md)
+
+[Astro Migration guide](/en/migrate/)
+
+
+{/* ## Contribute */}
+
+{/* These docs are brought to you by all these helpful people. [Join us on GitHub!](https://github.com/withastro/docs) */}
+
+{/* <ContributorList githubRepo="withastro/docs" /> */}
