@@ -63,19 +63,24 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 	</article>
 </div>
 
-<style is:global>
+<style lang="scss" is:global>
 	.DocSearch-Logo {
 		display: none;
 	}
-	.block-wrapper .block {
+	.block-wrapper {
+		.block {
 		background-color: var(--theme-code-inline-bg);
 		border-radius: 12px;
 		margin: 0 .55em .55em 0;
 		padding: 1.4em;
-		flex: 1 31%;
+		@media (min-width: 50em) {
+			flex: 1 31%;
+		}
+		flex: 1 48%;
 		flex-grow: 1;
 		color: var(--theme-text-lighter);
 		padding-right: 5px;
+	}
 	}
 	.block-wrapper .block h4 {
 		color: var(--theme-text);

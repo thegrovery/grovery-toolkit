@@ -4,13 +4,18 @@ import UIString from '../UIString.astro';
 const currentUrl = Astro.url.pathname.replace(/\/$/, '');
 ---
 
-<button data-feedback-fish data-feedback-fish-url={currentUrl}>
+<button 
+	data-feedback-fish data-feedback-fish-url={currentUrl} 
+	data-feedback-fish-userid="scottj@thegrovery.com"
+	data-feedback-fish-userid="alecr@thegrovery.com"
+	data-feedback-fish-userid="ginac@thegrovery.com"
+	>
 	<UIString key="feedback.button" />
 </button>
 <script>
 	const script = document.createElement('script');
 	script.setAttribute('defer', '');
-	script.setAttribute('src', 'https://feedback.fish/ff.js?pid=1b24b5d16c81bd');
+	script.setAttribute('src', 'https://feedback.fish/ff.js?pid=1fe791a9771621');
 	document.body.append(script);
 </script>
 

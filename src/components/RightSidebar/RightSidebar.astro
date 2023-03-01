@@ -4,6 +4,8 @@ import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
 import { useTranslations } from '../../i18n/util';
 import generateToc from '../../util/generateToc';
+import FeedbackButton from '../tutorial/FeedbackButton.astro';
+
 
 const t = useTranslations(Astro);
 
@@ -23,6 +25,9 @@ const overview = t('rightSidebar.overview');
 		)
 	}
 	<ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
+	<div class="feedback-section">
+		<FeedbackButton />
+	</div>
 	<CommunityMenu />
 </nav>
 
