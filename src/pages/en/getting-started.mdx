@@ -8,7 +8,8 @@ import Button from '../../components/Button.astro'
 import Card from '../../components/Card.astro'
 import ContributorList from '../../components/ContributorList.astro'
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
-import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro'
+import ResourceCard from '../../components/ResourceCard.astro';
 
 
 <h2>What is a Toolkit?</h2>
@@ -21,36 +22,42 @@ Astro is an **all-in-one** **web framework** for building **fast,** **content-fo
     flex-wrap: wrap;
     width:100%;
     margin: 0 auto;">
-  {/* <div class="block">
-    <h4>Resource</h4>
-    <Button>View Resource</Button>
-  </div> */}
-  <rux-card class="block">
-    <div slot="header"><h4>Brand Strategy</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
-  <rux-card class="block">
-    <div slot="header"><h4>Content Strategy</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
-  <rux-card class="block">
-    <div slot="header"><h4>Digital Media</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
-  <rux-card class="block">
-    <div slot="header"><h4>Omnichannel Creative</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
-  <rux-card class="block">
-    <div slot="header"><h4>Web Development</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
-  <rux-card class="block">
-    <div slot="header"><h4>Insights + Analytics</h4></div>
-    Suscipit potenti habitant penatibus praesent quam class erat purus nisl ligula arcu accumsan risus, interdum phasellus lorem leo libero maecenas dictumst donec dis cras ante finibus.
-  </rux-card>
   
-  
+  <ResourceCard
+  icon="clipboard"  
+  title="Troubleshooting Guide: Solutions for Common Issues" 
+  description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+  tags={['Tag1', 'Tag2', 'Tag3']} 
+  viewDetailsButtonText="View Details" 
+  shareButtonText="Share" 
+/>
+
+  <ResourceCard 
+  icon="globe" 
+  title="Online Support Provider Portal" 
+  description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+  tags={['Tag1', 'Tag2', 'Tag3']} 
+  viewDetailsButtonText="View Details" 
+  shareButtonText="Share" 
+/>
+
+  <ResourceCard 
+  icon="graduation-cap" 
+  title="Product Training Module: Part 1" 
+  description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+  tags={['Tag1', 'Tag2', 'Tag3']} 
+  viewDetailsButtonText="View Details" 
+  shareButtonText="Share" 
+/>
+
+  <ResourceCard 
+  icon="pills" 
+  title="Customer Success Stories: Inspire Trust and Confidence" 
+  description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+  tags={['Tag1', 'Tag2', 'Tag3']} 
+  viewDetailsButtonText="View Details" 
+  shareButtonText="Share" 
+/>
         
 
 </div>
