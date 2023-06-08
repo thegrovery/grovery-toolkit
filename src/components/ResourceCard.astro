@@ -1,0 +1,85 @@
+---
+// This is the frontmatter section where you can import other components or scripts if needed
+import Button from '../components/Button.astro'
+---
+
+<div class="resource-card">
+    <div class="icon-container">
+        <i class={`fas fa-${Astro.props.icon}`}></i>
+    </div>
+    <h3>{Astro.props.title}</h3>
+    <p>{Astro.props.description}</p>
+    <div class="tags">
+      {Astro.props.tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+    <Button variant="primary" className="details-btn">
+        {Astro.props.viewDetailsButtonText}
+    </Button>
+    <Button variant="tertiary" className="share-btn">
+        {Astro.props.shareButtonText}
+    </Button>
+</div>
+  
+  <style>
+    :root {
+    --blue: #007B98;
+    --teal: #00DFC3;
+    }
+    .icon-container {
+        background-color: #efefef;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 80px;
+        border-radius: 28px;
+    }
+    .icon-container i {
+        font-size: 30px;
+        color: var(--blue);
+    }
+    .resource-card {
+      /* styles for the card container */
+      background-color: #fff;
+      margin: 0rem 2% 2% 0rem;
+      max-width: 31%;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #8080807a;
+      box-shadow: -2px 2px 0px #8080807a;
+      transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .resource-card:hover,.resource-card:focus {
+        border-color: var(--blue);
+        box-shadow: -2px 2px 0px var(--blue);
+    }
+    .resource-card h3 {
+        margin-top: 1.5rem;
+    }
+    .resource-card .tags {
+      /* styles for the tags container */
+      font-size: .75rem;
+      margin: .5rem 0;
+    }
+  
+    .resource-card .tag {
+      /* styles for individual tags */
+      text-transform: uppercase;
+      color: var(--blue);
+      padding: 2px 4px;
+      border-radius: 3px;
+      background-color: #007b982e;
+      margin: 0 .5rem 0 0;
+    }
+  
+    .details-btn {
+      /* styles for the details button */
+    }
+  
+    .share-btn {
+      /* styles for the share button */
+    }
+  </style>
+  
