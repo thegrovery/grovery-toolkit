@@ -135,9 +135,9 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 					<LeftSidebar {currentPage} />
 				</slot>
 			</aside>
-			<aside id="right-sidebar" class="sidebar">
+			<!-- <aside id="right-sidebar" class="sidebar">
 				<slot name="secondary-sidebar" />
-			</aside>
+			</aside> -->
 			<div id="main-content" class="main-column">
 				<slot />
 				<span id="docsearch-lvl0" hidden>{getPageCategory(url)}</span>

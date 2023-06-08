@@ -4,6 +4,8 @@ import { rtlLanguages } from '../../i18n/languages';
 import { getLanguageFromURL } from '../../util';
 import FallbackNotice from '../FallbackNotice.astro';
 import ArticleNavigationButton from './ArticleNavigationButton.astro';
+// import TutorialNav from '../tutorial/TutorialNav.astro';
+
 
 export interface Props {
 	content: { title: string };
@@ -43,6 +45,7 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 				<h1 class="content-title" id="overview" set:html={title} />
 				<slot name="after-title" />
 			</header>
+			<!-- <TutorialNav id="sidebar" /> -->
 			{
 				isFallback && (
 					<div lang={bcpLang} dir={direction}>
@@ -124,7 +127,7 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 		padding-inline: var(--min-spacing-inline);
 		width: 100%;
 		height: 100%;
-		max-width: 80ch;
+		// max-width: 80ch;
 		margin-inline: auto;
 		display: flex;
 		flex-direction: column;
