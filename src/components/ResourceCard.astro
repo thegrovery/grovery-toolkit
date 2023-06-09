@@ -28,7 +28,8 @@ import Button from '../components/Button.astro'
     --teal: #00DFC3;
     }
     .icon-container {
-        background-color: #efefef;
+        /* background-color: var(--theme-bg-gradient); */
+        background-color: var(--theme-code-inline-bg);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -42,7 +43,8 @@ import Button from '../components/Button.astro'
     }
     .resource-card {
       /* styles for the card container */
-      background-color: #fff;
+      /* background-color: var(--theme-code-inline-bg); */
+      background-color: var(--theme-bg-gradient);
       margin: 0rem 2% 2% 0rem;
       max-width: 31%;
       padding: 1.5rem;
@@ -68,9 +70,9 @@ import Button from '../components/Button.astro'
       /* styles for individual tags */
       text-transform: uppercase;
       color: var(--blue);
-      padding: 2px 4px;
-      border-radius: 3px;
-      background-color: #007b982e;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background-color: var(--theme-code-inline-bg);
       margin: 0 .5rem 0 0;
     }
   
