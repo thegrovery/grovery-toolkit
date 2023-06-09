@@ -15,25 +15,29 @@ export let variant = 'primary'; // default to primary if no variant is provided
   --blue: #007B98;
   --teal: #00DFC3;
 }
-
+  
+/* Global Btn Style */
   .button {
 	margin: 10px 0;
-    padding: 12px 30px;
-    border-radius: 6px;
+    padding: 16px 30px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
 	font-weight: 500;
 	transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-
+  
+  /* Primary Button */
   .primary {
-    background-color: var(--blue);
+    background-color: var(--theme-accent-secondary);
     color: white;
     border: none;
   }
   .primary:hover,.primary:focus {
 	background-color: #005e73;
   }
+
+  /* Secondary Btn */
   .secondary {
     background-color: var(--teal);
     color: white;
@@ -42,6 +46,8 @@ export let variant = 'primary'; // default to primary if no variant is provided
   .secondary:hover,.secondary:focus {
 	background-color: #00b39b;
   }
+
+  /* Tertiary Btn */
   .tertiary {
     border-color: var(--teal);
 	border-style: solid;
@@ -51,6 +57,19 @@ export let variant = 'primary'; // default to primary if no variant is provided
   }
   .tertiary:hover,.tertiary:focus {
 	background-color:var(--teal);
+	color: #fff;
+  }
+  
+  /* outline */
+  .outline {
+    border-color: var(--theme-accent-secondary);
+	border-style: solid;
+	border-width: 1px;
+    color: var(--theme-accent-secondary);
+    background-color: transparent;
+  }
+  .outline:hover,.outline:focus {
+    background-color:var(--theme-accent-secondary);
 	color: #fff;
   }
 </style>
