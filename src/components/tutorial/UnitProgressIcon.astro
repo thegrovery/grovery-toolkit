@@ -30,7 +30,7 @@ for (let i = 0; i < numberOfLessons; i++) {
 	});
 }
 
-const size = 64;
+const size = 32;
 const t = useTranslations(Astro);
 ---
 
@@ -120,6 +120,14 @@ const t = useTranslations(Astro);
 		font-weight: bold;
 		fill: var(--theme-text);
 		background-color: var(--theme-bg-offset);
+	}
+
+	:global([aria-selected='true']) .segment:not(.done) {
+		stroke: hsl(var(--color-gray-95));
+	}
+
+	:global(.theme-dark [aria-selected='true']) .segment:not(.done) {
+		stroke: hsl(var(--color-gray-20));
 	}
 
 	.segment {

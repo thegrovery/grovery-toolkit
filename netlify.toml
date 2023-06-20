@@ -1,6 +1,25 @@
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
 [build]
-  command = "NODE_OPTIONS=--max_old_space_size=4096 pnpm build"
+  command = "NODE_OPTIONS=--max_old_space_size=8192 pnpm netlify:build"
   ignore = "git diff --quiet $COMMIT_REF $CACHED_COMMIT_REF -- /"
+
+  [[plugins]]
+    package = "@algolia/netlify-plugin-crawler"
+      [plugins.inputs]
+      branches = ['main']
+      disabled = true
+      pathPrefix = "/en/"
+      customDomain = "grovery-core-toolkit-staging.netlify.app"
+      renderJavaScript = true
 
   [[redirects]]
     from = "/reference/renderer-reference"
@@ -33,6 +52,18 @@
   [[redirects]]
     from = "/:lang/core-concepts/partial-hydration"
     to = "/:lang/concepts/islands"
+  
+  [[redirects]]
+    from = "/core-concepts/collections"
+    to = "/en/guides/content-collections"
+  
+  [[redirects]]
+    from = "/:lang/core-concepts/collections"
+    to = "/:lang/guides/content-collections"
+
+  [[redirects]]
+    from = "/comparing-astro-vs-other-tools"
+    to = "/en/guides/migrate-to-astro"
 
   [[redirects]]
     from = "/:lang/comparing-astro-vs-other-tools"
@@ -61,6 +92,18 @@
   [[redirects]]
     from = "/:lang/guides/deploy/layer-zero"
     to = "/:lang/guides/deploy/edgio"
+
+  [[redirects]]
+    from = "/:lang/migration/0.21.0"
+    to = "/:lang/guides/upgrade-to/v1"
+
+  [[redirects]]
+    from = "/:lang/migrate"
+    to = "/:lang/guides/upgrade-to/v1"
+    
+  [[redirects]]
+    from = "/"
+    to = "/en/getting-started"
 
   [[redirects]]
     from = "/:lang/*"

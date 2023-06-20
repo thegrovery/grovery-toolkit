@@ -1,11 +1,11 @@
 import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import { defineConfig } from 'astro/config';
+import AstroPWA from '@vite-pwa/astro'
 
 import AutoImport from 'astro-auto-import';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import remarkGFM from 'remark-gfm';
 import remarkSmartypants from 'remark-smartypants';
 
 import { asideAutoImport, astroAsides } from './integrations/astro-asides';
@@ -19,7 +19,7 @@ import { theme } from './syntax-highlighting-theme';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://docs.astro.build/',
+	site: 'https://grovery-core-toolkit-staging.netlify.app/',
 	integrations: [
 		AutoImport({
 			imports: [asideAutoImport, codeSnippetAutoImport],
@@ -29,13 +29,20 @@ export default defineConfig({
 		astroAsides(),
 		astroCodeSnippets(),
 		mdx(),
+		//AstroPWA({
+		//      registerType: 'autoUpdate',
+		//      workbox: {
+		//		globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+		//      }
+		//    }
+		//),
 	],
 	markdown: {
 		syntaxHighlight: 'shiki',
 		shikiConfig: { theme },
+		// Override with our own config
+		smartypants: false,
 		remarkPlugins: [
-			// These are here because setting custom plugins disables the default plugins
-			remarkGFM,
 			[remarkSmartypants, { dashes: false }],
 			// Add our custom plugin that marks links to fallback language pages
 			remarkFallbackLang(),
