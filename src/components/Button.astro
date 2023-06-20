@@ -1,12 +1,13 @@
 ---
 // Component Script (JavaScript)
 export let variant = 'primary'; // default to primary if no variant is provided
+export let href; // optional href prop
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
-<button class={`button ${Astro.props.variant}`}>
+<a class={`button ${Astro.props.variant}`} href={Astro.props.href}>
   <slot></slot>
-</button>
+</a>
 
 <!-- Styles for the primary and secondary buttons -->
 <style>
@@ -18,15 +19,19 @@ export let variant = 'primary'; // default to primary if no variant is provided
   
 /* Global Btn Style */
   .button {
-	margin: 10px 0;
+    display: inline-block;
+	  margin: 10px 0;
     padding: 16px 30px;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-	font-weight: 500;
-	transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-decoration: none;
+	  font-weight: 500;
+	  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-  
+  .button:hover {
+    text-decoration: none;
+  }
   /* Primary Button */
   .primary {
     background-color: var(--theme-accent-secondary);
@@ -34,7 +39,7 @@ export let variant = 'primary'; // default to primary if no variant is provided
     border: none;
   }
   .primary:hover,.primary:focus {
-	background-color: #005e73;
+	  background-color: #005e73;
   }
 
   /* Secondary Btn */
