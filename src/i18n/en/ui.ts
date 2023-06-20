@@ -3,15 +3,15 @@ export default {
 	'a11y.sectionLink': 'Section titled',
 	'navbar.a11yTitle': 'Top',
 	// Site settings
-	'site.title': 'Support Program and Resource Kit',
-	'site.description': 'Build faster websites with less client-side Javascript.',
+	'site.title': 'Astro Documentation',
+	'site.description': 'Build faster websites with less client-side JavaScript.',
 	'site.og.imageSrc': '/default-og-image.png?v=1',
 	'site.og.imageAlt':
 		'astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground',
 	// Left Sidebar
 	'leftSidebar.a11yTitle': 'Primary',
 	'leftSidebar.learnTab': 'Learn',
-	'leftSidebar.referenceTab': 'Reference',
+	'leftSidebar.referenceTab': 'Resources',
 	'leftSidebar.viewInEnglish': 'View in English',
 	'leftSidebar.sponsoredBy': 'Sponsored by',
 	// Right Sidebar
@@ -37,6 +37,7 @@ export default {
 	// Used in `<Since>`: Added in: v0.24.0 [NEW]
 	'since.addedIn': 'Added in:',
 	'since.new': 'New',
+	'since.beta': 'Beta',
 	// Installation Guide
 	'install.autoTab': 'Automatic CLI',
 	'install.manualTab': 'Manual Setup',
@@ -50,6 +51,8 @@ export default {
 	'cms.navTitle': 'More CMS guides',
 	// Migration Guides vocabulary
 	'migration.navTitle': 'More migration guides',
+	// Recipes vocabulary
+	'recipes.navTitle': 'More recipes',
 	// `<ContributorList>` fallback text
 	'contributors.seeAll': 'See all contributors',
 	// Fallback content notice shown when a page is not yet translated
@@ -65,6 +68,10 @@ export default {
 	'aside.tip': 'Tip',
 	'aside.caution': 'Caution',
 	'aside.danger': 'Danger',
+	// `<CodeSnippet>` vocabulary
+	'codeSnippet.terminalCaption': 'Terminal window',
+	// `<LanguageSelect>` vocabulary
+	'languageSelect.label': 'Select language',
 	// Integrations vocabulary
 	'integrations.changelog': 'Changelog',
 	'integrations.footerTitle': 'More Integrations',
@@ -86,7 +93,19 @@ export default {
 	// Tutorial
 	'tutorial.getReady': 'Get ready to…',
 	// Feedback Fish widget
-	'feedback.button': 'Feedback',
+	'feedback.button': 'Give us feedback',
+	'feedback.a11yLabel': 'Feedback form',
+	'feedback.formTitle': 'What’s on your mind?',
+	'feedback.categoryGroupLabel': 'Choose feedback category',
+	'feedback.issue': 'Issue',
+	'feedback.createIssue': 'Create GitHub Issue',
+	'feedback.idea': 'Idea',
+	'feedback.other': 'Other',
+	'feedback.messageA11yLabel': 'Message',
+	'feedback.placeholder': 'What do you want us to know?',
+	'feedback.submit': 'Send feedback',
+	'feedback.close': 'Close feedback form',
+	'feedback.success': 'Thanks! We received your feedback.',
 	// `<FileTree>` component
 	'fileTree.directoryLabel': 'Directory',
 };

@@ -5,7 +5,7 @@
 	--theme-navbar-height: 6rem;
 	--theme-mobile-toc-height: 4rem;
 	--theme-left-sidebar-width: 18rem;
-	/* --theme-right-sidebar-width: 24rem; */
+	--theme-right-sidebar-width: 18rem;
 	/*
 		Minimum visual horizontal spacing from the edges of the viewport,
 		and between vertically arranged elements
@@ -16,6 +16,7 @@
 	--max-width: 100%;
 	--cur-viewport-height: 100vh;
 	/* Font sizes */
+	--theme-text-lg: 1.25rem;
 	--theme-text-base: 1rem;
 	--theme-text-sm: 0.9375rem;
 	--theme-text-xs: 0.875rem;
@@ -49,7 +50,8 @@
 /*
 	Define common fonts and colors
 */
-:root {
+:root,
+::backdrop {
 	--font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
 		Apple Color Emoji, Segoe UI Emoji;
 	--font-body: system-ui, var(--font-fallback);
@@ -70,8 +72,8 @@
 	--color-base-black: 240, 100%;
 	--color-base-gray: 250, 14%;
 	--color-base-blue: 212, 100%;
-	--color-base-blue-dark: 212, 72%;
-	--color-base-teal: 180, 80%;
+	--color-base-blue-dark: 191, 72%;
+	--color-base-teal: 172, 80%;
 	--color-base-green: 158, 79%;
 	--color-base-orange: 22, 100%;
 	--color-base-purple: 269, 79%;
@@ -105,34 +107,36 @@
 	--color-yellow: var(--color-base-yellow), 59%;
 }
 
-:root {
+:root,
+::backdrop {
 	color-scheme: light;
-	--theme-accent: hsla(var(--color-orange), 1);
-	--theme-accent-secondary: hsl(191, 100%, 30%);
+	--theme-accent: hsla(var(--color-blue), 1);
+	--theme-accent-secondary: hsla(var(--color-blue-dark), 1);
 	--theme-dim: hsla(var(--color-gray-70), 1);
 	--theme-dim-light: hsla(var(--color-gray-80), 1);
 	--theme-dim-lighter: hsla(var(--color-gray-90), 1);
 	--theme-accent-opacity: 0.1;
-	--theme-divider: hsla(var(--color-blue), 0.1);
-	--theme-shade-subtle: hsla(var(--color-blue), 0.3);
-	--theme-text: hsla(var(--color-gray-10), .9);
+	--theme-divider: hsla(var(--color-purple), 0.1);
+	--theme-shade-subtle: hsla(var(--color-purple), 0.3);
+	--theme-text: hsla(var(--color-gray-10), 1);
 	--theme-text-light: hsla(var(--color-gray-30), 1);
 	--theme-text-lighter: hsla(var(--color-gray-40), 1);
-	--theme-bg: hsl(198, 37%, 93%);
+	--theme-bg:  hsla(var(--color-blue),0.075);
 	--theme-bg-gradient-top: var(--theme-bg);
 	--theme-bg-gradient-bottom: #fdfeff;
-	--theme-bg-hover: hsla(var(--color-blue), 0.075);
-	--theme-bg-offset: hsla(var(--color-blue), 0.1);
-	--theme-bg-accent: hsla(var(--color-blue), var(--theme-accent-opacity));
-	--theme-code-inline-bg: hsla(var(--color-blue), 0.1);
+	--theme-bg-hover: hsla(var(--color-purple), 0.075);
+	--theme-bg-offset: hsla(var(--color-purple), 0.1);
+	--theme-bg-accent: hsla(var(--color-purple), var(--theme-accent-opacity));
+	--theme-backdrop-overlay: hsla(var(--color-gray-50), 0.8);
+	--theme-code-inline-bg: hsla(var(--color-purple), 0.1);
 	--theme-code-inline-text: var(--theme-text);
-	--theme-code-bg: rgb(39, 69, 73);
-	--theme-code-tabs: rgb(51, 100, 113);
+	--theme-code-bg: hsla(257, 31%, 22%, 1);
+	--theme-code-tabs: hsla(257, 38%, 32%, 1);
 	--theme-code-text: hsla(var(--color-gray-95), 1);
 	--theme-navbar-bg: var(--theme-bg);
-	--theme-selection-color: hsla(var(--color-blue), 1);
-	--theme-selection-bg: hsla(var(--color-blue), var(--theme-accent-opacity));
-	--theme-code-selection-bg: hsla(var(--color-blue), 0.4);
+	--theme-selection-color: hsla(var(--color-purple), 1);
+	--theme-selection-bg: hsla(var(--color-purple), var(--theme-accent-opacity));
+	--theme-code-selection-bg: hsla(var(--color-purple), 0.4);
 	--theme-code-mark-bg: hsl(226, 50%, 33%);
 	--theme-code-mark-border: hsl(224, 50%, 54%);
 	--theme-code-ins-bg: hsl(122, 22%, 23%);
@@ -144,17 +148,17 @@
 
 	--theme-bg-gradient: linear-gradient(
 		180deg,
-		var(--theme-bg-gradient-top),
-		var(--theme-bg-gradient-top) calc(var(--theme-navbar-height) + var(--theme-mobile-toc-height)),
-		var(--theme-bg-gradient-bottom)
+		var(--theme-bg-gradient-top) 0%,
+		var(--theme-bg-gradient-bottom) 100%
 	);
 
 	--theme-glow-highlight: transparent;
-	--theme-glow-diffuse: hsla(var(--color-base-blue), 65%, 0.5);
+	--theme-glow-diffuse: hsla(var(--color-base-purple), 65%, 0.5);
 	--theme-glow-blur: 10px;
 }
 
-:root.theme-dark {
+:root.theme-dark,
+.theme-dark ::backdrop {
 	color-scheme: dark;
 	/* We lighten-up the orange in dark mode, to help with link contrast. */
 	--color-orange: var(--color-base-orange), 60%;
@@ -170,11 +174,12 @@
 	--theme-text: hsla(var(--color-gray-90), 1);
 	--theme-text-light: hsla(var(--color-gray-80), 1);
 	--theme-text-lighter: hsla(var(--color-gray-70), 1);
-	--theme-bg: hsl(203, 32%, 26%);
+	--theme-bg: hsl(256, 27%, 19%);
 	--theme-bg-gradient-top: var(--theme-bg);
 	--theme-bg-gradient-bottom: hsl(251, 29%, 11%);
-	--theme-bg-hover: hsla(var(--color-blue), 0.2);
+	--theme-bg-hover: hsla(var(--color-purple), 0.2);
 	--theme-bg-offset: #0008;
+	--theme-backdrop-overlay: hsla(var(--color-gray-10), 0.8);
 	--theme-code-inline-bg: #ffffff16;
 	--theme-code-inline-text: var(--theme-text-light);
 	--theme-code-bg: hsla(257, 31%, 11%, 1);
@@ -191,8 +196,8 @@
 	--theme-code-del-border: hsl(340, 34%, 43%);
 	--theme-code-del-text: hsl(340, 24%, 65%);
 
-	--theme-glow-highlight: hsla(var(--color-base-blue), 50%, 1);
-	--theme-glow-diffuse: hsla(var(--color-base-blue), 35%, 0.4);
+	--theme-glow-highlight: hsla(var(--color-base-purple), 50%, 1);
+	--theme-glow-diffuse: hsla(var(--color-base-purple), 35%, 0.4);
 }
 
 ::selection {

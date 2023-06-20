@@ -1,6 +1,6 @@
 ---
 import '@docsearch/css/dist/style.css';
-import { DocSearchTranslation } from '../../i18n/translation-checkers';
+import type { DocSearchTranslation } from '../../i18n/translation-checkers';
 import DocSearch from './DocSearch';
 import './HeaderButton.css';
 import './DocSearch.css';
@@ -85,7 +85,7 @@ const { button, shortcutLabel, ...modalLabels } = labels;
 		.search-input {
 			border-radius: 9e9px;
 			padding-inline: 1rem;
-			width: min(11.5rem, 100%);
+			width: min(16.5rem, 100%);
 		}
 
 		.search-placeholder {
