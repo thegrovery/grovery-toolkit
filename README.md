@@ -10,6 +10,7 @@
 
 ### Code Libraries
 * Framework: [Astro Docs](https://github.com/withastro/docs)
+* Icons: [astro-icon](https://github.com/natemoo-re/astro-icon#readme)
 
 
 ---
