@@ -614,3 +614,10 @@ html {
 		transition: none !important;
 	}
 }
+
+
+[astro-icon] {
+    font-size: 1em;
+    width: 1em;
+    height: auto;
+}
