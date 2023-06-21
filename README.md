@@ -33,17 +33,25 @@ Current active dev branches:
 * run 'npm install'
 * run 'npm run dev' (start and serve commands are the same as this by default, customize them if you need to)
 
+<br/>
+
 ### Initial Server Deploy, Updating Test/Staging Server
 This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.  
+
+<br/>
 
 ### Git Guidelines - Branching & Merging
 Try to keep all updates isolated to their own branch, and then open a pull request (PR) when you're ready to push the update live.  This will keep the git timeline clean and allow for easier collaboration.
 
 All branches should follow the naming scheme of `category--subject`, for example: `template--basic-page-template`, `package--astro-icon`, or `component--MasterComponent`.  
 
+<br/>
+
 >**Avoiding Merge Errors**: 
 >
 >Before you open your PR, re-merge `main` into your branch to get any updates that have happened in the meantime, and then run `pnpm run build` to make sure your updates build properly.  
+
+<br/>
 
 ### Assets Checklist
 When you start the project, check in with the team for the following:
@@ -54,7 +62,14 @@ When you start the project, check in with the team for the following:
 * Legal copy/links
 * Social links
 
+<br/>
+
 ### Code Libraries
 * Framework: [Astro Docs](https://github.com/withastro/docs)
 * Icons: [astro-icon](https://github.com/natemoo-re/astro-icon#readme)
 * Sliders/Carousels: [swiper](https://swiperjs.com/)
+
+<br/>
+
+## Markdown Syntax Guide
+* https://www.markdownguide.org/basic-syntax/#overview
