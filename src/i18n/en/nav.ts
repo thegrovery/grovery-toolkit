@@ -31,8 +31,8 @@ export default [
 		{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
 		{ text: 'Tutorial Page Template', slug: 'page-templates/tutorial-page-template', key: 'page-templates/tutorial-page-template' },
 
-	{ text: 'Tutorials', header: true, type: 'learn', key: 'tutorials' },
-		{ text: 'Build a Blog', slug: 'tutorial/0-introduction', key: 'blog-tutorial' },
+	/*{ text: 'Tutorials', header: true, type: 'learn', key: 'tutorials' },
+		{ text: 'Build a Blog', slug: 'tutorial/0-introduction', key: 'blog-tutorial' },*/
 		// { text: 'Thinking with Islands', slug: 'tutorial/0-introduction', key: 'island-tutorial' },
 
 	{ text: 'Misc.', header: true, type: 'learn', key: 'tutorials' },
