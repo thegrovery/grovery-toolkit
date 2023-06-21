@@ -2,20 +2,19 @@
 
 ## Project-Specific Notes
 * Project-specific notes go here.
-* 
+
 ### Server Links
 * Local: http://localhost:3000/
 * Staging: https://grovery-core-toolkit-staging.netlify.app/
 * Live: 
 
-### Code Libraries
-* Framework: [Astro Docs](https://github.com/withastro/docs)
-* Icons: [astro-icon](https://github.com/natemoo-re/astro-icon#readme)
+
 
 
 ---
 
 ## In-Progress Dev Notes
+Delete this section when no longer needed.
 
 Current active dev branches:
 * feature--algolia-search
@@ -33,37 +32,30 @@ Current active dev branches:
 * run 'npm install'
 * run 'npm run dev' (start and serve commands are the same as this by default, customize them if you need to)
 
-### Initial Server Deploy
+### Initial Server Deploy, Updating Test/Staging Server
+This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.  
 
+### Git Guidelines - Branching & Merging
+Try to keep all updates isolated to their own branch, and then open a pull request (PR) when you're ready to push the update live.  
 
-### Update Test/Staging Server
-This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.
+All branches should follow the naming scheme of `category--subject`, for example: `template--basic-page-template`, `package--astro-icon`, or `component--MasterComponent`.  
 
-### Form Configuration
-
-
-#### Page Links
-* http://localhost:3000/ - Index/Home
-* http://localhost:3000/posts - Blog posts directory
-* http://localhost:3000/posts/master-post - Post master template
-* http://localhost:3000/events - This is a clone of the blog pages and functionality, and can be renamed to whatever you need, or just ignored/removed.
-
+>*Avoiding Merge Errors*: 
+>Before you open your PR, re-merge `main` into your branch to get any updates that have happened in the meantime, and then run `pnpm run build` to make sure your updates build properly.  
 
 ### Assets Checklist
-When you start the project, check in with the projects's Analyst for the following:
+When you start the project, check in with the team for the following:
 * Font files
-* Logo(s) - as PNGs
+* Logo(s) - as PNGs or SVGs
 * Favicon - you can usually resize the logo for this
-* Figma/PSD of the design to export individual assets
+* Adobe Xd project link
 * Legal copy/links
 * Social links
 
-### Plugin/Library Links
-* [react-icons](https://react-icons.github.io/react-icons)
-* [swiper](https://swiperjs.com/)
-* [normalize.css](https://necolas.github.io/normalize.css/)
-* [react-headroom](https://kyleamathews.github.io/react-headroom/)
-* [tippy.js](https://atomiks.github.io/tippyjs/)
+### Code Libraries
+* Framework: [Astro Docs](https://github.com/withastro/docs)
+* Icons: [astro-icon](https://github.com/natemoo-re/astro-icon#readme)
+* Sliders/Carousels: [swiper](https://swiperjs.com/)
 
 ### Coming Features
 * Contact page
