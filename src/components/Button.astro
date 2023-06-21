@@ -5,9 +5,15 @@ export let href; // optional href prop
 ---
 
 <!-- Component Template (HTML + JS Expressions) -->
-<a class={`button ${Astro.props.variant}`} href={Astro.props.href}>
+<a 
+  class={`button ${Astro.props.variant}`} 
+  href={Astro.props.href}
+  {...(Astro.props.href && Astro.props.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+>
   <slot></slot>
 </a>
+
+
 
 <!-- Styles for the primary and secondary buttons -->
 <style>

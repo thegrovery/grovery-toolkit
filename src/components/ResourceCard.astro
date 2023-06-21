@@ -1,27 +1,45 @@
 ---
 // This is the frontmatter section where you can import other components or scripts if needed
 import Button from '../components/Button.astro'
+import { Icon } from 'astro-icon'
+
 ---
 
-<div class="resource-card">
-    <div class="icon-container">
-        <i class={`fas fa-${Astro.props.icon}`}></i>
-    </div>
-    <h3>{Astro.props.title}</h3>
-    <p>{Astro.props.description}</p>
-    <div class="tags">
-      {Astro.props.tags.map((tag) => (
-        <span class="tag">{tag}</span>
-      ))}
-    </div>
-    <Button variant="primary" className="details-btn">
-        {Astro.props.viewDetailsButtonText}
-    </Button>
-    <Button variant="tertiary" className="share-btn">
-        {Astro.props.shareButtonText}
-    </Button>
+<div class={`resource-card ${Astro.props.width}`}>
+  <div class="icon-container">
+    <Icon name={Astro.props.icon} />
+  </div>
+  <h3>{Astro.props.title}</h3>
+  <p>{Astro.props.description}</p>
+  <div class="tags">
+    {Astro.props.tags.map((tag) => (
+      <span class="tag">{tag}</span>
+    ))}
+  </div>
+  <Button variant="primary" className="details-btn" href={Astro.props.resourceDetailsLink}>
+    {Astro.props.viewDetailsButtonText}
+  </Button>
+  <Button variant="tertiary" className="share-btn" href={`mailto:?subject=CORE%20RMS%20Resource&body=${encodeURIComponent(Astro.props.resourceDetailsLink)}`}>
+    {Astro.props.shareButtonText}
+  </Button>
 </div>
-  
+  <style is:global>
+    .resource-card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* change 300px to whatever minimum width you want your cards to have */
+      gap: 20px; /* adjust for desired space between cards */
+    }
+    @media (max-width: 900px) {
+      .resource-card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* adjust minimum width as per your design */
+      }
+    }
+    @media (max-width: 600px) {
+      .resource-card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* adjust minimum width as per your design */
+      }
+    }
+  </style>
   <style>
     :root {
     --blue: #007B98;
@@ -37,16 +55,17 @@ import Button from '../components/Button.astro'
         width: 80px;
         border-radius: 28px;
     }
-    .icon-container i {
-        font-size: 30px;
+    .icon-container [astro-icon] {
+        font-size: 3em;
         color: var(--blue);
     }
     .resource-card {
       /* styles for the card container */
       /* background-color: var(--theme-code-inline-bg); */
       background-color: var(--theme-bg-gradient);
+      box-sizing: border-box;
       margin: 0rem 2% 2% 0rem;
-      max-width: 48%;
+      /* max-width: 31%; */
       padding: 1.5rem;
       border-radius: 12px;
       border: 1px solid #8080807a;
@@ -57,6 +76,17 @@ import Button from '../components/Button.astro'
         border-color: var(--blue);
         box-shadow: -2px 2px 0px var(--blue);
     }
+   /*  .resource-card.third {
+      width: 33.33%;
+    }
+
+    .resource-card.half {
+      width: 50%;
+    }
+
+    .resource-card.full {
+      width: 100%;
+    } */
     .resource-card h3 {
         margin-top: 1.5rem;
     }
