@@ -4,14 +4,14 @@
 * Project-specific notes go here.
 
 ### Server Links
-* Local: http://localhost:3000/
-* Staging: https://grovery-core-toolkit-staging.netlify.app/
+* Local: http://127.0.0.1:3000/
+* Staging: https://grovery-core-toolkit-template.netlify.app/
 * Live: 
-
-
+* Netlify: https://app.netlify.com/sites/grovery-core-toolkit-template/overview
 
 
 ---
+
 
 ## In-Progress Dev Notes
 Delete this section when no longer needed.
@@ -24,7 +24,8 @@ Current active dev branches:
 
 ---
 
-## Grovery CORE Toolkit
+
+## Framework: Grovery CORE Toolkit
 
 
 ### Initialize
@@ -36,11 +37,12 @@ Current active dev branches:
 This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.  
 
 ### Git Guidelines - Branching & Merging
-Try to keep all updates isolated to their own branch, and then open a pull request (PR) when you're ready to push the update live.  
+Try to keep all updates isolated to their own branch, and then open a pull request (PR) when you're ready to push the update live.  This will keep the git timeline clean and allow for easier collaboration.
 
 All branches should follow the naming scheme of `category--subject`, for example: `template--basic-page-template`, `package--astro-icon`, or `component--MasterComponent`.  
 
->*Avoiding Merge Errors*: 
+>**Avoiding Merge Errors**: 
+>
 >Before you open your PR, re-merge `main` into your branch to get any updates that have happened in the meantime, and then run `pnpm run build` to make sure your updates build properly.  
 
 ### Assets Checklist
@@ -56,15 +58,3 @@ When you start the project, check in with the team for the following:
 * Framework: [Astro Docs](https://github.com/withastro/docs)
 * Icons: [astro-icon](https://github.com/natemoo-re/astro-icon#readme)
 * Sliders/Carousels: [swiper](https://swiperjs.com/)
-
-### Coming Features
-* Contact page
-* About page - == In Progress ==
-* [Arbitrary JSON data usage](https://vercel.com/guides/loading-static-file-nextjs-api-route) - == Complete ==
-* [Category and tag filtering on blog pages](https://retool.com/blog/filtering-data-in-react-filter-map-and-for-loops/)
-* lodash - js utility library
-* browsersync - sync multiple browser windows
-* Form integration - netlify forms
-
-### Article Links
-* [Set up Google Analytics with react-ga](https://medium.com/@cooperwfloyd/the-most-simple-way-to-track-next-js-page-views-in-google-analytics-8a5c6d981f43)
