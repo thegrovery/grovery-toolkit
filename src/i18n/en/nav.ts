@@ -15,6 +15,7 @@ export default [
 
 	{ text: 'Page Templates', header: true, type: 'learn', key: 'pageTemplates' },
 	{ text: 'Basic Page Template', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+	{ text: 'Component Page Template', slug: 'page-templates/component-page-template', key: 'page-templates/component-page-template' },
 	{ text: 'Video Page Template', slug: 'page-templates/video-page-template', key: 'page-templates/video-page-template' },
 	{ text: 'Directory Page Template', slug: 'page-templates/directory-page-template', key: 'page-templates/directory-page-template' },
 	{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
