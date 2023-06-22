@@ -154,12 +154,17 @@ const t = useTranslations(Astro);
 	}
 	/* Logo as inline svg */
 	.logo svg {
-		height: 80px;
+		height: 60px;
 		width: auto;
 		display: block;
 		color: var(--theme-accent);
 	}
-
+	/* increase logo size on tablet & desktop */
+	@media (min-width: 600px) {
+		.logo svg {
+		height: 80px;
+		}
+	}
 	.logo .hover {
 		opacity: 0;
 	}
