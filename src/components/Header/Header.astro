@@ -21,7 +21,7 @@ const t = useTranslations(Astro);
 				<li>
 					<a class="logo" href="/">
 						<!-- <img src="/logos/grovery-logo.svg" /> -->
-						<svg xmlns="http://www.w3.org/2000/svg" width="285.951" height="94.455" viewBox="0 0 285.951 94.455">
+						<svg xmlns="http://www.w3.org/2000/svg" width="290" height="100" viewBox="0 0 285.951 94.455">
 							<g id="CORELOGO" transform="translate(0)">
 							  <path id="Path_1070" data-name="Path 1070" d="M229.649,92.917h0Z" transform="translate(-171.763 -69.495)" fill="#81c051"/>
 							  <path id="Path_1071" data-name="Path 1071" d="M53.779,94.059q.6-.1,1.2-.208l.258-.051q.369-.072.737-.15l.369-.08q.349-.078.7-.161l.3-.072A46.788,46.788,0,0,0,79.82,80.163c8.637-9.038,13.29-20.831,12.765-32.354-.713-8.872-5.219-16.639-12.053-20.725l-.054-.031q-.216-.129-.436-.252l-.2-.11q-.163-.089-.327-.175l-.2-.106q-.183-.093-.367-.183l-.162-.079q-.845-.4-1.723-.731l-.073-.027q-.257-.095-.516-.183l-.117-.039q-.236-.079-.474-.152l-.132-.04a21.482,21.482,0,0,0-3.77-.761l-.057-.006q-.348-.037-.7-.063l-.1-.007q-.353-.025-.708-.038l-.058,0q-.387-.013-.775-.013a26.119,26.119,0,0,0-5,.528c-.163.034-.328.071-.493.109l-.329.075q-.343.082-.692.175l-.18.049q-.325.089-.655.188c-.219.067-.439.134-.656.206l-.08.026A26.089,26.089,0,1,1,21.175,47.288c0-.484.017-1,.055-1.61A46.916,46.916,0,0,1,24.38,30.251,47.464,47.464,0,0,1,43.586,7.146,46.866,46.866,0,0,1,57.832,1.277,47.219,47.219,0,1,0,47.26,94.506a47.72,47.72,0,0,0,6.52-.447" transform="translate(0 -0.052)" fill="#81c051"/>
@@ -86,7 +86,21 @@ const t = useTranslations(Astro);
 		justify-content: left;
 		overflow: hidden;
 	}
-
+	html.theme-dark header svg {
+		overflow: visible;
+	}
+	html.theme-dark header svg path {
+		fill: var(--theme-text);
+	}
+	html.theme-dark header svg #Path_1072 {
+		fill: var(--theme-text);
+	}
+	html.theme-dark header svg #Path_1071 {
+		fill: transparent;
+		/* stroke: var(--theme-accent); */
+		stroke: var(--theme-text-lighter);
+		stroke-width: 3px;
+	}
 	
 	ul,
 	li {
