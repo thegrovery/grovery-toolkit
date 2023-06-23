@@ -8,8 +8,14 @@ import Button from '~/components/Button.astro'
 import ContributorList from '~/components/ContributorList.astro'
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
 import ResourceCard from '~/components/ResourceCard.astro';
+import TagFilter from '~/components/TagFilter.astro'
+
 
 Use this page template when you need to display a list of resources - they can either be other pages in the toolkit, or third-party resources hosted offsite.  Click "View Details" to navigate to the resource, or click "Share" to open a popup with a sharable link and a QR code
+
+<div class="tag-filter-container">
+	<TagFilter tags={['Training', 'Support', 'Customer', 'Pricing']} />
+</div>
 
 <div class="resource-card-container">
   
@@ -17,10 +23,10 @@ Use this page template when you need to display a list of resources - they can e
 		icon="akar-icons:clipboard"  
 		title="Troubleshooting Guide: Solutions for Common Issues" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
-		tags={['Tag1', 'Tag2', 'Tag3']} 
+		tags={['Training']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		width="half" 
+		width="full" 
 		resourceDetailsLink="/page-templates/resource-page-template/" 
 
 	/>
@@ -29,19 +35,19 @@ Use this page template when you need to display a list of resources - they can e
 		icon="ph:globe" 
 		title="Online Support Provider Portal" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
-		tags={['Tag1', 'Tag2', 'Tag3']} 
+		tags={['Support', 'Training']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		 width="third" 
+		 width="half" 
 		resourceDetailsLink="https://thegrovery.com" 
 
 	/>
 	
 	<ResourceCard 
 		icon="mdi:school-outline" 
-		title="Product Training Module: Part 1" 
+		title="Product Training Module: Part One" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
-		tags={['Tag1', 'Tag2', 'Tag3']} 
+		tags={['Training']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
 		resourceDetailsLink="/page-templates/resource-page-template/" 
@@ -51,7 +57,25 @@ Use this page template when you need to display a list of resources - they can e
 		icon="ph:pill-bold" 
 		title="Customer Success Stories: Inspire Trust and Confidence" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
-		tags={['Tag1', 'Tag2', 'Tag3']} 
+		tags={['Customer']} 
+		viewDetailsButtonText="View Details" 
+		shareButtonText="Share" 
+		resourceDetailsLink="https://thegrovery.com" 
+	/>
+	<ResourceCard 
+		icon="ps:chat" 
+		title="Best Practices for Effective Communication" 
+		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+		tags={['Support']} 
+		viewDetailsButtonText="View Resource" 
+		shareButtonText="Share" 
+		resourceDetailsLink="https://thegrovery.com" 
+	/>
+	<ResourceCard 
+		icon="icomoon-free:price-tags" 
+		title="Pricing and Discount Strategies: Maximize Revenue" 
+		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+		tags={['Pricing']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
 		resourceDetailsLink="https://thegrovery.com" 
