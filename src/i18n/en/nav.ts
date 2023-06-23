@@ -9,14 +9,14 @@
  */
 export default [
 
-	//LEARN SECTION
+	//LEARN TAB
 	{ text: 'Introduction', header: true, type: 'learn', key: 'startHere' },
 		{ text: 'Getting Started', slug: 'getting-started', key: 'getting-started' },
-		{ text: 'How to use the toolkit', slug: 'how-to-use-the-toolkit', key: 'how-to-use-the-toolkit' },
+		{ text: 'How To Use The Toolkit', slug: 'how-to-use-the-toolkit', key: 'how-to-use-the-toolkit' },
 		{ text: 'Announcements', slug: 'announcements', key: 'announcements' },
-		{ text: 'What is a brand toolkit?', slug: 'what-is-a-brand-toolkit', key: 'what-is-a-brand-toolkit' },
-		{ text: 'Playbook in practice', slug: 'playbook-in-practice', key: 'playbook-in-practice' },
-		{ text: 'Test your knowledge', slug: 'test-your-knowledge', key: 'test-your-knowledge' },
+		{ text: 'What Is A Brand Toolkit?', slug: 'what-is-a-brand-toolkit', key: 'what-is-a-brand-toolkit' },
+		{ text: 'Playbook In Practice', slug: 'playbook-in-practice', key: 'playbook-in-practice' },
+		{ text: 'Test Your Knowledge', slug: 'test-your-knowledge', key: 'test-your-knowledge' },
 
 	{ text: 'Onboarding', header: true, type: 'learn', key: 'onboarding' },
 		{ text: 'About our team', slug: 'onboarding/about-our-team', key: 'about-our-team' },
@@ -40,35 +40,23 @@ export default [
 		{ text: 'Recent Achievements', slug: 'recent-achievements', key: 'recent-achievements' },
 		{ text: 'FAQ’s', slug: 'faqs', key: 'faqs' },
 
-	//RESOURCES SECTION
-	{ text: 'Resources', header: true, type: 'api', key: 'resources' },
-	{
-		text: 'Configuration',
-		slug: 'reference/configuration-reference',
-		key: 'reference/configuration-reference',
-	},
-	{ text: 'Runtime API', slug: 'reference/api-reference', key: 'reference/api-reference' },
-	{
-		text: 'Integrations API',
-		slug: 'reference/integrations-reference',
-		key: 'reference/integrations-reference',
-	},
-	{ text: 'Adapter API', slug: 'reference/adapter-reference', key: 'reference/adapter-reference' },
-	{
-		text: 'Image Service API',
-		slug: 'reference/image-service-reference',
-		key: 'reference/image-service-reference',
-	},
-	{
-		text: 'Template Directives',
-		slug: 'reference/directives-reference',
-		key: 'reference/directives-reference',
-	},
-	{ text: 'The Astro CLI', slug: 'reference/cli-reference', key: 'reference/cli-reference' },
-	{
-		text: 'Error Reference',
-		slug: 'reference/error-reference',
-		key: 'reference/error-reference',
-	},
-	{ text: 'NPM Package Format', slug: 'reference/publish-to-npm', key: 'guides/publish-to-npm' },
+
+	//RESOURCES TAB
+	{ text: 'Brand Resources', header: true, type: 'api', key: 'brand-resources' },
+		{ text: 'Style Guide', slug: 'brand-resources/style-guide', key: 'brand-resources/style-guide' },
+		{ text: 'Icon Library', slug: 'brand-resources/icon-library', key: 'brand-resources/icon-library' },
+		{ text: 'Infographics', slug: 'brand-resources/infographics', key: 'brand-resources/infographics' },
+		{ text: 'Customer Personas', slug: 'brand-resources/customer-personas', key: 'brand-resources/customer-personas' },
+		{ text: 'Print Collateral', slug: 'brand-resources/print-collateral', key: 'brand-resources/print-collateral' },
+		{ text: 'Decks', slug: 'brand-resources/decks', key: 'brand-resources/decks' },
+
+	{ text: 'Program Resources', header: true, type: 'api', key: 'program-resources' },
+		{ text: 'Online Support', slug: 'program-resources/online-support', key: 'program-resources/online-support' },
+		{ text: 'User Assistance', slug: 'program-resources/user-assistance', key: 'program-resources/user-assistance' },
+		{ text: 'Order Forms', slug: 'program-resources/orderf-forms', key: 'program-resources/orderf-forms' },
+		{ text: 'Rate Cards', slug: 'program-resources/rate-cards', key: 'program-resources/rate-cards' },
+
+	{ text: 'Misc.', header: true, type: 'api', key: 'misc-resources' },
+		{ text: 'Forms', slug: 'misc-resources/forms', key: 'misc-resources/forms' },
+		{ text: 'Templates', slug: 'misc-resources/templates', key: 'misc-resources/templates' },
 ] as const;
