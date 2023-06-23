@@ -57,6 +57,6 @@ export default [
 		{ text: 'Rate Cards', slug: 'program-resources/rate-cards', key: 'program-resources/rate-cards' },
 
 	{ text: 'Misc.', header: true, type: 'api', key: 'misc-resources' },
-		{ text: 'Forms', slug: 'misc-resources/our-brand-partners', key: 'our-brand-partners' },
-		{ text: 'Templates', slug: 'misc-resources/recent-achievements', key: 'recent-achievements' },
+		{ text: 'Forms', slug: 'misc-resources/forms', key: 'misc-resources/forms' },
+		{ text: 'Templates', slug: 'misc-resources/templates', key: 'misc-resources/templates' },
 ] as const;
