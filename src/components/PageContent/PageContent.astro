@@ -4,6 +4,8 @@ import { rtlLanguages } from '../../i18n/languages';
 import { getLanguageFromURL } from '../../util';
 import FallbackNotice from '../FallbackNotice.astro';
 import ArticleNavigationButton from './ArticleNavigationButton.astro';
+import { Breadcrumbs } from "astro-breadcrumbs";
+import 'astro-breadcrumbs/breadcrumbs.css';
 
 export interface Props {
 	content: { title: string };
@@ -39,6 +41,23 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 	<article id="article" class="content">
 		<section class="main-section">
 			<header>
+				<Breadcrumbs indexText="Home">
+				
+					<svg
+						slot="separator"
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						><polyline points="9 18 15 12 9 6"></polyline>
+					</svg>
+				
+				</Breadcrumbs>
 				<slot name="before-title" />
 				<h1 class="content-title" id="overview" set:html={title} />
 				<slot name="after-title" />
@@ -63,7 +82,23 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 	</article>
 </div>
 
+<style lang="scss" is:global>
+	.c-breadcrumbs {
+		margin-bottom: 1.2rem;
+		li {
+			&:nth-of-type(2) {
+				display: none;
+			}
+		}
+		a {
+			font-size: .9rem;
+			
+		}
+	}
+</style>
+
 <style>
+
 	.fixed-mobile-bar {
 		display: block;
 		position: fixed;
