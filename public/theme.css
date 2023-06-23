@@ -110,7 +110,7 @@
 :root,
 ::backdrop {
 	color-scheme: light;
-	--theme-accent: hsla(var(--color-green), 1);
+	--theme-accent: var(--custom-dark-blue);
 	--theme-accent-secondary: hsla(var(--color-blue-dark), 1);
 	--theme-dim: hsla(var(--color-gray-70), 1);
 	--theme-dim-light: hsla(var(--color-gray-80), 1);

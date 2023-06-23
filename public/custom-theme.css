@@ -1,4 +1,22 @@
 :root {
+	--custom-black: #17161D;
+	--custom-white: #fdfeff;
 	--custom-teal: #00DFC3;
-	--custom-dark-blue: #007B98;
+	--custom-dark-blue: #054C62;
+	--custom-green: #81C051;
+
+	/*shade variants - */
+	/* ========================= */
+	/* ===== SHADE VARIANTS ===== */
+	/* ========================= */
+	/*add opacity percent as last 2 digits*/
+	/*50% opacity*/
+	--custom-teal-50: #00DFC350;
+	--custom-dark-blue-50: #054C6250;
+	--custom-green-50: #81C05150;
+
+	/*25% opacity*/
+	--custom-teal-25: #00DFC325;
+	--custom-dark-blue-25: #054C6225;
+	--custom-green-25: #81C05125;
 }
