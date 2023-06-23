@@ -5,8 +5,7 @@ import { Icon } from 'astro-icon'
 
 ---
 
-<div class={`resource-card ${Astro.props.width ?? 'third'}`}>
-  <div class="icon-container">
+<div class={`resource-card ${Astro.props.width ?? 'third'} ${Astro.props.tags.join(' ')}`} data-tags={Astro.props.tags.join(',')}>  <div class="icon-container">
     <Icon name={Astro.props.icon} />
   </div>
   <h3>{Astro.props.title}</h3>
@@ -41,7 +40,16 @@ import { Icon } from 'astro-icon'
   .resource-card.full {
     grid-column: span 3;  /* This card will take up all the space */
   }
-  
+  @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   @media (max-width: 1400px) {
     .resource-card-container {
       grid-template-columns: repeat(2, 1fr); /* On smaller screens, we only want two columns */
@@ -94,6 +102,7 @@ import { Icon } from 'astro-icon'
       border: 1px solid #8080807a;
       box-shadow: -2px 2px 0px #8080807a;
       transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+      animation: fadeInUp 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .resource-card:hover,.resource-card:focus {
         border-color: var(--blue);
