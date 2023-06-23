@@ -1,6 +1,8 @@
 /*
 	Define common sizes and spacings
 */
+
+
 :root {
 	--theme-navbar-height: 7rem;
 	--theme-mobile-toc-height: 4rem;
@@ -126,7 +128,7 @@
 	--theme-bg-gradient-bottom: #fdfeff;
 	--theme-bg-hover: hsla(var(--color-purple), 0.075);
 	--theme-bg-offset: hsla(var(--color-purple), 0.1);
-	--theme-bg-accent: hsla(var(--color-purple), var(--theme-accent-opacity));
+	--theme-bg-accent: hsla(var(--color-green), var(--theme-accent-opacity));
 	--theme-backdrop-overlay: hsla(var(--color-gray-50), 0.8);
 	--theme-code-inline-bg: hsla(var(--color-purple), 0.1);
 	--theme-code-inline-text: var(--theme-text);
