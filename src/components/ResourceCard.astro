@@ -78,7 +78,7 @@ import { Icon } from 'astro-icon'
     }
     .icon-container {
         /* background-color: var(--theme-bg-gradient); */
-        background-color: var(--theme-code-inline-bg);
+        background-color: var(--theme-dim-lighter);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -88,7 +88,7 @@ import { Icon } from 'astro-icon'
     }
     .icon-container [astro-icon] {
         font-size: 3em;
-        color: var(--blue);
+        color: var(--theme-accent);
     }
     .resource-card {
       /* styles for the card container */
@@ -99,14 +99,14 @@ import { Icon } from 'astro-icon'
       /* max-width: 31%; */
       padding: 1.5rem;
       border-radius: 12px;
-      border: 1px solid #8080807a;
-      box-shadow: -2px 2px 0px #8080807a;
+      border: 1px solid var(--theme-dim);
+      box-shadow: -2px 2px 0px var(--theme-dim-light);
       transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
       animation: fadeInUp 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     .resource-card:hover,.resource-card:focus {
-        border-color: var(--blue);
-        box-shadow: -2px 2px 0px var(--blue);
+        border-color: var(--theme-accent);
+        box-shadow: -2px 2px 0px var(--theme-accent);
     }
     .resource-card h3 {
         margin-top: 1.5rem;
@@ -120,7 +120,7 @@ import { Icon } from 'astro-icon'
     .resource-card .tag {
       /* styles for individual tags */
       text-transform: uppercase;
-      color: var(--blue);
+      color: var(--theme-accent);
       padding: 2px 10px;
       border-radius: 12px;
       background-color: var(--theme-code-inline-bg);
