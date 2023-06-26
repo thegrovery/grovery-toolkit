@@ -45,17 +45,19 @@ export let href; // optional href prop
   }
   /* Primary Button */
   .primary {
-    background-color: var(--theme-accent-secondary);
+    background-color: var(--theme-accent);
     color: white;
     border: none;
   }
   .primary:hover,.primary:focus {
-	  background-color: #005e73;
+	  /* background-color: #005e73; */
+	  background-color: var(--custom-dark-blue);
   }
 
   /* Secondary Btn */
   .secondary {
-    background-color: var(--teal);
+    /* background-color: var(--teal); */
+    background-color: var(--theme-accent-secondary);
     color: white;
     border: none;
   }
@@ -65,14 +67,14 @@ export let href; // optional href prop
 
   /* Tertiary Btn */
   .tertiary {
-    border-color: var(--teal);
+    border-color: var(--theme-accent-secondary);
 	border-style: solid;
 	border-width: 1px;
-    color: var(--teal);
+    color: var(--theme-accent-secondary);
     background-color: transparent;
   }
   .tertiary:hover,.tertiary:focus {
-	background-color:var(--teal);
+	background-color:var(--theme-accent-secondary);
 	color: #fff;
   }
   
