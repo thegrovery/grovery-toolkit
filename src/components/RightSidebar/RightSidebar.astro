@@ -2,6 +2,7 @@
 import TableOfContents from './TableOfContents';
 import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
+import FeedbackButton from '../tutorial/FeedbackButton.astro';
 import { useTranslations } from '../../i18n/util';
 import generateToc from '../../util/generateToc';
 
@@ -22,8 +23,11 @@ const overview = t('rightSidebar.overview');
 			/>
 		)
 	}
-	<ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
-	<CommunityMenu />
+	<!-- <ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
+	<CommunityMenu /> -->
+	<div class="feedback-section">
+		<FeedbackButton />
+	</div>
 </nav>
 
 <style>
@@ -32,5 +36,15 @@ const overview = t('rightSidebar.overview');
 		padding: var(--doc-padding-block) 0;
 		overflow: auto;
 		font-size: var(--theme-text-xs);
+	}
+	.feedback-section {
+		margin-block: 2rem;
+		margin-inline-start: 2rem;
+	}
+
+	@media (min-width: 50em) {
+		.feedback-section {
+			margin-inline-start: 1rem;
+		}
 	}
 </style>

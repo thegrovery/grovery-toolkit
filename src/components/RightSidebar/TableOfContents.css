@@ -1,3 +1,8 @@
+
+.toc-root{
+	background-color: var(--custom-grey-1-10);
+}
+
 /* The mobile container is a <details> element wrapping the mobile TOC */
 .toc-mobile-container > .toc-mobile-header::marker,
 .toc-mobile-container > .toc-mobile-header::-webkit-details-marker {
