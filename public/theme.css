@@ -128,7 +128,7 @@
 	--theme-bg-offset: hsla(var(--color-purple), 0.1);
 	--theme-bg-accent: hsla(var(--color-purple), var(--theme-accent-opacity));
 	--theme-backdrop-overlay: hsla(var(--color-gray-50), 0.8);
-	--theme-code-inline-bg: hsla(var(--color-purple), 0.1);
+	--theme-code-inline-bg: var(--custom-accent-2-10);
 	--theme-code-inline-text: var(--theme-text);
 	--theme-code-bg: hsla(257, 31%, 22%, 1);
 	--theme-code-tabs: hsla(257, 38%, 32%, 1);
@@ -201,6 +201,6 @@
 }
 
 ::selection {
-	color: var(--theme-selection-color);
-	background-color: var(--theme-selection-bg);
+	color: var(--custom-accent-1);
+	background-color: var(--custom-accent-2-25);
 }
