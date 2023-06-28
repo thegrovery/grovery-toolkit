@@ -60,13 +60,21 @@ const t = useTranslations(Astro);
 				</li>
 			</ul>
 		</div>
-		<ThemeToggleButton
-			client:visible
-			labels={{ useLight: t('themeToggle.useLight'), useDark: t('themeToggle.useDark') }}
-			isInsideHeader={true}
-		/>
-		{lang && <LanguageSelect lang={lang} label={t('languageSelect.label')} client:idle />}
-		<Search {lang} labels={docsearchStrings} />
+
+		{import.meta.env.PUBLIC_FEATURE_DARKMODE=="true" &&
+			<ThemeToggleButton
+				client:visible
+				labels={{ useLight: t('themeToggle.useLight'), useDark: t('themeToggle.useDark') }}
+				isInsideHeader={true}
+			/>
+		}
+
+		
+		
+		{import.meta.env.PUBLIC_FEATURE_SEARCH=="true" &&
+			<Search {lang} labels={docsearchStrings} />
+		}
+		
 		<SidebarToggle client:idle />
 	</nav>
 </header>
