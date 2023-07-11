@@ -43,6 +43,7 @@ specifiers:
   hastscript: ^7.0.2
   html-escaper: ^3.0.3
   htmlparser2: ^7.2.0
+  jquery: ^3.7.0
   jsdoc-api: ^7.1.1
   kleur: ^4.1.5
   mdast-util-from-markdown: ^1.2.0
@@ -87,6 +88,7 @@ dependencies:
   astro-breadcrumbs: 1.6.0_astro@2.1.4
   astro-icon: 0.8.1
   canvas-confetti: 1.6.0
+  jquery: 3.7.0
   jsdoc-api: 7.1.1
   nanostores: 0.5.13
   rehype-autolink-headings: 6.1.1
@@ -5011,6 +5013,10 @@ packages:
     resolution: {integrity: sha512-QAdOptna2NYiSSpv0O/BwoHBSmz4YhpzJHyi+fnMRTXFjp7B8i/YG5Z8IfusxB1ufjcD2Sre1F3R+nX3fvy7gg==}
     hasBin: true
     dev: true
+
+  /jquery/3.7.0:
+    resolution: {integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==}
+    dev: false
 
   /js-sdsl/4.2.0:
     resolution: {integrity: sha512-dyBIzQBDkCqCu+0upx25Y2jGdbTGxE9fshMsCdK0ViOongpV+n5tXRcZY9v7CaVQ79AGS9KA1KHtojxiM7aXSQ==}
