@@ -100,6 +100,7 @@
     "astro-breadcrumbs": "^1.6.0",
     "astro-icon": "^0.8.1",
     "canvas-confetti": "^1.6.0",
+    "jquery": "^3.7.0",
     "jsdoc-api": "^7.1.1",
     "nanostores": "^0.5.13",
     "rehype-autolink-headings": "^6.1.1",
