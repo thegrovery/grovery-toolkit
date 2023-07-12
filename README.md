@@ -53,6 +53,23 @@ All branches should follow the naming scheme of `category--subject`, for example
 
 <br/>
 
+### Feature Controls & Keys
+Major features can be turned off and on from the `.env` file at the project's root.  Feature Control variables should follow the naming scheme of `PUBLIC_FEATURE_NAME` and only be set to 'true' or 'false'.  The associated feature's component should then be wrapped in an IF statement as shown below.
+
+[How to use .env vars in Astro.](https://docs.astro.build/en/guides/environment-variables/)
+
+Feature Control example:
+```
+{import.meta.env.PUBLIC_FEATURE_SEARCH=="true" &&
+	<Search {lang} labels={docsearchStrings} />
+}
+```
+
+Key example:
+```
+	prop=import.meta.env.PUBLIC_KEY_SEARCH
+```
+
 ### Assets Checklist
 When you start the project, check in with the team for the following:
 * Font files

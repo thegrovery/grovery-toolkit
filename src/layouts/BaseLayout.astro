@@ -5,6 +5,7 @@ import HeadCommon from '../components/HeadCommon.astro';
 import Header from '../components/Header/Header.astro';
 import HeadSEO from '../components/HeadSEO.astro';
 import HeadAnalytics from '../components/HeadAnalytics.astro';
+import FooterJS from '../components/FooterJS.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import { normalizeLangTag } from '../i18n/bcp-normalize';
 import { rtlLanguages } from '../i18n/languages';
@@ -13,6 +14,7 @@ import { getLanguageFromURL } from '../util';
 import { getPageCategory } from '../util/getPageCategory';
 //import { pwaInfo } from 'virtual:pwa-info';
 import ReloadPrompt from '../components/ReloadPrompt.astro';
+
 
 export interface Props {
 	content: CollectionEntry<'docs'>['data'];
@@ -31,6 +33,7 @@ const formatTitle = (content: { title?: string }) =>
 // Ensures the canonicalURL always has a trailing slash.
 const canonicalURL = new URL(Astro.url.pathname.replace(/([^/])$/, '$1/'), Astro.site);
 if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/`, '/en/');
+
 ---
 
 <html dir={direction} lang={bcpLang} class="initial">
@@ -155,5 +158,6 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 			</slot>
 		</div>
 		<!-- <ReloadPrompt /> -->
+		<FooterJS/>
 	</body>
 </html>
