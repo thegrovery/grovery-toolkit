@@ -50,8 +50,8 @@ export default function Search({ lang = 'en', labels }: Props) {
 			initialScrollY={window.scrollY}
 			onClose={onClose}
 			indexName="netlify_cfb53036-402d-4e61-976d-16188f596578_main_all"
-			appId="G45VMJYPMY"
-			apiKey="233b565e2a875ac210f709d540d15cad"
+			appId="IYMZS24CL1"
+			apiKey="615eab92e41d39c6bc56f82595f514bc"
 			searchParameters={{ facetFilters: [[`lang:en`]] }}
 			getMissingResultsUrl={({ query }: { query: string }) =>
 				`https://github.com/alecr-thegrovery/grovery-toolkit-template/issues/new?title=Missing+results+for+query+%22${encodeURIComponent(
