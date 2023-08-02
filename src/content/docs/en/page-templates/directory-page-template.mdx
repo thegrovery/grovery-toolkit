@@ -10,8 +10,13 @@ import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
 import ResourceCard from '~/components/ResourceCard.astro';
 import TagFilter from '~/components/TagFilter.astro'
 
-
 Use this page template when you need to display a list of resources - they can either be other pages in the toolkit, or third-party resources hosted offsite.  Click "View Details" to navigate to the resource, or click "Share" to open a popup with a sharable link and a QR code
+
+:::tip[Recent updates]
+
+**What’s new Product Training Module: Part 1** has been updated 4-19-2023 at 4:39pm EST.
+
+::: 
 
 <div class="tag-filter-container">
 	<TagFilter tags={['Training', 'Support', 'Customer', 'Pricing']} />
@@ -26,7 +31,7 @@ Use this page template when you need to display a list of resources - they can e
 		tags={['Training']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		width="full" 
+		width="third" 
 		resourceDetailsLink="/page-templates/resource-page-template/" 
 
 	/>
@@ -38,8 +43,8 @@ Use this page template when you need to display a list of resources - they can e
 		tags={['Support', 'Training']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		 width="half" 
-		resourceDetailsLink="https://thegrovery.com" 
+		 width="third" 
+		resourceDetailsLink="/page-templates/resource-page-template/" 
 
 	/>
 	
@@ -60,14 +65,14 @@ Use this page template when you need to display a list of resources - they can e
 		tags={['Customer']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		resourceDetailsLink="https://thegrovery.com" 
+		resourceDetailsLink="/page-templates/resource-page-template/" 
 	/>
 	<ResourceCard 
 		icon="ps:chat" 
 		title="Best Practices for Effective Communication" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
 		tags={['Support']} 
-		viewDetailsButtonText="View Resource" 
+		viewDetailsButtonText="Visit Website" 
 		shareButtonText="Share" 
 		resourceDetailsLink="https://thegrovery.com" 
 	/>
@@ -78,7 +83,7 @@ Use this page template when you need to display a list of resources - they can e
 		tags={['Pricing']} 
 		viewDetailsButtonText="View Details" 
 		shareButtonText="Share" 
-		resourceDetailsLink="https://thegrovery.com" 
+		resourceDetailsLink="/page-templates/resource-page-template/" 
 	/>
 
 
