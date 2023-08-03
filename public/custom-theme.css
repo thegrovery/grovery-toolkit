@@ -7,13 +7,22 @@
 	--custom-teal: 				#00DFC3;
 	--custom-dark-blue: 	#054C62;
 	--custom-green: 			#81C051;
+	--custom-light-blue:		#e7f0f4;
 
 	/* ===== SHADE VARIANTS ===== */
 	/*add opacity percent as last 2 digits*/
+		/*90% opacity*/
+		--custom-teal-90: 				#00DFC390;
+		--custom-dark-blue-90: 	#054c62e9;
+		--custom-green-90: 				#81C05190;
+		--custom-white-90: 				#fdfeff90;
+		--custom-light-blue-90: 		#e7f0f4e8;
+		
 		/*50% opacity*/
 		--custom-teal-50: 				#00DFC350;
 		--custom-dark-blue-50: 	#054C6250;
 		--custom-green-50: 				#81C05150;
+		--custom-white-50: 				#fdfeff50;
 
 		/*25% opacity*/
 		--custom-teal-25: 				#00DFC325;

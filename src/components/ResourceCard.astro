@@ -15,25 +15,18 @@ import { Icon } from 'astro-icon'
       <span class="tag">{tag}</span>
     ))}
   </div>
-  <div class="button-wrap">
-    <Button variant="primary" className="details-btn" href={Astro.props.resourceDetailsLink}>
-      {Astro.props.viewDetailsButtonText}
-    </Button>
-    <Button variant="tertiary" className="share-btn" href={`mailto:?subject=CORE%20RMS%20Resource&body=${encodeURIComponent(Astro.props.resourceDetailsLink)}`}>
-      {Astro.props.shareButtonText}
-    </Button>
-  </div>
+  <Button variant="primary" className="details-btn mini" href={Astro.props.resourceDetailsLink}>
+    {Astro.props.viewDetailsButtonText}
+  </Button>
+  <Button variant="tertiary" className="share-btn mini" href={`mailto:?subject=CORE%20RMS%20Resource&body=${encodeURIComponent(Astro.props.resourceDetailsLink)}`}>
+    {Astro.props.shareButtonText}
+  </Button>
 </div>
 <style is:global>
-  .button-wrap {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
   .resource-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* change 3 to the number of columns you want by default */
-    gap: 14px; /* adjust for desired space between cards */
+    gap: 20px; /* adjust for desired space between cards */
   }
   
   .resource-card.third {
@@ -104,7 +97,7 @@ import { Icon } from 'astro-icon'
       box-sizing: border-box;
       /* margin: 0rem 2% 2% 0rem; */
       /* max-width: 31%; */
-      padding: 1.15rem;
+      padding: 1.5rem;
       border-radius: 12px;
       border: 1px solid var(--theme-dim);
       box-shadow: -2px 2px 0px var(--theme-dim-light);
