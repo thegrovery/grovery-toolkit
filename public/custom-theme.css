@@ -24,6 +24,11 @@
 		--custom-teal-10: 				#00DFC310;
 		--custom-dark-blue-10: 	#054C6210;
 		--custom-green-10: 				#81C05110;
+		
+		/*05% opacity*/
+		--custom-teal-05: 				#00DFC305;
+		--custom-dark-blue-05: 	#054c6205;
+		--custom-green-05: 				#81C05105;
 
 	/* ================ */
 	/* ===== GREYS ===== */
@@ -32,6 +37,7 @@
 		--custom-grey-1-50: 	#80808050;
 		--custom-grey-1-20: 	#80808020;
 		--custom-grey-1-10: 	#80808010;
+		--custom-grey-1-05: 	#80808005;
 
 
 	/* ======================== */
@@ -41,10 +47,12 @@
 		--custom-accent-1-50: 	var(--custom-dark-blue-50);
 		--custom-accent-1-25: 	var(--custom-dark-blue-25);
 		--custom-accent-1-10: 	var(--custom-dark-blue-10);
+		--custom-accent-1-05: 	var(--custom-dark-blue-05);
 
 		--custom-accent-2: 	var(--custom-teal);
 		--custom-accent-2-50: 	var(--custom-teal-50);
 		--custom-accent-2-25: 	var(--custom-teal-25);
 		--custom-accent-2-10: 	var(--custom-teal-10);
+		--custom-accent-2-05: 	var(--custom-teal-05);
 }
 
