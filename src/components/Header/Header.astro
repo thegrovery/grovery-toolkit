@@ -82,7 +82,7 @@ const t = useTranslations(Astro);
 	</nav>
 </header>
 
-<style>
+<style type="scss">
 	header {
 		position: fixed;
 		left: 0;
@@ -91,7 +91,18 @@ const t = useTranslations(Astro);
 		height: var(--theme-navbar-height);
 		z-index: 11;
 		padding: 1.2rem 0;
-		background-color: var(--theme-navbar-bg);
+		backdrop-filter: blur(10px);
+		&:before {
+			content:'';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			display: block;
+			opacity: .92;
+			z-index: -1;
+			background-color: var(--theme-navbar-bg);
+			
+		}
 		display: flex;
 		align-items: center;
 		justify-content: left;
