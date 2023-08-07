@@ -50,8 +50,8 @@ export default function Search({ lang = 'en', labels }: Props) {
 			initialScrollY={window.scrollY}
 			onClose={onClose}
 			indexName="dev_posts"
-			appId="IYMZS24CL1"
-			apiKey="de099f97e199640b66405d7f7195d2f8"
+			appId="0UT59PL1CU"
+			apiKey="231ef1ebf42d7b0b55a06a0accfd9afa"
 			searchParameters={{ facetFilters: [[`lang:${lang}`]] }}
 			insights
 			getMissingResultsUrl={({ query }: { query: string }) =>
