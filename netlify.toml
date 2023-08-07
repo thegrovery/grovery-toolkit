@@ -15,10 +15,10 @@
   [[plugins]]
     package = "@algolia/netlify-plugin-crawler"
       [plugins.inputs]
-      branches = ['main']
-      disabled = true
-      pathPrefix = "/en/"
-      customDomain = "grovery-core-toolkit-staging.netlify.app"
+      branches = ['main', 'feature--search']
+      disabled = false
+      pathPrefix = "/"
+      customDomain = "https://core-rms.com/"
       renderJavaScript = true
 
   [[redirects]]
