@@ -17,8 +17,8 @@
       [plugins.inputs]
       branches = ['main', 'feature--search']
       disabled = false
-      pathPrefix = "/en/"
-      customDomain = "grovery-core-toolkit-staging.netlify.app"
+      pathPrefix = "/"
+      customDomain = "https://core-rms.com/en/getting-started/"
       renderJavaScript = true
 
   [[redirects]]
