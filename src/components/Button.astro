@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon'
 // Component Script (JavaScript)
 export let variant = 'primary'; // default to primary if no variant is provided
 export let href; // optional href prop
@@ -6,12 +7,13 @@ export let href; // optional href prop
 
 <!-- Component Template (HTML + JS Expressions) -->
 <a 
-  class={`button ${Astro.props.variant}`} 
+  class={`button ${Astro.props.variant} ${Astro.props.className ?? ''}`} 
   href={Astro.props.href}
   data-tag={Astro.props['data-tag']}
   {...(Astro.props.href && Astro.props.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
 >
   <slot></slot>
+  {Astro.props.icon && <Icon name={Astro.props.icon} />}
 </a>
 
 
@@ -26,8 +28,8 @@ export let href; // optional href prop
   
 /* Global Btn Style */
   .button {
-    display: inline-block;
-	  margin: 10px 0;
+    display: inline-flex;
+	  margin: 8px 0;
     padding: 16px 30px;
     border-radius: 10px;
     font-size: 16px;
@@ -35,6 +37,15 @@ export let href; // optional href prop
     text-decoration: none;
 	  font-weight: 500;
 	  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .button [astro-icon] {
+    font-size: 1.45rem;
+    width: 1.45rem;
+    margin-top: -2px;
+  }
+  .button.mini {
+    padding: 14px 20px;
+    font-size: 14px;
   }
   .button.small {
     padding: 12px 28px;
@@ -51,7 +62,7 @@ export let href; // optional href prop
   }
   .primary:hover,.primary:focus {
 	  /* background-color: #005e73; */
-	  background-color: var(--custom-dark-blue);
+	  background-color: var(--custom-dark-blue-90);
   }
 
   /* Secondary Btn */

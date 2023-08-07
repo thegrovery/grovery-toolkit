@@ -15,10 +15,10 @@ import { Icon } from 'astro-icon'
       <span class="tag">{tag}</span>
     ))}
   </div>
-  <Button variant="primary" className="details-btn" href={Astro.props.resourceDetailsLink}>
+  <Button variant="primary" className="details-btn mini" href={Astro.props.resourceDetailsLink}>
     {Astro.props.viewDetailsButtonText}
   </Button>
-  <Button variant="tertiary" className="share-btn" href={`mailto:?subject=CORE%20RMS%20Resource&body=${encodeURIComponent(Astro.props.resourceDetailsLink)}`}>
+  <Button variant="tertiary" className="share-btn mini" href={`mailto:?subject=CORE%20RMS%20Resource&body=${encodeURIComponent(Astro.props.resourceDetailsLink)}`}>
     {Astro.props.shareButtonText}
   </Button>
 </div>

@@ -43,17 +43,19 @@ export default [
 
 	//RESOURCES TAB
 	{ text: 'Brand Resources', header: true, type: 'api', key: 'brand-resources' },
+		{ text: 'View All', slug: 'brand-resources/view-all', key: 'brand-resources/view-all' },
 		{ text: 'Style Guide', slug: 'brand-resources/style-guide', key: 'brand-resources/style-guide' },
 		{ text: 'Icon Library', slug: 'brand-resources/icon-library', key: 'brand-resources/icon-library' },
 		{ text: 'Infographics', slug: 'brand-resources/infographics', key: 'brand-resources/infographics' },
 		{ text: 'Customer Personas', slug: 'brand-resources/customer-personas', key: 'brand-resources/customer-personas' },
 		{ text: 'Print Collateral', slug: 'brand-resources/print-collateral', key: 'brand-resources/print-collateral' },
 		{ text: 'Decks', slug: 'brand-resources/decks', key: 'brand-resources/decks' },
+		{ text: 'Product Training Part 1', slug: 'brand-resources/product-training-module1', key: 'brand-resources/product-training-module1' },
 
 	{ text: 'Program Resources', header: true, type: 'api', key: 'program-resources' },
 		{ text: 'Online Support', slug: 'program-resources/online-support', key: 'program-resources/online-support' },
 		{ text: 'User Assistance', slug: 'program-resources/user-assistance', key: 'program-resources/user-assistance' },
-		{ text: 'Order Forms', slug: 'program-resources/orderf-forms', key: 'program-resources/orderf-forms' },
+		{ text: 'Order Forms', slug: 'program-resources/order-forms', key: 'program-resources/order-forms' },
 		{ text: 'Rate Cards', slug: 'program-resources/rate-cards', key: 'program-resources/rate-cards' },
 
 	{ text: 'Misc.', header: true, type: 'api', key: 'misc-resources' },

@@ -12,7 +12,8 @@ const { type = 'note', title = t(`aside.${type}`) } = Astro.props as Props;
 const icons: Record<NonNullable<Props['type']>, { viewBox: string; d: string }> = {
 	note: {
 		viewBox: '0 0 18 18',
-		d: 'M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z',
+		// d: 'M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z',
+		d: 'M12.5 6v8.5h-9v-13H8v2.75C8 5.216 8.784 6 9.75 6h2.75Zm-.121-1.5L9.5 1.621V4.25c0 .138.112.25.25.25h2.629ZM2 1a1 1 0 0 1 1-1h6.586a1 1 0 0 1 .707.293l3.414 3.414a1 1 0 0 1 .293.707V15a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm3.75 7a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5ZM5 11.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z',
 	},
 	tip: {
 		viewBox: '0 0 18 18',
@@ -44,10 +45,10 @@ const { viewBox, d } = icons[type];
 	</section>
 </aside>
 
-<style>
+<style lang="scss">
 	aside {
-		--aside-color-base: var(--color-base-purple);
-		--aside-color-lightness: 54%;
+		--aside-color-base: var(--color-base-blue-dark);
+		--aside-color-lightness: 30%;
 		--aside-accent-color: hsl(var(--aside-color-base), var(--aside-color-lightness));
 		--aside-text-lightness: 20%;
 		--aside-text-accent-color: hsl(var(--aside-color-base), var(--aside-text-lightness));
@@ -102,7 +103,18 @@ const { viewBox, d } = icons[type];
 		margin-left: 0;
 		margin-right: 0;
 	}
-
+	.note :global(p) {
+		margin-top: .5rem;
+	}
+	.note {
+		// border-color: var(--custom-dark-blue);
+		// background-color: var(--custom-dark-blue-25);
+		background-color: var(--custom-grey-1-10);
+		border-color: var(--theme-accent);
+		.title {
+			color: var(--theme-accent)
+		}
+	}
 	.tip {
 		--aside-color-lightness: 42%;
 		--aside-color-base: var(--color-base-teal);
