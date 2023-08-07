@@ -51,7 +51,7 @@ export default function Search({ lang = 'en', labels }: Props) {
 			onClose={onClose}
 			indexName="dev_posts"
 			appId="IYMZS24CL1"
-			apiKey="615eab92e41d39c6bc56f82595f514bc"
+			apiKey="0cc18221037b55d6895a5e58a5fd29a40131add9e4ebcccdfdcbc6058eb124d3"
 			searchParameters={{ facetFilters: [[`lang:${lang}`]] }}
 			insights
 			getMissingResultsUrl={({ query }: { query: string }) =>

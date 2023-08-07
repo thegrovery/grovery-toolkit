@@ -18,7 +18,7 @@
       branches = ['main', 'feature--search']
       disabled = false
       pathPrefix = "/"
-      customDomain = "https://core-rms.com/en/getting-started/"
+      customDomain = "https://core-rms.com/"
       renderJavaScript = true
 
   [[redirects]]
