@@ -3,6 +3,7 @@ import { createPortal } from 'preact/compat';
 import { useCallback, useEffect, useRef, useState } from 'preact/hooks';
 import type { DocSearchTranslation } from '../../i18n/translation-checkers';
 
+
 interface Props {
 	lang?: string;
 	labels: Omit<DocSearchTranslation, 'button' | 'shortcutLabel'>;
@@ -49,7 +50,7 @@ export default function Search({ lang = 'en', labels }: Props) {
 			initialQuery={initialQuery}
 			initialScrollY={window.scrollY}
 			onClose={onClose}
-			indexName="dev_posts"
+			indexName="core_rms"
 			appId="IYMZS24CL1"
 			apiKey="de099f97e199640b66405d7f7195d2f8"
 			searchParameters={{ facetFilters: [[`lang:${lang}`]] }}
