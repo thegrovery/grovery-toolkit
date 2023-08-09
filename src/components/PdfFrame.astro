@@ -1,0 +1,32 @@
+---
+// This is the frontmatter section where you can import other components or scripts if needed
+
+const { link } = Astro.props as Props;
+---
+
+<div class='PdfFrame'>
+
+  <iframe src={link}></iframe>
+
+</div>
+
+<style lang="scss">
+  $fontSize: 1rem;
+  $borderSize: 2px;
+  $borderColor: #000;
+  $color: #454257;
+
+  $border: solid $borderSize $borderColor;
+  .PdfFrame{
+    display: flex;
+    justify-content: center;
+  }
+  iframe{
+    /*width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: inline-block;*/
+  }
+ 
+
+</style>
