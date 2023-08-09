@@ -30,7 +30,6 @@ export default [
 		{ text: 'Directory Page Template', slug: 'page-templates/directory-page-template', key: 'page-templates/directory-page-template' },
 		{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
 		{ text: 'Tutorial Page Template', slug: 'page-templates/tutorial-page-template', key: 'page-templates/tutorial-page-template' },
-		{ text: 'Persona Page Template', slug: 'page-templates/persona-page-template', key: 'page-templates/persona-page-template' },
 
 	/*{ text: 'Tutorials', header: true, type: 'learn', key: 'tutorials' },
 		{ text: 'Build a Blog', slug: 'tutorial/0-introduction', key: 'blog-tutorial' },*/
@@ -51,7 +50,7 @@ export default [
 		{ text: 'Customer Personas', slug: 'brand-resources/customer-personas', key: 'brand-resources/customer-personas' },
 		{ text: 'Print Collateral', slug: 'brand-resources/print-collateral', key: 'brand-resources/print-collateral' },
 		{ text: 'Decks', slug: 'brand-resources/decks', key: 'brand-resources/decks' },
-		{ text: 'Product Training Part 1', slug: 'brand-resources/product-training-module1', key: 'brand-resources/product-training-module1' },
+		{ text: 'Product Training', slug: 'brand-resources/product-training-module1', key: 'brand-resources/product-training-module1' },
 
 	{ text: 'Program Resources', header: true, type: 'api', key: 'program-resources' },
 		{ text: 'Online Support', slug: 'program-resources/online-support', key: 'program-resources/online-support' },
