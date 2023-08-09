@@ -1,52 +1,66 @@
 ---
-title: Style Guide
-description: A basic intro to Astro.
+title: Product Training Module Part One
+description: UUse this page for things like embedded tools like forms and login portals
 i18nReady: true
 type: base
 ---
 import Button from '~/components/Button.astro'
+import ContributorList from '~/components/ContributorList.astro'
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
+import PlaceholderContent from '~/components/PlaceholderContent.astro'
+import { Icon } from 'astro-icon'
+import ResourceDetails from '~/components/ResourceDetails.astro'
+import ResourceThumb from '~/components/ResourceThumb.astro'
+import ResourceCard from '~/components/ResourceCard.astro'
 
-When editing toolkit pages, you only have to focus on the inner page content - the part you're reading right now.  Everything else like the sidebars to the left and right, or the header and footer - they're handled elsewhere for you.
+<ResourceDetails 
+    author="Ken Miranda" 
+    lastModified="08/09/2023" 
+    tags="Guidelines" 
+    icon="fluent:style-guide-24-regular"
+/>
+### Preview Resource
 
-To make a new page, simply make a copy of this file with a new name.  The subfolder you place the file in will determine it's URL path.
+<ResourceThumb 
+    imgSrc="/imgs/Brand_Guidelines_Page_1.png" 
+    imgSrc2="/imgs/Brand_Guidelines_Page_2.png" 
+/>
 
-To add/remove a page from the left sidebar nav, edit the file: `src/i18n/en/nav.ts`
+### Download Resource
+***
+<Button variant="primary" className="details-btn" href="https://drive.google.com/file/d/1lhCsRA50TCnwgjsmHF0xEo2O_Bw-KyMI/view?usp=drive_link" target="_blank" icon="ri:external-link-fill">Download From Source</Button>
+<Button variant="tertiary" className="share-btn" href={`mailto:?subject=CORE%20RMS%20Resource&body=https://drive.google.com/file/d/1lhCsRA50TCnwgjsmHF0xEo2O_Bw-KyMI/view?usp=drive_link`} icon="mdi:share">Share</Button>
 
-## Toolkit pages are powered by Markdown
+### Description & Supporting Docs
+The Grovery Brand Guide: A comprehensive resource for anyone working to bring The Grovery brand to life.
 
-Markdown is sort of like Word docs for coders - everything is plain text and easily readable, plus some extra features.  Formatting like headings, lists, text treatments, etc are all done using simple things like dashes and hashtags.  You just write plain, intuitive text and the website code handles everything else for you.  No worrying about setting fonts, font sizes, colors, etc - everything is kept consistent by the website's styling code.
 
-Markdown can be used by coders, marketers, designers, and even your clients - it's that easy! 
+:::note[SUPPORTING DOCUMENTS]
 
-:::tip[ANNOUNCEMENTS]
-**Block Quote Element** - Use this element for calling out specific things.  
-:::
+**[The Grovery Icon Library](https://astro.build/blog/astro-1/)**
 
-## Basic Heading
+**[Stock Photo Collection](https://astro.build/blog/astro-2/)**
 
-Markdown headings are automatically added to the right sidebar navigation and can be used as links.
+**[Stock Video Collection](https://astro.build/blog/astro-3/ "external")**
 
-**Basic paragraph section** | Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+:::  
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+## Related Resources
 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+<div class="resource-card-container">
 
-## What is a Brand Toolkit?
+<ResourceCard 
+		icon="ps:chat" 
+		title="Best Practices for Effective Communication" 
+		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
+		tags={['Support']} 
+		viewDetailsButtonText="Visit Website" 
+		shareButtonText="Share" 
+		resourceDetailsLink="https://thegrovery.com" 
+	/>
 
-Use your brand toolkit as a central repository for important information for your employees and your clients.  Make your toolkit the authoritative source for any resources your brand needs to get the job done.
 
-- Informational pages & articles
-- Directory pages with links to outside resources
-- Services pages with outside resources embedded into the toolkit
-- Tutorial pages for keeping employees up to date
-- Brand styleguides & assets
-- News and updates
+</div>
 
----
+{/* <PlaceholderContent/> */}
 
-Brought to you by:
-![Markdown image text](/logos/grovery-logo.svg "Markdown image text")
-
-PWA new content test.
-PWA test v0.0.1
