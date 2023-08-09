@@ -19,13 +19,23 @@ Use this page template when you need to display a list of resources - they can e
 ::: 
 
 <div class="tag-filter-container">
-	<TagFilter tags={['Training', 'Support', 'Customer', 'Pricing']} />
+	<TagFilter tags={['Guidelines', 'Training', 'Support', 'Customer', 'Pricing']} />
 </div>
 
 <div class="resource-card-container">
   
 	
     <ResourceCard 
+		icon="fluent:style-guide-24-regular" 
+		title="Grovery 2.0 Brand Guidelines" 
+		description="The Grovery Brand Guide: A comprehensive resource for anyone working to bring The Grovery brand to life." 
+		tags={['Guidelines']} 
+		viewDetailsButtonText="View Details" 
+		shareButtonText="Share" 
+		resourceDetailsLink="/brand-resources/style-guide" 
+	/>
+    
+	<ResourceCard 
 		icon="mdi:school-outline" 
 		title="Product Training Module: Part One" 
 		description="Leaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas." 
