@@ -19,7 +19,7 @@ import { theme } from './syntax-highlighting-theme';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://grovery-core-toolkit-staging.netlify.app',
+	site: 'grovery-core-toolkit-staging.netlify.app',
 	integrations: [
 		AutoImport({
 			imports: [asideAutoImport, codeSnippetAutoImport],

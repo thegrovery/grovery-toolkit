@@ -103,6 +103,7 @@
     "jquery": "^3.7.0",
     "jsdoc-api": "^7.1.1",
     "nanostores": "^0.5.13",
+    "qrcode": "^1.5.3",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
