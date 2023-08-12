@@ -17,7 +17,7 @@
       [plugins.inputs]
       branches = ['main', 'feature--search']
       disabled = false
-      pathPrefix = "/"
+      pathPrefix = "/en/"
       customDomain = "https://core-rms.com/"
       renderJavaScript = true
 
