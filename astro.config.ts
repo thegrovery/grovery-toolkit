@@ -29,13 +29,13 @@ export default defineConfig({
 		astroAsides(),
 		astroCodeSnippets(),
 		mdx(),
-		//AstroPWA({
-		//      registerType: 'autoUpdate',
-		//      workbox: {
-		//		globPatterns: ['**/*.{js,css,html,ico,png,svg}']
-		//      }
-		//    }
-		//),
+		AstroPWA({
+		      registerType: 'autoUpdate',
+		      workbox: {
+				globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+		      }
+		    }
+		),
 	],
 	markdown: {
 		syntaxHighlight: 'shiki',
