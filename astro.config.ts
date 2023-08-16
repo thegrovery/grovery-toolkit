@@ -31,8 +31,8 @@ export default defineConfig({
 		mdx(),
 		AstroPWA({
 		      mode: 'development',
-		      base: '/',
-		      scope: '/',
+		      base: '/en/',
+		      scope: '/en/',
 		      includeAssets: ['favicon.svg'],
 		      registerType: 'autoUpdate',
 		      manifest: {
