@@ -16,7 +16,7 @@
     package = "@algolia/netlify-plugin-crawler"
       [plugins.inputs]
       branches = ['main', 'feature--search']
-      disabled = false
+      disabled = true
       pathPrefix = "/en/"
       customDomain = "https://core-rms.com/"
       renderJavaScript = true
