@@ -6,6 +6,7 @@ specifiers:
   '@algolia/client-search': ^4.14.2
   '@astrojs/mdx': ^0.18.2
   '@astrojs/preact': ^2.0.3
+  '@astrojs/prefetch': ^0.3.0
   '@astrojs/sitemap': 1.0.1
   '@babel/core': ^7.18.10
   '@docsearch/css': ^3.2.2
@@ -83,6 +84,7 @@ specifiers:
   workbox-window: 6.5.4
 
 dependencies:
+  '@astrojs/prefetch': 0.3.0
   '@fontsource/ibm-plex-mono': 4.5.10
   '@nanostores/preact': 0.1.3_yvb6ohlypojrr2hxfrgghirh7m
   astro-breadcrumbs: 1.6.0_astro@2.1.4
@@ -475,6 +477,12 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@astrojs/prefetch/0.3.0:
+    resolution: {integrity: sha512-LPKpbcnTwonkgNeLvVEQ1SXEyjkjsCm/o77Leg6/9725Cpn+rAIHiWMwFwigqf366VuvdvEYsG86nH8d1kSoNA==}
+    dependencies:
+      throttles: 1.0.1
+    dev: false
 
   /@astrojs/prism/2.1.1:
     resolution: {integrity: sha512-Gnwnlb1lGJzCQEg89r4/WqgfCGPNFC7Kuh2D/k289Cbdi/2PD7Lrdstz86y1itDvcb2ijiRqjqWnJ5rsfu/QOA==}
@@ -7280,6 +7288,11 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
+
+  /throttles/1.0.1:
+    resolution: {integrity: sha512-fab7Xg+zELr9KOv4fkaBoe/b3L0GMGLd0IBSCn16GoE/Qx6/OfCr1eGNyEcDU2pUA79qQfZ8kPQWlRuok4YwTw==}
+    engines: {node: '>=6'}
+    dev: false
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
