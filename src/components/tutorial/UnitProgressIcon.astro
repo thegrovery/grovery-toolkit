@@ -10,9 +10,12 @@ export interface Props {
 	 * `['/en/tutorial/0-introduction/', '/en/tutorial/0-introduction/1/']`.
 	 */
 	paths: string[];
+	mainSection?: boolean; // New prop to determine if it's in the main section
 }
-const { unitNumber, paths } = Astro.props as Props;
+
+const { unitNumber, paths, mainSection } = Astro.props as Props;
 const numberOfLessons = paths.length;
+const size = mainSection ? 64 : 32; // Use size 64 if in the main section, 32 otherwise
 
 let segments = [];
 const segmentLength = 360 / numberOfLessons;
@@ -30,7 +33,6 @@ for (let i = 0; i < numberOfLessons; i++) {
 	});
 }
 
-const size = 32;
 const t = useTranslations(Astro);
 ---
 
