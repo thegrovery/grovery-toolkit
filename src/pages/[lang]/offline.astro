@@ -8,9 +8,13 @@ const { lang = 'en' } = Astro.params;
 const t = useTranslations(Astro);
 ---
 
-<SplashLayout title={t('404.title')}>
+<SplashLayout title="Offline Notice">
 	<h1>Offline Notice</h1>
-	<p>Looks like you're offline and don't have this page pre-downloaded.  Try visiting this page again when you're back online.</p>
+	<p>
+		Looks like you're offline and don't have this page pre-downloaded.  
+		<br/><br/>
+		Try visiting this page again when you're back online.
+	</p>
 	<a href="/en/getting-started">Go Back Home</a>
 </SplashLayout>
 
