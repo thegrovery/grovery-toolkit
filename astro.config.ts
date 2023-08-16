@@ -2,6 +2,7 @@ import mdx from '@astrojs/mdx';
 import preact from '@astrojs/preact';
 import { defineConfig } from 'astro/config';
 import AstroPWA from '@vite-pwa/astro'
+import prefetch from '@astrojs/prefetch';
 
 import AutoImport from 'astro-auto-import';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
