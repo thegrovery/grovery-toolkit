@@ -60,7 +60,10 @@ export default defineConfig({
 		      },
 		      workbox: {
 		        navigateFallback: '/offline',
-		        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+		        globDirectory: '/',
+				globPatterns: [
+				'**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}',
+				],
 		      },
 		      devOptions: {
 		        enabled: true,
