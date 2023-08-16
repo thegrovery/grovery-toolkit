@@ -30,15 +30,15 @@ for (let i = 0; i < numberOfLessons; i++) {
 	});
 }
 
-const size = 32;
+const size = 64;
 const t = useTranslations(Astro);
 ---
 
 <unit-progress-icon data-paths={JSON.stringify(paths)}>
 	<span class="sr-only">
 		{t('tutorial.unit')}
-		{unitNumber}
-		(<span class="sr-done-count">0</span>/{numberOfLessons}
+		{unitNumber + 1} {/* Add 1 to the unit number */}
+		(<span class="sr-done-count">1</span>/{numberOfLessons} {/* Start the count at 1 */}
 		{t('progress.done')})
 	</span>
 	<svg viewBox="0 0 100 100" width={size} height={size} aria-hidden="true">
@@ -68,7 +68,7 @@ const t = useTranslations(Astro);
 
 		private updateDone(): void {
 			const done = this.getDoneCount();
-			this.doneCount.textContent = String(done);
+			this.doneCount.textContent = String(done + 1); // Increment by 1
 			this.segments.forEach((segment, index) => {
 				const isDone = index < done;
 				const wasNotDone = this.loaded && !segment.classList.contains('done');

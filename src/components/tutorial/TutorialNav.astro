@@ -29,14 +29,15 @@ const isCurrentUnit = (unit: typeof units[number]) =>
 			{
 				units.map((unit, idx) => (
 					<TabListItem id={makeUnitId(idx)} initial={isCurrentUnit(unit)}>
-						<UnitProgressIcon unitNumber={idx} paths={unit.lessons.map((l) => '/' + l.slug)} />
+						<UnitProgressIcon unitNumber={idx + 1} paths={unit.lessons.map((l) => '/' + l.slug)} />
+
 					</TabListItem>
 				))
 			}
 		</Fragment>
 		{
 			units.map((unit, idx) => (
-				<TabPanel id={makeUnitId(idx)} initial={isCurrentUnit(unit)}>
+				<TabPanel class="lesson-panel" id={makeUnitId(idx)} initial={isCurrentUnit(unit)}>
 					<div class="unit">
 						<h2 class="heading">{unit.title}</h2>
 						<ol class="lessons">
@@ -51,7 +52,8 @@ const isCurrentUnit = (unit: typeof units[number]) =>
 												aria-current={currentUrl.endsWith(slugWithoutLang)}
 											>
 												<Progress path={'/' + lesson.slug} />
-												{index}. {lesson.data.title}
+												{index + 1}. {lesson.data.title}
+
 											</a>
 										</div>
 										{currentUrl.endsWith(lesson.slug) && (

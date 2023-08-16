@@ -1,0 +1,66 @@
+---
+type: tutorial
+unitTitle: 'Tutorial Template 2'
+title: Tutorial Template Step 2 Index
+description: >-
+  Learn the basics of Astro with a project-based tutorial. All the background
+  knowledge you need to get started!
+i18nReady: true
+---
+import Badge from '~/components/Badge.astro';
+import Checklist from '~/components/Checklist.astro';
+import Box from '~/components/tutorial/Box.astro';
+import Lede from '~/components/tutorial/Lede.astro';
+import MultipleChoice from '~/components/tutorial/MultipleChoice.astro';
+import Option from '~/components/tutorial/Option.astro';
+import PreCheck from '~/components/tutorial/PreCheck.astro';
+
+<Lede> This is the tutorial lead-in section, where you can go over the content ahead. </Lede>
+
+<PreCheck>
+  - This is a checklist
+  - Thing one
+  - Thing two
+</PreCheck>
+
+
+	## SubSection One - Toggle Component
+	
+	Below is a toggle component that can show information in a toggle.
+
+    <details>
+    	<summary>Show me the code!</summary>
+	
+    	Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+    </details>
+
+
+
+<Box icon="check-list">
+
+	## SubSection Two - Quiz
+
+	1. Ask your reinforcing ***test your knowledge*** question here.
+	<MultipleChoice>
+		<Option>
+			Option Component
+		</Option>
+		<Option isCorrect>
+			Option Component - Correct Answer
+		</Option>
+		<Option>
+			Option Component
+		</Option>
+	</MultipleChoice>
+
+	
+</Box>
+
+
+<Box icon="check-list">
+## SubSection Three - Checklist
+
+<Checklist>
+- [ ] Looks great! I'm ready to get started!
+</Checklist>
+</Box>

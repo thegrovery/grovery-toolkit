@@ -8,6 +8,7 @@ import { getPreviousAndNext } from '../util/getNavLinks';
 import { getTutorialPages, getTutorialUnits } from '../util/getTutorialPages';
 import BaseLayout from './BaseLayout.astro';
 import type { TutorialEntry } from '~/content/config';
+import TutorialNav from '~/components/tutorial/TutorialNav.astro';
 
 export interface Props {
 	content: TutorialEntry['data'];
@@ -26,23 +27,45 @@ const currentUnit = units[currentUnitIndex];
 const { next } = getPreviousAndNext(
 	tutorialPages.map((page) => ({ text: page.data.title, slug: stripLangFromSlug(page.slug) })),
 	Astro
-);
+); 
 ---
 
 <BaseLayout {...Astro.props}>
 	<RightSidebar slot="secondary-sidebar" />
 	<PageContent content={Astro.props.content} {...{ next }}>
+		<nav><TutorialNav /></nav>
 		<MobileTutorialNav slot="before-article" />
 		<p class="unit" slot="before-title">
-			{currentUnitIndex} • {currentUnit.title}
+			{currentUnitIndex + 1} • {currentUnit.title}
 		</p>
+		
 		<slot />
 	</PageContent>
 </BaseLayout>
 
 <style>
 	.unit {
+		display: inline-block;
 		font-size: var(--theme-text-sm);
-		color: var(--theme-text-lighter);
+		color: var(--theme-text);
+		background-color: var(--custom-teal-25);
+		padding: 2px 16px;
+		border-radius: 30px;
 	}
+	
+</style>
+<style is:global type="scss">
+	/* .main-section {
+		.panels {
+			display: none !important;
+			visibility: hidden;
+		}
+		[aria-selected="true"] unit-progress-icon {
+			background-color: transparent !important;
+		}
+		.tab-list {
+			background-color: var(--theme-bg-offset);
+		}
+	}
+ */	
 </style>

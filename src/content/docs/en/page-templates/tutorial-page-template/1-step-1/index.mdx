@@ -1,0 +1,99 @@
+---
+type: tutorial
+unitTitle: 'Tutorial Template 1'
+title: Tutorial Template Step 1 Index
+description: >-
+  Learn the basics of Astro with a project-based tutorial. All the background
+  knowledge you need to get started!
+i18nReady: true
+---
+import Badge from '~/components/Badge.astro';
+import Checklist from '~/components/Checklist.astro';
+import Box from '~/components/tutorial/Box.astro';
+import Lede from '~/components/tutorial/Lede.astro';
+import MultipleChoice from '~/components/tutorial/MultipleChoice.astro';
+import Option from '~/components/tutorial/Option.astro';
+import PreCheck from '~/components/tutorial/PreCheck.astro';
+
+<Lede> This is the tutorial lead-in section, where you can go over the content ahead. </Lede>
+
+<PreCheck>
+  - This is a checklist
+  - Thing one
+  - Thing two
+</PreCheck>
+
+
+Here's a standard list
+- List item 1
+- List item 2
+- List item 3
+
+Text to introduce upcoming content. This may also include [links](https://thegrovery.com)
+
+<Box icon="puzzle-piece">
+
+	## SubSection One - Box with Icon and Toggle
+	
+	1. Box content can contain lits, text and toggles. You may also customize the icon which appears in top right.
+
+    <details>
+    	<summary>Show me the text</summary>
+	
+    	Sed ut [perspiciatis](https://thegrovery.com) unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+    </details>
+
+</Box>
+
+<Box icon="check-list">
+
+	## SubSection Two - Test Your Knowledge
+
+	1. Reinforce content absorbtion by finishing training with a multiple choice quiz. 
+	<MultipleChoice>
+		<Option>
+			Option Component
+		</Option>
+		<Option isCorrect>
+			Option Component - Correct Answer
+		</Option>
+		<Option>
+			Option Component
+		</Option>
+	</MultipleChoice>
+
+	2. Answers use the Option component, and correct answers are set using the 'isCorrect' prop
+	<MultipleChoice>
+		<Option>
+			Option Component
+		</Option>
+		<Option>
+			Option Component
+		</Option>
+		<Option isCorrect>
+			Option Component - Correct Answer
+		</Option>
+	</MultipleChoice>
+
+	3. Astro components will automatically create a new page on your site when you...
+	<MultipleChoice>
+		<Option>
+			Option Component
+		</Option>
+		<Option>
+			Option Component
+		</Option>
+		<Option isCorrect>
+			Option Component - Correct Answer
+		</Option>
+	</MultipleChoice>
+</Box>
+
+
+<Box icon="check-list">
+## SubSection Three - Checklist
+
+<Checklist>
+- [ ] Im ready to move on! Check out step 2
+</Checklist>
+</Box>
