@@ -70,7 +70,11 @@ export default defineConfig({
           navigateFallbackAllowlist: [/^\/offline/],
         },
       }),
-  prefetch()],
+  	prefetch({
+  	      // Only prefetch links with an href that begins with `/en`
+  	      selector: "a[href^='/en']",
+	}),
+  ],
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
