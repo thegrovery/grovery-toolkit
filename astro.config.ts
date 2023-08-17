@@ -62,7 +62,7 @@ export default defineConfig({
           navigateFallback: '/offline',
           globDirectory: 'dist',
   		globPatterns: [
-  			'**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico}',
+  			'**/*.{js,css,svg,png,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,ico,html}',
   		],
         },
         devOptions: {
@@ -71,8 +71,7 @@ export default defineConfig({
         },
       }),
   	prefetch({
-  	      // Only prefetch links with an href that begins with `/en`
-  	      selector: "a[href^='/en']",
+  	      //prefetch options
 	}),
   ],
   markdown: {
