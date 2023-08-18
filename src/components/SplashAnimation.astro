@@ -13,11 +13,9 @@ const { heading, body } = Astro.props as Props;
 </div>
 
 <style lang="scss">
-  $fontSize: 1rem;
-  $borderSize: 2px;
-  $color: #454257;
   .SplashAnimation {
       position: fixed;
+      display: none;
       top:0px;
       left: 0px;
       width: 100%;
@@ -26,7 +24,7 @@ const { heading, body } = Astro.props as Props;
       background-color: var(--color-blue-dark);
       opacity: 1;
       pointer-events: auto;
-      transition: 0.5s linear;
+      transition: 0.35s linear;
       &.hidden{
         opacity: 0;
         pointer-events: none;
@@ -41,6 +39,7 @@ const { heading, body } = Astro.props as Props;
 
 <script>
   //Hide Timer function
+  function hideTimer(){
     // Get a reference to the element
     const elementToHide = document.getElementById("SplashAnimation");
 
@@ -55,4 +54,26 @@ const { heading, body } = Astro.props as Props;
 
     // Set a timeout to call the hideElement function after the specified time
     setTimeout(hideElement, hideTimeout);
+  }
+  
+  //Show Once Per Session function
+  function showOnce(){
+    // Get a reference to the element
+    const elementToShow = document.getElementById("SplashAnimation");
+
+    // Check if the element should be shown
+    const shouldShow = !localStorage.getItem("shownOnce");
+
+    if (shouldShow) {
+        console.log("");
+        elementToShow.style.display = "block";
+        // Mark the element as shown
+        localStorage.setItem("shownOnce", "true");
+    }
+  }
+
+  //Run Functions
+  showOnce();
+  hideTimer();
+
 </script>
