@@ -44,6 +44,14 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<HeadAnalytics/>
 		<title set:html={formatTitle(content)} />
 		<style>
+			body{
+				animation: smoothLoad 1s;
+			}
+			@keyframes smoothLoad {
+			  0%    { opacity: 0; }
+			  75%    { opacity: 0; }
+			  100%  { opacity: 1; }
+			}
 			.sidebar {
 				position: fixed;
 				top: 0;
