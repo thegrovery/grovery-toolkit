@@ -14,6 +14,7 @@ import { getLanguageFromURL } from '../util';
 import { getPageCategory } from '../util/getPageCategory';
 import { pwaInfo } from 'virtual:pwa-info';
 import ReloadPrompt from '../components/ReloadPrompt.astro';
+import SplashAnimation from '../components/SplashAnimation.astro';
 
 
 export interface Props {
@@ -43,6 +44,14 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<HeadAnalytics/>
 		<title set:html={formatTitle(content)} />
 		<style>
+			body{
+				animation: smoothLoad 1s;
+			}
+			@keyframes smoothLoad {
+			  0%    { opacity: 0; }
+			  75%    { opacity: 0; }
+			  100%  { opacity: 1; }
+			}
 			.sidebar {
 				position: fixed;
 				top: 0;
@@ -133,6 +142,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 	</head>
 
 	<body>
+		<SplashAnimation/>
 		<Header currentPage={currentPage} />
 		<main class="layout">
 			
