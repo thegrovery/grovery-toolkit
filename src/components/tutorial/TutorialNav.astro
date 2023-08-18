@@ -19,11 +19,8 @@ const tutorialPages = getTutorialPages(pages, lang);
 const units = getTutorialUnits(tutorialPages);
 
 const makeUnitId = (index: number) => `${Astro.props.id}__tutorial-unit-nav-panel-${index}`;
-const isCurrentUnit = (unit: typeof units[number]) =>
+const isCurrentUnit = (unit: (typeof units)[number]) =>
 	unit.lessons.some((lesson) => currentUrl.endsWith(lesson.slug));
-
-const { id } = Astro.props as Props;
-const mainSection = id === "mainsection";	
 ---
 
 <div class="tutorial-nav">
@@ -32,7 +29,7 @@ const mainSection = id === "mainsection";
 			{
 				units.map((unit, idx) => (
 					<TabListItem id={makeUnitId(idx)} initial={isCurrentUnit(unit)}>
-						<UnitProgressIcon unitNumber={idx + 1} paths={unit.lessons.map((l) => '/' + l.slug)} mainSection={mainSection} />
+						<UnitProgressIcon unitNumber={idx} paths={unit.lessons.map((l) => '/' + l.slug)} />
 					</TabListItem>
 				))
 			}
@@ -54,7 +51,7 @@ const mainSection = id === "mainsection";
 												aria-current={currentUrl.endsWith(slugWithoutLang)}
 											>
 												<Progress path={'/' + lesson.slug} />
-												{index + 1}. {lesson.data.title}
+												{index}. {lesson.data.title}
 											</a>
 										</div>
 										{currentUrl.endsWith(lesson.slug) && (

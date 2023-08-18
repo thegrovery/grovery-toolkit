@@ -1,21 +1,20 @@
 ---
 import UIString from '../UIString.astro';
-// import FeedbackButton from './FeedbackButton.astro';
+import FeedbackButton from './FeedbackButton.astro';
 import TutorialNav from './TutorialNav.astro';
 ---
 
 <nav class="right-sidebar">
 	<h1><UIString key="tutorial.trackerLabel" /></h1>
 	<TutorialNav id="sidebar" />
-	<!-- <div class="feedback">
+	<div class="feedback">
 		<FeedbackButton />
-	</div> -->
+	</div>
 </nav>
 
 <style>
 	.right-sidebar {
 		display: flex;
-		width: 100%;
 		flex-direction: column;
 		overflow: auto;
 		padding-inline-end: 0.5rem;
