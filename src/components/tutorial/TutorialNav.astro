@@ -32,7 +32,7 @@ const mainSection = id === "mainsection";
 			{
 				units.map((unit, idx) => (
 					<TabListItem id={makeUnitId(idx)} initial={isCurrentUnit(unit)}>
-						<UnitProgressIcon unitNumber={idx} paths={unit.lessons.map((l) => '/' + l.slug)} />
+						<UnitProgressIcon unitNumber={idx + 1} paths={unit.lessons.map((l) => '/' + l.slug)} mainSection={mainSection} />
 					</TabListItem>
 				))
 			}
@@ -54,7 +54,7 @@ const mainSection = id === "mainsection";
 												aria-current={currentUrl.endsWith(slugWithoutLang)}
 											>
 												<Progress path={'/' + lesson.slug} />
-												{index}. {lesson.data.title}
+												{index + 1}. {lesson.data.title}
 											</a>
 										</div>
 										{currentUrl.endsWith(lesson.slug) && (
