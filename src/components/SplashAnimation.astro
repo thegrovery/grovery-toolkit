@@ -1,0 +1,58 @@
+---
+// This is the frontmatter section where you can import other components or scripts if needed
+
+import Button from '~/components/Button.astro'
+
+const { heading, body } = Astro.props as Props;
+
+
+---
+
+<div class='SplashAnimation' id='SplashAnimation'>
+  <img src="/images/core-splash.gif">
+</div>
+
+<style lang="scss">
+  $fontSize: 1rem;
+  $borderSize: 2px;
+  $color: #454257;
+  .SplashAnimation {
+      position: fixed;
+      top:0px;
+      left: 0px;
+      width: 100%;
+      height:100%;
+      z-index: 100000;
+      background-color: var(--color-blue-dark);
+      opacity: 1;
+      pointer-events: auto;
+      transition: 0.5s linear;
+      &.hidden{
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      img{
+        animation-iteration-count: 1;
+      }
+  }
+
+</style>
+
+<script>
+  //Hide Timer function
+    // Get a reference to the element
+    const elementToHide = document.getElementById("SplashAnimation");
+
+    // Set the time (in milliseconds) after which the element should be hidden
+    const hideTimeout = 5000; // 3 seconds
+
+    // Function to hide the element
+    function hideElement() {
+        //elementToHide.style.opacity = "0";
+        elementToHide.classList.add("hidden")
+    }
+
+    // Set a timeout to call the hideElement function after the specified time
+    setTimeout(hideElement, hideTimeout);
+</script>
