@@ -21,7 +21,7 @@ const { heading, body } = Astro.props as Props;
       width: 100%;
       height:100%;
       z-index: 100000;
-      background-color: var(--color-blue-dark);
+      background-color: #054C62;
       opacity: 1;
       pointer-events: auto;
       transition: 0.35s linear;
@@ -32,6 +32,10 @@ const { heading, body } = Astro.props as Props;
 
       img{
         animation-iteration-count: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
   }
 
@@ -73,7 +77,16 @@ const { heading, body } = Astro.props as Props;
   }
 
   //Run Functions
-  showOnce();
+  var searchParams = new URLSearchParams(window.location.search); 
+  if(searchParams.has("splash")){
+    //allow animation to run
+    console.log("param exists");
+    const elementToShow = document.getElementById("SplashAnimation");
+    elementToShow.style.display = "block";
+  } else {
+    showOnce();
+  }
+  
   hideTimer();
 
 </script>
