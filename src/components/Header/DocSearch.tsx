@@ -49,9 +49,9 @@ export default function Search({ lang = 'en', labels }: Props) {
 			initialQuery={initialQuery}
 			initialScrollY={window.scrollY}
 			onClose={onClose}
-			indexName="core_rms"
-			appId="IYMZS24CL1"
-			apiKey="de099f97e199640b66405d7f7195d2f8"
+			indexName="astro"
+			appId="7AFBU8EPJU"
+			apiKey="4440670147c44d744fd8da35ff652518"
 			searchParameters={{ facetFilters: [[`lang:${lang}`]] }}
 			insights
 			getMissingResultsUrl={({ query }: { query: string }) =>
