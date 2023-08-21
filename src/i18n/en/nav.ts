@@ -30,6 +30,8 @@ export default [
 		{ text: 'Directory Page Template', slug: 'page-templates/directory-page-template', key: 'page-templates/directory-page-template' },
 		{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
 		{ text: 'Tutorial Page Template', slug: 'page-templates/tutorial-page-template/1-step-1', key: 'page-templates/tutorial-page-template/1-step-1' },
+		{ text: 'PDF Page Template', slug: 'page-templates/pdf-page-template', key: 'page-templates/pdf-page-template' },
+		{ text: 'Persona Page Template', slug: 'page-templates/persona-page-template', key: 'page-templates/persona-page-template' },
 
 	/*{ text: 'Tutorials', header: true, type: 'learn', key: 'tutorials' },
 		{ text: 'Build a Blog', slug: 'tutorial/0-introduction', key: 'blog-tutorial' },*/
