@@ -8,26 +8,76 @@ import ContributorList from '~/components/ContributorList.astro'
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
 import ResourceCard from '~/components/ResourceCard.astro';
 import YouTubeEmbed from '~/components/YouTubeEmbed.astro';
+import NavBlock from '~/components/NavBlock.astro';
+import IconList from '~/components/IconList.astro';
+import InlineGlossary from '~/components/InlineGlossary.astro';
+
+
 
 :::tip[ANNOUNCEMENTS]
 **What’s new in the Grovery’s V1 Toolkit** [Find out in the announcement blog post](https://astro.build/blog/astro-2/).  
 **Ready to for your own Toolkit?** [Take our quiz to find what features are right for you?](/en/guides/upgrade-to/v2/).
 :::
 
-The Grovery’s CORE RMS (Resource Management System) is a software product that provides the framework to organize, manage and train Sales and Marketing teams. This Web App platform provides the environment for teams to work more efficiently, share information and provides easy access to relevant program materials.
+The Grovery’s CORE <InlineGlossary text="RMS" />&nbsp;(Resource Management System) is a software product that provides the framework to **organize**, **manage** and **train** Sales and Marketing teams. This <InlineGlossary text="Web App platform" />&nbsp;provides the environment for teams to work more efficiently, share information and provides easy access to relevant program materials.
+
+## Quick Links
+
+<div class="nav-block-container">
+  
+	<NavBlock
+		icon="gala:brochure"  
+		title="Brand Resources" 
+		description="Check out our latest brand resources to get you started on your journey" 
+		
+		viewDetailsButtonText="Explore Resources" 
+		
+		width="half" 
+		resourceDetailsLink="/brand-resources/view-all" 
+
+	/>
+	<NavBlock
+		icon="mdi:people-outline"  
+		title="Program in Practice" 
+		description="Learn some of our most common scenarios and their best resolutions" 
+		
+		viewDetailsButtonText="Common Scenarios" 
+	
+		width="half" 
+		resourceDetailsLink="/playbook-in-practice" 
+
+	/>
+	
+
+</div>
+
+
+## Watch Our Reel
+
+<YouTubeEmbed videoId="3TbJfqwSy_I" />
 
 ## Features of CORE RMS include: 
 
-* Teams gain efficiency through a scalable Progressive Web App platform.
-* The  Grovery’s CORE RMS manages communications integrity through system-wide informational updates that minimize the legal risks involved in document version control
+<IconList items={[
+    "Teams gain efficiency through a scalable Progressive Web App platform.",
+    "The Grovery’s CORE RMS manages communications integrity",
+    "Anytime digital access mitigates the high cost to manage print collateral and provides immediate and easy access to program materials",
+    "Communications are streamlined with the built-in feedback loop and in-app notifications ensure that the most relevant program information is front and center.",
+    "The integrated resources access feature allows Teams to send materials to customers directly from the app.",
+    "Utilize the built in knowledge base to deepen your team’s understanding of program components",
+    "Customize and simplify your user experience through the full-resource search functionality ",
+    "Understand how your team is utilizing The Grovery CORE RMS through an integrated analytics tool. ",
+    "All assets are  stored securely. Sensitive material can always be gated and password protected. "
+]} />
+
+{/* * Teams gain efficiency through a scalable **Progressive Web App** platform.
+* The  Grovery’s **CORE RMS** manages communications integrity through system-wide informational updates that minimize the legal risks involved in document version control
 * Anytime digital access mitigates the high cost to manage print collateral and provides immediate and easy access to program materials
 * Communications are streamlined with the built-in feedback loop and in-app notifications ensure that the most relevant program information is front and center.
 * The integrated resources access feature allows Teams to send materials to customers directly from the app.
 * Utilize the built in knowledge base to deepen your team’s understanding of program components
 * Customize and simplify your user experience through the full-resource search functionality 
-* Understand how your team is utilizing The Grovery CORE RMS through an integrated analytics tool. 
-* All assets are  stored securely. Sensitive material can always be gated and password protected. 
+* Understand how your team is utilizing The Grovery **CORE RMS** through an integrated analytics tool. 
+* All assets are  stored securely. Sensitive material can always be gated and password protected.  */}
 
-
-<YouTubeEmbed videoId="3TbJfqwSy_I" />
 
