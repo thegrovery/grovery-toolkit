@@ -5,8 +5,8 @@
 
 ### Server Links
 * Local: http://127.0.0.1:3000/
-* Staging: https://grovery-core-toolkit-template.netlify.app/
-* Live: 
+* Staging: https://core-template-staging.netlify.app/
+* Live: https://core-rms.com
 * Netlify: https://app.netlify.com/sites/grovery-core-toolkit-template/overview
 
 
@@ -17,8 +17,8 @@
 Delete this section when no longer needed.
 
 Current active dev branches:
-* feature--algolia-search
-* plugins--vite-initial
+* feature--search
+* feature--pwa
 * template--placeholder-content
 
 
@@ -36,7 +36,11 @@ Current active dev branches:
 <br/>
 
 ### Initial Server Deploy, Updating Test/Staging Server
-This site uses Netlify's auto-deploy functions.  Every time you push to your main branch, Netlify will do a new deploy.  
+This site uses Netlify's auto-deploy functions.  Every time you push to your main or staging branch, Netlify will do a new deploy.  
+
+Since this site is being shown to potential clients, try to always push to the `staging` branch first to test any new updates, then push to main once everything is finished and confirmed to be client-ready.
+
+`feature--update > staging > main`
 
 <br/>
 
@@ -90,3 +94,8 @@ When you start the project, check in with the team for the following:
 
 ## Markdown Syntax Guide
 * https://www.markdownguide.org/basic-syntax/#overview
+
+## Vars File
+This project uses a vars file to control the general style of the site.  Colors, fonts, font sizes, spacing , etc. are all set from this location and referenced throughout the projet as variables.  For example, setting the variable `$black` to `#000000` will update all instances of $black throughout the project to your new color.  
+
+You can take this a step further by using "theme variables".  Instead of naming a variable something direct like `$black`, create a variable named something like `$primaryColor` and then set that equal to another variable like `$black`.  This cascading method will give you the best experience with modifying the project's theme, and you should try your best to always use variables instead of directly referencing these styles.
