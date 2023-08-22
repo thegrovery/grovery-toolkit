@@ -1,0 +1,54 @@
+---
+// This is the frontmatter section where you can import other components or scripts if needed
+
+const { link } = Astro.props as Props;
+---
+
+
+
+
+<div class='QrCode'>
+    <div id="qrcode"></div>
+</div>
+
+<style lang="scss">
+  $fontSize: 1rem;
+  $borderSize: 10px;
+  $borderColor: #000;
+  $color: #454257;
+
+  $border: solid $borderSize $borderColor;
+  .QrCode{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    border: $border;
+    padding: $borderSize;
+  }
+ #qrcode{
+  width: 250px;
+  height: 250px;
+  img{
+    width: 100%;
+    height: auto;
+  }
+ }
+
+</style>
+
+
+<script type="text/javascript">
+  
+  const url = "{Astro.site.slice(0, -1)}{link}";
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    text: "http://jindo.dev.naver.com/collie",
+    width: 128,
+    height: 128,
+    colorDark : "#000",
+    colorLight : "#FFF",
+    correctLevel : QRCode.CorrectLevel.H,
+    useSVG: true
+  });
+  qrcode.makeCode();
+
+</script>
