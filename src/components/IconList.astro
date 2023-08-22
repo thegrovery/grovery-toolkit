@@ -1,0 +1,47 @@
+---
+import { Icon } from 'astro-icon'; // Import the icon library you're using
+
+const { items } = Astro.props; // Destructure the props
+---
+
+<ul class="icon-list">
+    {items.map((item, index) => ( // Use items directly, not props.items
+      <li key={index}>
+        <span class="icon-container">
+          <Icon name="fe:check" />
+        </span>
+        {item}
+      </li>
+    ))}
+  </ul>
+  
+  <style>
+  .icon-list {
+    font-size: 1.15rem;
+    list-style-type: none;
+    padding: 0;
+    padding-inline-start: 0rem !important;
+  }
+  .icon-list [astro-icon] {
+      font-size: 1.5rem;
+  }
+  .icon-list li {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .icon-container {
+    width: 32px; /* Fixed width for the icon container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-list li > .icon-container > svg {
+    margin-right: 4px;
+    margin-top: 4px;
+    color: var(--custom-teal);
+    /* fill: var(--color-base-teal);
+    stroke: var(--color-base-teal); */
+  }
+  </style>
