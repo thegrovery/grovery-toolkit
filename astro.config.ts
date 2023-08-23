@@ -18,6 +18,21 @@ import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
 import { remarkFallbackLang } from './plugins/remark-fallback-lang';
 import { theme } from './syntax-highlighting-theme';
 
+const getCache = ({ name, pattern }: any) => ({
+  urlPattern: pattern,
+  handler: "CacheFirst" as const,
+  options: {
+    cacheName: name,
+    expiration: {
+      maxEntries: 500,
+      maxAgeSeconds: 60 * 60 * 24 * 365 * 2 // 2 years
+    },
+    cacheableResponse: {
+      statuses: [200]
+    }
+  }
+});
+
 // https://astro.build/config
 export default defineConfig({
 	  site: 'https://grovery-core-toolkit-staging.netlify.app/',
@@ -52,7 +67,17 @@ export default defineConfig({
 	    },
 	    workbox: {
 	      navigateFallback: '/offline',
-	      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}']
+	      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}'],
+	      runtimeCaching: [
+	        getCache({ 
+	          pattern: /^https:\/\/s3.amazonaws.com\/my-library-cover-uploads/, 
+	          name: "local-images1" 
+	        }),
+	        getCache({ 
+	          pattern: /^https:\/\/my-library-cover-uploads.s3.amazonaws.com/, 
+	          name: "local-images2" 
+	        })
+	      ]
 	    },
 	    devOptions: {
 	      enabled: true,
