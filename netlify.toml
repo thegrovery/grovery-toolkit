@@ -9,7 +9,7 @@
     Content-Type = "application/manifest+json"
 
 [build]
-  command = "NODE_OPTIONS=--max_old_space_size=8192 npm netlify:build"
+  command = "NODE_OPTIONS=--max_old_space_size=8192 pnpm netlify:build"
   ignore = "git diff --quiet $COMMIT_REF $CACHED_COMMIT_REF -- /"
 
   [[plugins]]
