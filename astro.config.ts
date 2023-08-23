@@ -56,7 +56,7 @@ export default defineConfig({
 	    manifest: {
 	      name: 'Grovery CORE RMS',
 	      short_name: 'CORE',
-	      theme_color: '#ffffff',
+	      theme_color: '#054C62',
 	      icons: [{
 	        src: 'pwa-192x192.png',
 	        sizes: '192x192',
