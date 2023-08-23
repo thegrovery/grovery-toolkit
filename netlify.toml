@@ -31,7 +31,7 @@
     # to audit a path other than /
     # route1 audit will use the top level thresholds
     [[plugins.inputs.audits]]
-      path = "/en/getting-started/"
+      path = "en/getting-started/"
 
       # you can optionally specify an output_path per audit, relative to the path, where HTML report output will be saved
       output_path = "reports/lighthouse.html"
