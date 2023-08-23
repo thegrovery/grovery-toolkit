@@ -8,7 +8,10 @@ const { link } = Astro.props as Props;
 
 
 <div class='QrCode'>
-    <div id="qrcode"></div>
+    <div 
+      class="qrcodeMain" 
+      data-link={ link }
+    ></div>
 </div>
 
 <style lang="scss">
@@ -24,8 +27,9 @@ const { link } = Astro.props as Props;
     flex-direction: column;
     border: $border;
     padding: $borderSize;
+    background-color: #FFF;
   }
- #qrcode{
+ .qrcodeMain{
   width: 250px;
   height: 250px;
   img{
@@ -38,12 +42,13 @@ const { link } = Astro.props as Props;
 
 
 <script type="text/javascript">
-  
-  const url = "{Astro.site.slice(0, -1)}{link}";
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-    text: "http://jindo.dev.naver.com/collie",
-    width: 128,
-    height: 128,
+
+  //var currentUrl = "{Astro.site.slice(0, -1)}{link}";
+  var targetElement = document.querySelector(".qrcodeMain");
+  var qrcode = new QRCode(targetElement, {
+    text: targetElement.dataset.link,
+    width: 500,
+    height: 500,
     colorDark : "#000",
     colorLight : "#FFF",
     correctLevel : QRCode.CorrectLevel.H,

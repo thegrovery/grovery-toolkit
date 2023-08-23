@@ -12,7 +12,7 @@ const { link } = Astro.props as Props;
   <div class="meta">
     <p>Link to file: {Astro.site}{link}</p>
     <p>QR Code: 
-      <QrCode/>
+      <QrCode link={link}/>
     </p>
   </div>
   <iframe src={link}></iframe>

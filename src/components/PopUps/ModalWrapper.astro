@@ -1,0 +1,106 @@
+---
+// This is the frontmatter section where you can import other components or scripts if needed
+
+import Button from '~/components/Button.astro'
+
+const { modalType } = Astro.props as Props;
+---
+
+<div class='ModalWrapper active'>
+  
+  <div class="modalBackdrop"></div>
+ 
+  <div class="modalInner">
+    <div class="modalCloseButton" onclick="modalClose()">
+      <span>&#10005;</span>
+    </div>
+    <slot />
+  </div>
+
+</div>
+
+<style lang="scss">
+  $fontSize: 1rem;
+  $borderSize: 2px;
+  $color: #454257;
+  $transition: 0.35s linear;
+  .ModalWrapper {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 10000;
+      transition: $transition;
+      //inactive state
+      opacity: 0;
+      pointer-events: none;
+      //active state
+      &.active{
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modalBackdrop{
+        background-color: var(--theme-backdrop-overlay);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;   //z-index uses nesting, no need to make higher than parent element.
+      }
+      .modalCloseButton{
+        position: absolute;
+        top: -2rem;
+        right: -2rem;
+        z-index: 3;
+        font-size: 4rem;
+        font-weight: 800;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 100%;
+        background-color: #FFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.15s;
+        span{
+          position: relative;
+          top: -0.25rem;
+          color: #000;
+          transition: 0.15s;
+        }
+        &:hover{
+          background-color: #000;
+          span{
+            color: #FFF;
+          }
+        }
+      }
+      .modalInner{
+        background-color: #FFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        max-height: 100%;
+        width: 100%;
+        max-width: 800px;
+        /*aspect-ratio: 16/9;*/
+        z-index: 2;   
+
+      }
+  }
+
+</style>
+
+
+<script type="text/javascript">
+  function modalClose(){
+    var targetElement = document.querySelector(".ModalWrapper");
+    targetElement.classList.remove("active")
+  }
+</script>
