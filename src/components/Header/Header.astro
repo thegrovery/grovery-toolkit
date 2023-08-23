@@ -5,6 +5,7 @@ import LanguageSelect from './LanguageSelect';
 import Search from './Search.astro';
 import ThemeToggleButton from './ThemeToggleButton';
 import FeedbackButton from './FeedbackButton.astro';
+
 import { getLanguageFromURL } from '../../util';
 import { getDocSearchStrings, useTranslations } from '../../i18n/util';
 
@@ -61,6 +62,7 @@ const t = useTranslations(Astro);
 				</li>
 			</ul>
 		</div>
+
 
 		{import.meta.env.PUBLIC_FEATURE_FEEDBACK=="true" &&
 			<FeedbackButton/>

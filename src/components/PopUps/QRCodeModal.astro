@@ -11,9 +11,9 @@ import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
     <div class="inner">
       <h2>Share this page via QR Code</h2>
       <div class="main">
-        <QrCode link={Astro.site}/>
+        <QrCode link={Astro.url}/>
       </div>
-      <a class="textLink" href={Astro.site}>{Astro.site}</a>
+      <a class="textLink" href={Astro.url}>{Astro.url}</a>
     </div>
   </ModalWrapper>  
 </div>
@@ -29,6 +29,7 @@ import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
         justify-content: center;
         align-items: center;
         padding: 2rem;
+        color: var(--theme-text);
       }
       .main{
         margin: 2rem 0;
