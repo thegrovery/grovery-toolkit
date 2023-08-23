@@ -48,7 +48,7 @@ export default defineConfig({
 		  astroCodeSnippets(), 
 		  mdx(), 
 	  AstroPWA({
-	    mode: 'production',
+	    mode: 'development',
 	    base: '/',
 	    scope: '/',
 	    includeAssets: ['favicon.png'],
