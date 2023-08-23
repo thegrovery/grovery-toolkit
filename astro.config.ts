@@ -36,12 +36,19 @@ const getCache = ({ name, pattern }: any) => ({
 // https://astro.build/config
 export default defineConfig({
 	  site: 'https://grovery-core-toolkit-staging.netlify.app/',
-	  integrations: [AutoImport({
-	    imports: [asideAutoImport, codeSnippetAutoImport]
-	  }), preact({
-	    compat: true
-	  }), sitemap(), astroAsides(), astroCodeSnippets(), mdx(), AstroPWA({
-	    mode: 'development',
+	  integrations: [
+	  	AutoImport({
+		    imports: [asideAutoImport, codeSnippetAutoImport]
+		  }), 
+		  preact({
+		    compat: true
+		  }), 
+		  sitemap(), 
+		  astroAsides(), 
+		  astroCodeSnippets(), 
+		  mdx(), 
+	  AstroPWA({
+	    mode: 'production',
 	    base: '/',
 	    scope: '/',
 	    includeAssets: ['favicon.png'],
@@ -69,21 +76,22 @@ export default defineConfig({
 	      navigateFallback: '/offline',
 	      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}'],
 	      runtimeCaching: [
-	        getCache({ 
+	        /*getCache({ 
 	          pattern: /^https:\/\/s3.amazonaws.com\/my-library-cover-uploads/, 
 	          name: "local-images1" 
 	        }),
 	        getCache({ 
 	          pattern: /^https:\/\/my-library-cover-uploads.s3.amazonaws.com/, 
 	          name: "local-images2" 
-	        })
+	        })*/
 	      ]
 	    },
 	    devOptions: {
 	      enabled: true,
 	      navigateFallbackAllowlist: [/^\/offline/]
 	    }
-	  }), prefetch()],
+	  }), 
+	  prefetch()],
 	  markdown: {
 	    syntaxHighlight: 'shiki',
 	    shikiConfig: {
