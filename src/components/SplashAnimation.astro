@@ -9,7 +9,8 @@ const { heading, body } = Astro.props as Props;
 ---
 
 <div class='SplashAnimation' id='SplashAnimation'>
-  <img src="/images/core-splash.gif">
+  <img class="desktop" src="/images/core-splash.gif">
+  <img class="mobile" src="/images/core-splash-mobile.gif">
 </div>
 
 <style lang="scss">
@@ -36,6 +37,21 @@ const { heading, body } = Astro.props as Props;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+      .desktop{
+        display: block;
+      }
+      .mobile{
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .desktop{
+          display: none;
+        }
+        .mobile{
+          display: block;
+        }
       }
   }
 
@@ -66,13 +82,13 @@ const { heading, body } = Astro.props as Props;
     const elementToShow = document.getElementById("SplashAnimation");
 
     // Check if the element should be shown
-    const shouldShow = !localStorage.getItem("shownOnce");
+    const shouldShow = !sessionStorage.getItem("shownOnce");
 
     if (shouldShow) {
         console.log("");
         elementToShow.style.display = "block";
         // Mark the element as shown
-        localStorage.setItem("shownOnce", "true");
+        sessionStorage.setItem("shownOnce", "true");
     }
   }
 
