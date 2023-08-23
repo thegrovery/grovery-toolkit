@@ -25,7 +25,7 @@
     "lint:linkcheck:nobuild": "tsm --require=./scripts/lib/filter-warnings.cjs ./scripts/lint-linkcheck.ts",
     "lint:slugcheck": "node ./scripts/lint-slugcheck.mjs",
     "lint:eslint": "eslint .",
-    "netlify:build": "pnpm install --no-frozen-lockfile && pnpm ${NETLIFY_BUILD_SCRIPT:-build}",
+    "netlify:build": "pnpm ${NETLIFY_BUILD_SCRIPT:-build} --no-frozen-lockfile",
     "translation-status": "tsm --require=./scripts/lib/filter-warnings.cjs ./scripts/translation-status.ts",
     "generate-pwa-assets": "pwa-assets-generator"
   },
