@@ -51,12 +51,12 @@ export default defineConfig({
 	      }]
 	    },
 	    workbox: {
-	      navigateFallback: '/404',
+	      navigateFallback: '/offline',
 	      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}']
 	    },
 	    devOptions: {
-	      enabled: false,
-	      navigateFallbackAllowlist: [/^\/404$/]
+	      enabled: true,
+	      navigateFallbackAllowlist: [/^\/offline/]
 	    }
 	  }), prefetch()],
 	  markdown: {
