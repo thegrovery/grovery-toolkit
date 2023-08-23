@@ -21,6 +21,21 @@
       customDomain = "https://core-rms.com/"
       renderJavaScript = true
 
+  [[plugins]]
+    package = "@netlify/plugin-lighthouse"
+
+    # Set minimum thresholds for each report area
+    [plugins.inputs.thresholds]
+      performance = 0.9
+
+    # to audit a path other than /
+    # route1 audit will use the top level thresholds
+    [[plugins.inputs.audits]]
+      path = "/en/getting-started/"
+
+      # you can optionally specify an output_path per audit, relative to the path, where HTML report output will be saved
+      output_path = "reports/lighthouse.html"
+
   [[redirects]]
     from = "/reference/renderer-reference"
     to = "/en/reference/integrations-reference"
