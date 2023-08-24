@@ -48,7 +48,7 @@ export default defineConfig({
 		  astroCodeSnippets(), 
 		  mdx(), 
 		  
-		  prefetch()
+		  //prefetch()
 	  ],
 	  markdown: {
 	    syntaxHighlight: 'shiki',
