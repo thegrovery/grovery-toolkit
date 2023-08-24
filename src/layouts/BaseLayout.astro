@@ -145,7 +145,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 
 	<body>
 		<SplashAnimation/>
-		<Header currentPage={currentPage} />
+		<Header currentPage={currentPage} client:load />
 		<main class="layout">
 			
 			<aside id="left-sidebar" class="sidebar">
@@ -154,7 +154,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 				</slot>
 			</aside>
 
-			<aside id="right-sidebar" class="sidebar">
+			<aside id="right-sidebar" class="sidebar" client:load>
 				<slot name="secondary-sidebar" />
 			</aside>
 
