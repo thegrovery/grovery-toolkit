@@ -6,7 +6,7 @@ import Button from '~/components/Button.astro'
 const { heading, body } = Astro.props as Props;
 ---
 
-<button class='ShareButton' onclick="modalOpen();">
+<button class='ShareButton' onclick="modalOpenQrCode();">
   Share with QR Code
 </button>
 
@@ -27,7 +27,7 @@ const { heading, body } = Astro.props as Props;
 </style>
 
 <script type="text/javascript">
-  function modalOpen(){
+  function modalOpenQrCode(){
     var targetElement = document.querySelector(".ModalWrapper[data-modal='qrcode']");
     targetElement.classList.add("active");
   }
