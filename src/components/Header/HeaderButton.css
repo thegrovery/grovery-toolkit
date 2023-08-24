@@ -1,8 +1,8 @@
 .header-button {
 	--border-color-default: var(--theme-shade-subtle);
-	--border-color-hocus: var(--theme-text-light);
+	--border-color-focus: var(--theme-text-light);
 	--text-color-default: var(--theme-text-light);
-	--text-color-hocus: var(--theme-text);
+	--text-color-focus: var(--theme-text);
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0.8rem;
@@ -30,6 +30,6 @@
 	}
 	.header-button:hover {
 		color: var(--text-color-hocus);
-		border-color: var(--border-color-hocus);
+		border-color: var(--border-color-focus);
 	}
 }
