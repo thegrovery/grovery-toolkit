@@ -47,51 +47,52 @@ export default defineConfig({
 		  astroAsides(), 
 		  astroCodeSnippets(), 
 		  mdx(), 
-	  AstroPWA({
-	    mode: 'development',
-	    base: '/',
-	    scope: '/',
-	    includeAssets: ['favicon.png'],
-	    registerType: 'autoUpdate',
-	    manifest: {
-	      name: 'Grovery CORE RMS',
-	      short_name: 'CORE',
-	      theme_color: '#054C62',
-	      icons: [{
-	        src: 'pwa-192x192.png',
-	        sizes: '192x192',
-	        type: 'image/png'
-	      }, {
-	        src: 'pwa-512x512.png',
-	        sizes: '512x512',
-	        type: 'image/png'
-	      }, {
-	        src: 'pwa-512x512.png',
-	        sizes: '512x512',
-	        type: 'image/png',
-	        purpose: 'any maskable'
-	      }]
-	    },
-	    workbox: {
-	      navigateFallback: '/offline',
-	      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}'],
-	      runtimeCaching: [
-	        /*getCache({ 
-	          pattern: /^https:\/\/s3.amazonaws.com\/my-library-cover-uploads/, 
-	          name: "local-images1" 
-	        }),
-	        getCache({ 
-	          pattern: /^https:\/\/my-library-cover-uploads.s3.amazonaws.com/, 
-	          name: "local-images2" 
-	        })*/
-	      ]
-	    },
-	    devOptions: {
-	      enabled: true,
-	      navigateFallbackAllowlist: [/^\/offline/]
-	    }
-	  }), 
-	  prefetch()],
+		  AstroPWA({
+		    mode: 'development',
+		    base: '/',
+		    scope: '/',
+		    includeAssets: ['favicon.png'],
+		    registerType: 'autoUpdate',
+		    manifest: {
+		      name: 'Grovery CORE RMS',
+		      short_name: 'CORE',
+		      theme_color: '#054C62',
+		      icons: [{
+		        src: 'pwa-192x192.png',
+		        sizes: '192x192',
+		        type: 'image/png'
+		      }, {
+		        src: 'pwa-512x512.png',
+		        sizes: '512x512',
+		        type: 'image/png'
+		      }, {
+		        src: 'pwa-512x512.png',
+		        sizes: '512x512',
+		        type: 'image/png',
+		        purpose: 'any maskable'
+		      }]
+		    },
+		    workbox: {
+		      navigateFallback: '/offline',
+		      globPatterns: ['**/*.{css,js,html,svg,png,jpg,ico,txt}'],
+		      runtimeCaching: [
+		        /*getCache({ 
+		          pattern: /^https:\/\/s3.amazonaws.com\/my-library-cover-uploads/, 
+		          name: "local-images1" 
+		        }),
+		        getCache({ 
+		          pattern: /^https:\/\/my-library-cover-uploads.s3.amazonaws.com/, 
+		          name: "local-images2" 
+		        })*/
+		      ]
+		    },
+		    devOptions: {
+		      enabled: true,
+		      navigateFallbackAllowlist: [/^\/offline/]
+		    }
+		  }), 
+		  prefetch()
+	  ],
 	  markdown: {
 	    syntaxHighlight: 'shiki',
 	    shikiConfig: {
