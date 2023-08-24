@@ -46,7 +46,7 @@ export default defineConfig({
 		  sitemap(), 
 		  astroAsides(), 
 		  astroCodeSnippets(), 
-		  mdx(), 
+		  mdx()
 		  
 		  //prefetch()
 	  ],
