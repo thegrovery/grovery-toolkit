@@ -6,7 +6,7 @@ import Button from '~/components/Button.astro'
 const { modalType } = Astro.props as Props;
 ---
 
-<div class='ModalWrapper'>
+<div class='ModalWrapper' data-modal={modalType}>
   
   <div class="modalBackdrop"></div>
  
