@@ -1,4 +1,4 @@
-import { registerSW } from 'virtual:pwa-register'
+/*import { registerSW } from 'virtual:pwa-register'
 
 window.addEventListener('load', () => {
   const pwaToast = document.querySelector<HTMLDivElement>('#pwa-toast')!
@@ -48,4 +48,4 @@ window.addEventListener('load', () => {
       console.log('SW registered: ', swScriptUrl)
     },
   })
-})
+})*/
