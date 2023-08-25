@@ -15,8 +15,7 @@ import { getPageCategory } from '../util/getPageCategory';
 /*import { pwaInfo } from 'virtual:pwa-info';*/
 /*import ReloadPrompt from '../components/ReloadPrompt.astro';*/
 import SplashAnimation from '../components/SplashAnimation.astro';
-import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
-import OptionsModal from '~/components/PopUps/OptionsModal.astro'; 
+
 
 
 export interface Props {
@@ -164,8 +163,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 			</slot>
 		</div>
 
-		<QRCodeModal/>
-		<OptionsModal/> 
+		 
 		<!-- <ReloadPrompt /> -->
 		
 		<!--Start of Tawk.to Script-->
