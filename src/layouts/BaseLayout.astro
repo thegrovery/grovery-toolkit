@@ -5,7 +5,6 @@ import HeadCommon from '../components/HeadCommon.astro';
 import Header from '../components/Header/Header.astro';
 import HeadSEO from '../components/HeadSEO.astro';
 import HeadAnalytics from '../components/HeadAnalytics.astro';
-import FooterJS from '../components/FooterJS.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import { normalizeLangTag } from '../i18n/bcp-normalize';
 import { rtlLanguages } from '../i18n/languages';
@@ -139,7 +138,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 	    	<meta name="msapplication-TileColor" content="#FFFFFF" />
 	    	<meta name="theme-color" content="#ffffff" /> -->
 
-	    	<FooterJS></FooterJS>
+	    	
 	</head>
 
 	<body>
