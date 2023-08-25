@@ -44,7 +44,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<HeadCommon />
 		<!-- <HeadSEO content={content} canonicalURL={canonicalURL} /> -->
 		<!-- <HeadAnalytics/> -->
-		<title>{`${title} 🚀 ${t('site.title')}`}</title>
+		<title set:html={formatTitle(content)} />
 		<style>
 			body{
 				animation: smoothLoad 1s;
