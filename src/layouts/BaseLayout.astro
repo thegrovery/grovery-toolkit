@@ -12,7 +12,7 @@ import { rtlLanguages } from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
 import { getLanguageFromURL } from '../util';
 import { getPageCategory } from '../util/getPageCategory';
-import { pwaInfo } from 'virtual:pwa-info';
+/*import { pwaInfo } from 'virtual:pwa-info';*/
 import ReloadPrompt from '../components/ReloadPrompt.astro';
 import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
@@ -134,7 +134,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<!-- Vite PWA code | temp disable for other updates-->
 			
 
-	    	<!-- <FooterJS></FooterJS> -->
+	    	<FooterJS></FooterJS>
 	</head>
 
 	<body>
