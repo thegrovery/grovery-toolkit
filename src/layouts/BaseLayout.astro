@@ -13,7 +13,7 @@ import { useTranslations } from '../i18n/util';
 import { getLanguageFromURL } from '../util';
 import { getPageCategory } from '../util/getPageCategory';
 /*import { pwaInfo } from 'virtual:pwa-info';*/
-import ReloadPrompt from '../components/ReloadPrompt.astro';
+/*import ReloadPrompt from '../components/ReloadPrompt.astro';*/
 import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro'; 
@@ -44,7 +44,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<HeadCommon />
 		<!-- <HeadSEO content={content} canonicalURL={canonicalURL} /> -->
 		<!-- <HeadAnalytics/> -->
-		<title set:html={formatTitle(content)} />
+		<title>{`${title} 🚀 ${t('site.title')}`}</title>
 		<style>
 			body{
 				animation: smoothLoad 1s;

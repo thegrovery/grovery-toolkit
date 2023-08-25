@@ -6,6 +6,7 @@ import { normalizeLangTag } from '../i18n/bcp-normalize';
 import { rtlLanguages } from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
 import { getLanguageFromURL } from '../util';
+import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro'; 
 
@@ -42,6 +43,7 @@ const t = useTranslations(Astro);
 	</head>
 
 	<body>
+		<SplashAnimation/>
 		<Header />
 		<main class="layout splash-layout">
 			<article>
