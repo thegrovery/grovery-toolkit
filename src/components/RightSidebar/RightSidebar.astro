@@ -4,7 +4,7 @@ import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
 import { useTranslations } from '../../i18n/util';
 import generateToc from '../../util/generateToc';
-import ShareButton from './ShareButton.astro';
+
 
 const t = useTranslations(Astro);
 
@@ -23,9 +23,7 @@ const overview = t('rightSidebar.overview');
 			/>
 		)
 	}
-	<div class="buttons">
-		<ShareButton/>
-	</div>
+	
 	
 	<!-- <ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
 	<CommunityMenu /> -->
