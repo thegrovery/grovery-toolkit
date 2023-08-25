@@ -154,7 +154,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 
 			<div id="main-content" class="main-column">
 				<slot />
-				
+				<span id="docsearch-lvl0" hidden>{getPageCategory(url)}</span>
 			</div>
 			
 		</main>
