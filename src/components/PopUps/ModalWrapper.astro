@@ -6,9 +6,9 @@ import Button from '~/components/Button.astro'
 const { modalType } = Astro.props as Props;
 ---
 
-<div class='ModalWrapper'>
+<div class='ModalWrapper' data-modal={modalType}>
   
-  <div class="modalBackdrop"></div>
+  <div class="modalBackdrop" onclick="modalClose()"></div>
  
   <div class="modalInner">
     <div class="modalCloseButton" onclick="modalClose()">
@@ -111,8 +111,17 @@ const { modalType } = Astro.props as Props;
 
 <script type="text/javascript">
   function modalClose(){
-    var targetElement = document.querySelector(".ModalWrapper");
-    targetElement.classList.remove("active");
-
+    var elements = document.querySelectorAll('.ModalWrapper');
+    
+    elements.forEach(element => {
+      //target all instances of ModalWrapper
+      element.classList.remove("active"); 
+    });
   }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      modalClose();
+    }
+  });
 </script>

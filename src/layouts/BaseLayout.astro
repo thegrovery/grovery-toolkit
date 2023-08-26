@@ -5,7 +5,6 @@ import HeadCommon from '../components/HeadCommon.astro';
 import Header from '../components/Header/Header.astro';
 import HeadSEO from '../components/HeadSEO.astro';
 import HeadAnalytics from '../components/HeadAnalytics.astro';
-import FooterJS from '../components/FooterJS.astro';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
 import { normalizeLangTag } from '../i18n/bcp-normalize';
 import { rtlLanguages } from '../i18n/languages';
@@ -16,7 +15,7 @@ import { pwaInfo } from 'virtual:pwa-info';
 import ReloadPrompt from '../components/ReloadPrompt.astro';
 import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
-
+import OptionsModal from '~/components/PopUps/OptionsModal.astro';
 
 export interface Props {
 	content: CollectionEntry<'docs'>['data'];
@@ -139,7 +138,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 	    	<meta name="msapplication-TileColor" content="#FFFFFF" />
 	    	<meta name="theme-color" content="#ffffff" /> -->
 
-	    	<FooterJS></FooterJS>
+	    	
 	</head>
 
 	<body>
@@ -170,6 +169,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		</div>
 
 		<QRCodeModal/>
+		<OptionsModal/> 
 		<!-- <ReloadPrompt /> -->
 		
 		<!--Start of Tawk.to Script-->
