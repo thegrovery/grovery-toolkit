@@ -17,10 +17,10 @@
 Delete this section when no longer needed.
 
 Current active dev branches:
-* feature--search
-* feature--pwa
-* template--placeholder-content
-
+* New Feedback Form: feature--feedback-form-new
+* Additional left nav bar tabs: feature--sidebar-nav-tabs
+* Progressive Web App functions: feature--pwa
+* Content Prefetch: feature--prefetch
 
 ---
 
