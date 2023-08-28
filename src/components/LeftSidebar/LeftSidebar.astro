@@ -30,8 +30,9 @@ const sidebarSections = (await getNav(Astro)).reduce((collection, item) => {
 
 const learnSections = sidebarSections.filter((section) => section.type === 'learn');
 const apiSections = sidebarSections.filter((section) => section.type === 'api');
+const miscSections = sidebarSections.filter((section) => section.type === 'misc');
 
-let activeTab: 'learn' | 'api' = 'learn';
+let activeTab: 'learn' | 'api' | 'misc' = 'learn';
 
 // Certain pages are not in the sidebar nav, so we manually set the active tab based on other factors (e.g. Algolia page category).
 const isReference = ['Error Reference', 'Reference'].includes(
@@ -67,6 +68,12 @@ if (isReference) {
 			type={'api'}
 			defaultActiveTab={activeTab}
 			sidebarSections={apiSections}
+			currentPageMatch={currentPageMatch}
+		/>
+		<SidebarContent
+			type={'misc'}
+			defaultActiveTab={activeTab}
+			sidebarSections={miscSections}
 			currentPageMatch={currentPageMatch}
 		/>
 		<li>

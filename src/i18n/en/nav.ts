@@ -61,4 +61,10 @@ export default [
 	{ text: 'Misc.', header: true, type: 'api', key: 'misc-resources' },
 		{ text: 'Forms', slug: 'misc-resources/forms', key: 'misc-resources/forms' },
 		{ text: 'Templates', slug: 'misc-resources/templates', key: 'misc-resources/templates' },
+
+	//MISC Tab
+	{ text: 'Misc.', header: true, type: 'misc', key: 'tutorials' },
+		{ text: 'Our Brand Partners', slug: 'our-brand-partners', key: 'our-brand-partners' },
+		{ text: 'Recent Achievements', slug: 'recent-achievements', key: 'recent-achievements' },
+		{ text: 'FAQ’s', slug: 'faqs', key: 'faqs' },
 ] as const;
