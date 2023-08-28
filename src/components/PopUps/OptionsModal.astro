@@ -2,7 +2,7 @@
 // This is the frontmatter section where you can import other components or scripts if needed
 
 import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
-
+import UserInfo from '~/components/UserInfo.astro';
 
 ---
 
@@ -10,7 +10,7 @@ import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
   <ModalWrapper modalType="options">
     <div class="inner">
       <h2>CORE Options</h2>
-      <p>Currently logged in as: <span id="userEmail">userEmail</span></p>
+      <p>Currently logged in as: <UserInfo info="email"/></p>
       
 
       <div class="main">
@@ -97,7 +97,6 @@ import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
     console.log("Delayed function has been executed.");
 
     const user = netlifyIdentity.currentUser();
-   /* document.querySelectorAll('#userEmail').innerHTML(user.email);*/
     console.log(user);
     var elements = document.querySelectorAll('#userEmail');
     
