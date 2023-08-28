@@ -16,6 +16,7 @@ import ReloadPrompt from '../components/ReloadPrompt.astro';
 import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro';
+import FeedbackModal from '~/components/PopUps/FeedbackModal.astro';
 
 export interface Props {
 	content: CollectionEntry<'docs'>['data'];
@@ -170,6 +171,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 
 		<QRCodeModal/>
 		<OptionsModal/> 
+		<FeedbackModal/>
 		<!-- <ReloadPrompt /> -->
 		
 		<!--Start of Tawk.to Script-->
