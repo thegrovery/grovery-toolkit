@@ -31,6 +31,14 @@ export default [
 		{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
 		{ text: 'Tutorial Page Template', slug: 'page-templates/tutorial-page-template/1-step-1', key: 'page-templates/tutorial-page-template/1-step-1' },
 
+		{ text: 'Integrations', header: true, type: 'learn', key: 'integrations' },
+			{ text: 'Salesforce', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+			{ text: 'Hubspot', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+			{ text: 'Sharepoint', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+			{ text: 'Servlet', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+			{ text: 'Veeva', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
+			/*{ text: 'CMSs &amp; CMRs', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },*/
+
 	/*{ text: 'Tutorials', header: true, type: 'learn', key: 'tutorials' },
 		{ text: 'Build a Blog', slug: 'tutorial/0-introduction', key: 'blog-tutorial' },*/
 		// { text: 'Thinking with Islands', slug: 'tutorial/0-introduction', key: 'island-tutorial' },
