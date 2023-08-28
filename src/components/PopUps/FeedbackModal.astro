@@ -2,38 +2,17 @@
 // This is the frontmatter section where you can import other components or scripts if needed
 
 import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
+import FeedbackForm from '~/components/Forms/FeedbackForm.astro';
 
 
 ---
 
-<div class='OptionsModal'>
-  <ModalWrapper modalType="options">
+<div class='FeedbackModal'>
+  <ModalWrapper modalType="feedback">
     <div class="inner">
-      <h2>CORE Options</h2>
-      <p>Currently logged in as: <span id="userEmail">userEmail</span></p>
-      
-
-      <div class="main">
-        
-        <div class="optionCell" onClick="netlifyIdentity.open(); modalClose();">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
-          </div>
-          <div class="text">
-            Log In
-          </div>
-        </div>
-
-        <div class="optionCell">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7l7-7Z"/></svg>
-          </div>
-          <div class="text">
-            Install
-          </div>
-        </div>
-
-      </div>
+      <h2>What’s on your mind?</h2>
+      <p>Have an issue or an idea?  Share it with us, and we'll check it out!</p>
+      <FeedbackForm/>
     </div>
   </ModalWrapper>  
 </div>
@@ -42,7 +21,10 @@ import ModalWrapper from '~/components/PopUps/ModalWrapper.astro';
   $fontSize: 1rem;
   $borderSize: 2px;
   $color: #454257; 
-  .OptionsModal {
+  .FeedbackModal {
+      p{
+        margin-bottom: 1rem;
+      }
       .inner{
         display: flex;
         flex-direction: column;

@@ -7,7 +7,7 @@
 .mobile-sidebar-toggle #menu-toggle {
 	--background-color-default: var(--theme-dim-lighter);
 	--text-color-default: var(--text-color-hocus);
-	--border-color-default: var(--border-color-hocus);
+	--border-color-default: var(--border-color-focus);
 }
 
 @media (min-width: 50em) {

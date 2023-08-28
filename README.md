@@ -99,3 +99,7 @@ When you start the project, check in with the team for the following:
 This project uses a vars file to control the general style of the site.  Colors, fonts, font sizes, spacing , etc. are all set from this location and referenced throughout the projet as variables.  For example, setting the variable `$black` to `#000000` will update all instances of $black throughout the project to your new color.  
 
 You can take this a step further by using "theme variables".  Instead of naming a variable something direct like `$black`, create a variable named something like `$primaryColor` and then set that equal to another variable like `$black`.  This cascading method will give you the best experience with modifying the project's theme, and you should try your best to always use variables instead of directly referencing these styles.
+
+
+### Articles / Documentation for later
+- [Custom PWA Install Experience ](https://web.dev/customize-install/)
