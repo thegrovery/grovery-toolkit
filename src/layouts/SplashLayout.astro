@@ -9,6 +9,7 @@ import { getLanguageFromURL } from '../util';
 import SplashAnimation from '../components/SplashAnimation.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro';
+import FeedbackModal from '~/components/PopUps/FeedbackModal.astro';
 
 export interface Props {
 	title: string;
@@ -53,5 +54,6 @@ const t = useTranslations(Astro);
 		<Footer />
 		<QRCodeModal/>
 		<OptionsModal/> 
+		<FeedbackModal/>
 	</body>
 </html>
