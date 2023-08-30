@@ -7,8 +7,13 @@ import { rtlLanguages } from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
 import { getLanguageFromURL } from '../util';
 import SplashAnimation from '../components/SplashAnimation.astro';
+
+/* Popups/Modals/Lightboxes/Dialogs/etc */
+import ReloadPrompt from '~/components/ReloadPrompt.astro';
 import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro';
+import FeedbackModal from '~/components/PopUps/FeedbackModal.astro';
+import VideoModal from '~/components/PopUps/VideoModal.astro';
 
 export interface Props {
 	title: string;
@@ -53,5 +58,7 @@ const t = useTranslations(Astro);
 		<Footer />
 		<QRCodeModal/>
 		<OptionsModal/> 
+		<FeedbackModal/>
+		<VideoModal/>
 	</body>
 </html>
