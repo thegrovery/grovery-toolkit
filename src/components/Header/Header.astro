@@ -8,6 +8,8 @@ import FeedbackButton from './FeedbackButton.astro';
 import FeedbackButtonNew from './FeedbackButtonNew.astro';
 import OptionsButton from './OptionsButton.astro';
 
+import SimpleSearch from './SimpleSearch';
+
 import { getLanguageFromURL } from '../../util';
 import { getDocSearchStrings, useTranslations } from '../../i18n/util';
 
@@ -81,7 +83,7 @@ const t = useTranslations(Astro);
 		{import.meta.env.PUBLIC_FEATURE_SEARCH=="true" &&
 			<Search {lang} labels={docsearchStrings} />
 		}
-
+		<SimpleSearch client:idle />
 		<OptionsButton/>
 		
 		<SidebarToggle client:idle />
@@ -112,7 +114,7 @@ const t = useTranslations(Astro);
 		display: flex;
 		align-items: center;
 		justify-content: left;
-		overflow: hidden;
+		overflow: visible;
 	}
 
 	/* Logo Dark Theme color changes */
