@@ -4,9 +4,9 @@ import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
 import Search from './Search.astro';
 import ThemeToggleButton from './ThemeToggleButton';
-import FeedbackButton from './FeedbackButton.astro';
 import FeedbackButtonNew from './FeedbackButtonNew.astro';
 import OptionsButton from './OptionsButton.astro';
+import AnnouncementButton from '~/components/Buttons/AnnouncementButton.astro';
 
 import { getLanguageFromURL } from '../../util';
 import { getDocSearchStrings, useTranslations } from '../../i18n/util';
@@ -65,6 +65,7 @@ const t = useTranslations(Astro);
 			</ul>
 		</div>
 
+		<AnnouncementButton/>
 
 		{import.meta.env.PUBLIC_FEATURE_FEEDBACK=="true" &&
 			<FeedbackButtonNew/>
