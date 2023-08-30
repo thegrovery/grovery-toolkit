@@ -21,6 +21,7 @@ import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro';
 import FeedbackModal from '~/components/PopUps/FeedbackModal.astro';
 import VideoModal from '~/components/PopUps/VideoModal.astro';
+import AnnouncementModal from '~/components/PopUps/AnnouncementModal.astro';
 
 export interface Props {
 	content: CollectionEntry<'docs'>['data'];
@@ -177,6 +178,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<OptionsModal/> 
 		<FeedbackModal/>
 		<VideoModal/>
+		<AnnouncementModal/>
 		<!-- <ReloadPrompt /> -->
 		
 		<!--Start of Tawk.to Script-->
