@@ -90,7 +90,7 @@ const { modalType } = Astro.props as Props;
         z-index: 2;   
 
         font-size: var(--theme-text-base);
-        margin: 1.5rem auto auto;
+        //margin: 1.5rem auto auto;
         border: 1px solid var(--theme-divider);
         border-radius: 0.5rem;
         background-color: var(--theme-bg);
@@ -112,11 +112,16 @@ const { modalType } = Astro.props as Props;
 <script type="text/javascript">
   function modalClose(){
     var elements = document.querySelectorAll('.ModalWrapper');
-    
+    modalVideoRemove()
     elements.forEach(element => {
       //target all instances of ModalWrapper
       element.classList.remove("active"); 
     });
+  }
+
+  function modalVideoRemove(){
+    var videoElement = document.querySelector(".ModalWrapper[data-modal='video'] iframe");
+    videoElement.setAttribute('src', '');
   }
 
   document.addEventListener("keydown", function(event) {
