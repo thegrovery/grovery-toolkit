@@ -159,6 +159,14 @@
     
     & .simpleSearch_item.recent {
       // Add any specific styles for recent items if needed
+      .remove {
+        position: absolute;
+        right: 10px;
+        color: var(--custom-grey-1);
+        &:hover {
+            color: var(--custom-green);
+        }
+      }
     }
   
     & button.simpleSearch_close {

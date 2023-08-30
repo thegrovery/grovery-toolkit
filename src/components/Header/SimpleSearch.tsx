@@ -86,6 +86,14 @@ const Search = ({ onClose }: SimpleSearchProps) => {
         }
     };
 
+    const deleteRecentSearch = (title: string) => {
+        const newRecentSearches = recentSearches.filter(item => item.title !== title);
+        setRecentSearches(newRecentSearches);
+        localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
+    };
+
+    const filteredRecentSearches = recentSearches.filter(item => !favorites.some(fav => fav.title === item.title));
+
     const displayFavorites = favorites.map(item => (
         <li class='simpleSearch_item recent'>
             <span 
@@ -100,17 +108,19 @@ const Search = ({ onClose }: SimpleSearchProps) => {
         </li>
     ));
     
-    const displayRecent = recentSearches.filter(item => !favorites.some(fav => fav.title === item.title)).map(item => (
+    const displayRecent = filteredRecentSearches.map(item => (
         <li class='simpleSearch_item recent'>
             <span 
                 onClick={() => toggleFavorite(item.title, item.url)}
                 class='favoriteToggle'
             >
-                {favorites.some(fav => fav.title === item.title) ? selectedStar : unselectedStar}
+            {favorites.some(fav => fav.title === item.title) ? selectedStar : unselectedStar}
             </span>
             <a class='full-link' href={item.url} onClick={() => handleLinkClick(item.title, item.url)}>
                 {item.title}
             </a>
+            {/* Adding a delete button here */}
+            <button class='remove' onClick={() => deleteRecentSearch(item.title)}> × </button>
         </li>
     ));
 
@@ -142,13 +152,13 @@ const Search = ({ onClose }: SimpleSearchProps) => {
     }, []);
 
     return (
-        <div className='simpleSearch_wrap'>
+        <div className='simpleSearch_wrap'  onClick={() => setIsModalOpen(true)}>
             
             <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true" role="img" class="astro-F4DDINW2">
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(-1)" class="astro-F4DDINW2"></path>
             </svg>
 
-            <button onClick={() => setIsModalOpen(true)}>Search</button>
+            <button>Search</button>
             {isModalOpen && (
                 <div class='simpleSearch_bg'>
                     <div className="simpleSearch" ref={modalContentRef}>
@@ -162,8 +172,9 @@ const Search = ({ onClose }: SimpleSearchProps) => {
                         <ul class='simpleSearch_ul'>
                             {favorites.length > 0 && <li><h2>Favorites</h2></li>}
                             {displayFavorites}
-                            
-                            {recentSearches.length > 0 && <li><h2>Recent</h2></li>}
+
+                            {/* Only show the "Recent" heading if filteredRecentSearches has items */}
+                            {filteredRecentSearches.length > 0 && <li><h2>Recent</h2></li>}
                             {displayRecent}
                             
                             {hits.length > 0 && <li><h2>Results</h2></li>}
