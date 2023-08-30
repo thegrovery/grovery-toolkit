@@ -8,6 +8,7 @@ import Button from '~/components/Button.astro'
 import ContributorList from '~/components/ContributorList.astro'
 import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
 import YouTubeEmbed from '~/components/YouTubeEmbed.astro'
+import VideoButton from '~/components/Buttons/VideoButton.astro'
 
 
 
@@ -22,6 +23,24 @@ To make a new page, simply make a copy of this file with a new name.  The subfol
 
 To add/remove a page from the left sidebar nav, edit the file: `src/i18n/en/nav.ts`
 
+## Video Modal/Popup/Lightbox
+
+<VideoButton
+	text="Video Button Example"
+	videoLink="https://www.youtube.com/embed/G_YZZKgWOBQ"
+/>
+
+<VideoButton
+	text="Another Video Button Example"
+	videoLink="https://www.youtube.com/embed/l5cdI3DdSyw"
+/>
+
+<VideoButton
+	text="Even Another Video Button Example"
+	videoLink="https://www.youtube.com/embed/CsR4c4LKBVw"
+/>
+
+
 ## Youtube Embed Section
 
 Markdown is sort of like Word docs for coders - everything is plain text and easily readable, plus some extra features.  Formatting like headings, lists, text treatments, etc are all done using simple things like dashes and hashtags.  You just write plain, intuitive text and the website code handles everything else for you.  No worrying about setting fonts, font sizes, colors, etc - everything is kept consistent by the website's styling code.
@@ -33,7 +52,3 @@ Markdown can be used by coders, marketers, designers, and even your clients - it
 ---
 
 <YouTubeEmbed videoId="ZmYm-4esDgA" />
-
-
-PWA new content test.
-PWA test v0.0.1
