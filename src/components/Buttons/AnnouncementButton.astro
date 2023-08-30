@@ -1,18 +1,20 @@
 ---
 // This is the frontmatter section where you can import other components or scripts if needed
 
-import Button from '~/components/Button.astro'
+import ButtonNotification from '~/components/Buttons/ButtonNotification.astro';
 
 const { videoLink, text } = Astro.props as Props;
 ---
 
 <button class='AnnouncementButton' onclick="modalOpenAnnouncement();">
   Announcements
+  <ButtonNotification/>
 </button>
 
 <style lang="scss">
   
   .AnnouncementButton {
+      position: relative;
       border: 1px solid var(--custom-accent-1-50);
       border-radius: 0.5rem;
       background-color: transparent;
