@@ -6,9 +6,16 @@ import ButtonNotification from '~/components/Buttons/ButtonNotification.astro';
 const { videoLink, text } = Astro.props as Props;
 ---
 
-<button class='AnnouncementButton' onclick="modalOpenAnnouncement();">
+<button 
+  class='AnnouncementButton' 
+  onclick="modalOpenAnnouncement(); buttonNotificationOff();"
+  data-notification="true"
+>
   Announcements
-  <ButtonNotification/>
+  <div class="notificationWrapper">
+    <ButtonNotification/>
+  </div>
+  
 </button>
 
 <style lang="scss">
@@ -30,11 +37,24 @@ const { videoLink, text } = Astro.props as Props;
         position: relative;
         top: 4px;
       }
+
+      .notificationWrapper{
+        opacity: 0;
+      }
+      &[data-notification="true"]{
+        .notificationWrapper{
+          opacity: 1;
+        }
+      }
   }
 
 </style>
 
 <script type="text/javascript">
+  function buttonNotificationOff(){
+    event.currentTarget.setAttribute("data-notification","false");
+  }
+
   function modalOpenAnnouncement(){
     
     //open announcement modal
