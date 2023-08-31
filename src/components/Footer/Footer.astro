@@ -1,9 +1,21 @@
 ---
 import UIString from '../UIString.astro';
+
+const currentYear = new Date().getFullYear();
+
 ---
 
 <footer>
+	
 	<ul class="footer-links">
+		<li class="first">
+			© {currentYear} Grovery CORE RMS
+		</li>
+		<li>
+			<a href=/cookies/">
+				Cookie Policy
+			</a>
+		</li>
 		<li>
 			<a href="https://astro.build/privacy/">
 				<UIString key="footer.privacyPolicy" />
@@ -12,7 +24,7 @@ import UIString from '../UIString.astro';
 	</ul>
 </footer>
 
-<style>
+<style type="scss">
 	footer {
 		padding: 6rem 0 2rem;
 		text-align: center;
@@ -21,11 +33,16 @@ import UIString from '../UIString.astro';
 	}
 
 	.footer-links {
+		border-top: 2px solid var(--custom-grey-1-50);
 		display: flex;
 		gap: 1.5em;
 		justify-content: center;
 		list-style: none;
-		padding: 0;
+		margin: 0 2.5%;
+		padding: 10px;
+		.first {
+			margin-right: auto;
+		}
 	}
 
 	.footer-links a {
