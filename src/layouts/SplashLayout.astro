@@ -14,6 +14,7 @@ import QRCodeModal from '~/components/PopUps/QRCodeModal.astro';
 import OptionsModal from '~/components/PopUps/OptionsModal.astro';
 import FeedbackModal from '~/components/PopUps/FeedbackModal.astro';
 import VideoModal from '~/components/PopUps/VideoModal.astro';
+import AnnouncementModal from '~/components/PopUps/AnnouncementModal.astro';
 
 export interface Props {
 	title: string;
@@ -60,5 +61,6 @@ const t = useTranslations(Astro);
 		<OptionsModal/> 
 		<FeedbackModal/>
 		<VideoModal/>
+		<AnnouncementModal/>
 	</body>
 </html>
