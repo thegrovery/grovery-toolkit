@@ -28,6 +28,7 @@ import Logo from '~/components/SVGs/Logo.astro';
 import NavBlock from '~/components/NavBlock.astro';
 import IfLoggedIn from '~/components/DynamicContent/IfLoggedIn.astro';
 import UserInfo from '~/components/DynamicContent/UserInfo.astro';
+import LoadingPlaceholder from '~/components/DynamicContent/LoadingPlaceholder.astro';
 import SimpleButton from '~/components/Buttons/SimpleButton.astro';
 
 ---
@@ -41,6 +42,9 @@ import SimpleButton from '~/components/Buttons/SimpleButton.astro';
 		
 		<div class="cell border">
 			<h2>Log In, Sign Up, or Log Out</h2>
+			<p>The below section reacts to whether or not you are logged in.</p>
+			<!-- <br/><br/>
+			<LoadingPlaceholder/> -->			
 			<hr/>
 			<IfLoggedIn>
 				
