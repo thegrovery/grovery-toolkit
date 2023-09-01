@@ -9,7 +9,7 @@ import OptionsButton from './OptionsButton.astro';
 import AnnouncementButton from '~/components/Buttons/AnnouncementButton.astro';
 import Logo from '~/components/SVGs/Logo.astro';
 
-import SearchButton from './../Buttons/SearchButton.astro';
+import SimpleSearch from './SimpleSearch';
 
 import { getLanguageFromURL } from '../../util';
 import { getDocSearchStrings, useTranslations } from '../../i18n/util';
@@ -47,12 +47,10 @@ const t = useTranslations(Astro);
 			/>
 		}
 		
-		<!-- {import.meta.env.PUBLIC_FEATURE_SEARCH=="true" &&
+		{import.meta.env.PUBLIC_FEATURE_SEARCH=="true" &&
 			<Search {lang} labels={docsearchStrings} />
-		} -->
-
-		<SearchButton />
-
+		}
+		<SimpleSearch client:idle />
 		<OptionsButton/>
 		
 		<SidebarToggle client:idle />
