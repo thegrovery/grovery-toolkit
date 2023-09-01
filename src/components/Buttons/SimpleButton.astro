@@ -3,12 +3,12 @@
 
 import Button from '~/components/Button.astro'
 
-const { videoLink, text } = Astro.props as Props;
+const { videoLink, text, onClick } = Astro.props as Props;
 ---
 
 <button 
   class='SimpleButton' 
-  onclick="modalOpenVideo();"
+  onclick={onClick}
 >
   {text ? text : "Button Text"}
 </button>

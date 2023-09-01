@@ -24,12 +24,82 @@ if (KNOWN_LANGUAGES.includes(newLangWithRegion)) {
 
 
 import SplashLayout from '../layouts/SplashLayout.astro';
+import Logo from '~/components/SVGs/Logo.astro';
+import NavBlock from '~/components/NavBlock.astro';
+import IfLoggedIn from '~/components/DynamicContent/IfLoggedIn.astro';
+import UserInfo from '~/components/DynamicContent/UserInfo.astro';
+import SimpleButton from '~/components/Buttons/SimpleButton.astro';
+
 ---
 
 <!-- <meta http-equiv="refresh" content="0;url=/en/getting-started" /> -->
 
-<SplashLayout title="Login Test">
-	<h1>Login Test</h1>
-	<p>Temp index page for testing login functions</p>
-	<a href="/en/getting-started">/en/getting-started</a>
+<SplashLayout title="CORE RMS">
+	<h1>Welcome to CORE RMS</h1>
+	<br/><br/>
+	<div class="content">
+		
+		<div class="cell border">
+			<h2>Log In, Sign Up, or Log Out</h2>
+			<hr/>
+			<IfLoggedIn>
+				
+				<div slot="loggedIn">
+					<p>You're logged in.  Currently logged in as: <UserInfo info="email"/></p>
+					<SimpleButton text="Log Out" onClick="netlifyIdentity.logout();" />
+				</div>
+
+				<div slot="loggedOut">
+					<p>You're logged out</p>
+					<SimpleButton text="Log In" onClick="netlifyIdentity.open('login');" />
+					<SimpleButton text="Sign Up" onClick="netlifyIdentity.open('signup');" />
+				</div>
+
+			</IfLoggedIn>
+		</div>
+		
+		<div class="cell">
+			<NavBlock
+				icon="gala:brochure"  
+				title="Getting Started" 
+				description="Learn how to use CORE and where to find the information you need." 
+				viewDetailsButtonText="Explore Resources" 
+				width="half" 
+				resourceDetailsLink="/en/getting-started/" 
+			/>
+		</div>
+
+	</div>
+	
 </SplashLayout>
+
+<style lang="scss">
+	.content{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 1200px;
+
+		.cell{
+			width: 50%;
+			position: relative;
+			//border: dashed 3px #000;
+			padding: 2rem;
+
+			&.border:after{
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 0px;
+				transform: translate(0px, -50%);
+				height: 300px;
+				width: 1px;
+				border-right: solid 1px #000;
+			}
+		}
+
+	}
+</style>
