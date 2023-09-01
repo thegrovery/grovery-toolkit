@@ -44,5 +44,27 @@ const { heading, body } = Astro.props as Props;
   </div>
 
 <style lang="scss">
-  
+  /* Logo height as image -- still commented out above btw */
+	.logo img {
+		height: 60px;
+	}
+	/* Logo as inline svg */
+	.logo svg {
+		height: 60px;
+		width: auto;
+		display: block;
+		color: var(--theme-accent);
+    transition: all .2s ease-in-out;
+	}
+	/* increase logo size on tablet & desktop */
+	@media (min-width: 800px) {
+		.logo svg {
+		height: 80px;
+		}
+	}
+	@media (min-width: 999px) {
+		.logo svg {
+		height: 90px;
+		}
+	}
 </style>
