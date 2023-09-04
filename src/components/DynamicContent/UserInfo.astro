@@ -15,12 +15,10 @@ const { info } = Astro.props as Props;
 
 <script>
   function delayedFunction() {
-    console.log("Delayed function has been executed.");
-
+    
     //grab all user info
     const user = netlifyIdentity.currentUser();
-    console.log(user);
-
+    
     //user email
     var elements = document.querySelectorAll('.UserInfo[data-info="email"]');
     elements.forEach(element => {
@@ -35,9 +33,5 @@ const { info } = Astro.props as Props;
 
   const delayInSeconds = 5; // Change this to the desired delay in seconds
   waitForDelay(delayInSeconds, delayedFunction);
-
-
-  
-
 
 </script>
