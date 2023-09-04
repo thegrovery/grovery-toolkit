@@ -31,6 +31,19 @@ const Search = () => {
     const handleLinkClick = (title: string, url: string) => {
         saveSearchToRecent(title, url);
     };
+
+    const highlightText = (text, highlight) => {
+        let parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+        return (
+            <span>
+                {parts.map((part, i) =>
+                i % 2 === 0
+                    ? part
+                    : <span style={{ textDecoration: 'underline', backgroundColor: 'var(--custom-teal-90)' }}>{part}</span>
+                )}
+            </span>
+        );
+    };
     
     const unselectedStar = (
         <svg xmlns="http://www.w3.org/2000/svg" width="20.728" height="19.786" viewBox="0 0 20.728 19.786">
@@ -61,7 +74,7 @@ const Search = () => {
     };
 
     useEffect(() => {
-        if (query.length > 2) {
+        if (query.length > 0) {
             handleSearch();
         } else {
             setHits([]);
@@ -134,17 +147,17 @@ const Search = () => {
                 {displayRecent}
                 {hits.length > 0 && <li><h2>Results</h2></li>}
                 {hits.map(hit => (
-                    <li className='simpleSearch_item'>
-                        <span 
-                            onClick={() => toggleFavorite(hit.title, hit.url)}
-                            className='favoriteToggle'
-                        >
-                            {favorites.some(fav => fav.title === hit.title) ? selectedStar : unselectedStar}
-                        </span>
-                        <a className='full-link' href={hit.url} onClick={() => handleLinkClick(hit.title, hit.url)}>
-                            {hit.title}
-                        </a>
-                    </li>
+                <li className='simpleSearch_item'>
+                    <span 
+                    onClick={() => toggleFavorite(hit.title, hit.url)}
+                    className='favoriteToggle'
+                    >
+                    {favorites.some(fav => fav.title === hit.title) ? selectedStar : unselectedStar}
+                    </span>
+                    <a className='full-link' href={hit.url} onClick={() => handleLinkClick(hit.title, hit.url)}>
+                    {highlightText(hit.title, query)}
+                    </a>
+                </li>
                 ))}
             </ul>
             {hits.length === 0 && filteredRecentSearches.length === 0 && favorites.length === 0 && (
