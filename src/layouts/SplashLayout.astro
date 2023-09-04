@@ -7,6 +7,7 @@ import { rtlLanguages } from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
 import { getLanguageFromURL } from '../util';
 import SplashAnimation from '../components/SplashAnimation.astro';
+import SessionManager from '~/components/SessionManager.astro';
 
 /* Popups/Modals/Lightboxes/Dialogs/etc */
 import ReloadPrompt from '~/components/ReloadPrompt.astro';
@@ -30,6 +31,7 @@ const t = useTranslations(Astro);
 <html dir={dir} lang={bcpLang} class="initial">
 	<head>
 		<HeadCommon />
+		<SessionManager/>
 		<title>{`${title} 🚀 ${t('site.title')}`}</title>
 		<style>
 			html,

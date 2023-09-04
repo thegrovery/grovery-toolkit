@@ -5,7 +5,7 @@
 
 <script is:inline>
   
-  var SessionManager = {
+  const SessionManager = {
     setItem: function(key, value) {
       if (typeof value === 'object') {
         sessionStorage.setItem(key, JSON.stringify(value));
