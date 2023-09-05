@@ -1,12 +1,13 @@
 #menu-toggle {
 	--border-color-default: transparent;
+	border: 1px solid var(--custom-accent-1-50);
 	margin-inline-end: -0.25rem;
 	transition-property: border-color, background-color, color;
 }
 
 .mobile-sidebar-toggle #menu-toggle {
 	--background-color-default: var(--theme-dim-lighter);
-	--text-color-default: var(--text-color-hocus);
+	--text-color-default: var(--text-color-focus);
 	--border-color-default: var(--border-color-focus);
 }
 
@@ -15,3 +16,19 @@
 		display: none;
 	}
 }
+
+/* .hamburger-box {
+	height: 25px !important;
+	width: 25px !important;
+	display: flex !important;
+	
+}
+.hamburger {
+	padding: 5px !important;
+	border-radius: .5rem !important;
+	min-height: 34px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	width: 25px !important;
+	height: 3px !important;
+} */

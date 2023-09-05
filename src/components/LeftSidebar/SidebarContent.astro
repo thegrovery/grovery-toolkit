@@ -84,13 +84,16 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 	.nav-group-title {
 		font-size: 1em;
 		font-weight: 600;
-		padding: 0.3rem 2rem;
+		padding: 0.5rem 2rem;
 		background-color: var(--custom-dark-blue);
-		border-radius: 1em 0 0 1em;
+		
 		h2{
 			background: none;
 			color: var(--custom-white)
 		}
+		@media (min-width: 50em) {
+			border-radius: 2em 0 0 2em;
+		} 
 	}
 
 	.nav-link a {
@@ -104,7 +107,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 		width: calc(100% - #{$indent});
 		position: relative;
 		left: $indent;
-		border-radius: 1em 0 0 1em;
+		border-radius: 2em 0 0 2em;
 
 		&:hover,
 		&:focus {

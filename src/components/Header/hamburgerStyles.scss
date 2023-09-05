@@ -1,0 +1,25 @@
+// Override variables
+
+$hamburger-padding-x           : 5px;
+$hamburger-padding-y           : 5px;
+
+$hamburger-layer-width         : 22px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 4px;
+$hamburger-layer-color         : var(--theme-text);
+
+$hamburger-hover-opacity       : 1;
+
+// Import hamburgers after the overrides
+@import "hamburgers/_sass/hamburgers/hamburgers";
+
+
+#menu-toggle {
+    // display: flex;
+    min-height: 35px;
+    align-items: center;
+    border-radius: .5rem;
+    &:hover, &:focus {
+        background-color: var(--custom-accent-2-10);
+    }
+}
