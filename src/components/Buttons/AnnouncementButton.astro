@@ -2,7 +2,7 @@
 // This is the frontmatter section where you can import other components or scripts if needed
 
 import ButtonNotification from '~/components/Buttons/ButtonNotification.astro';
-
+import { Icon } from 'astro-icon';
 
 
 const { videoLink, text } = Astro.props as Props;
@@ -18,9 +18,12 @@ const { videoLink, text } = Astro.props as Props;
   "
   data-notification="false"
 >
-  Announcements
-  <div class="notificationWrapper">
-    <ButtonNotification/>
+  <div class="AnnounceButton_inner">
+    <Icon name=ic:outline-notification-important />
+    <span>Announcements</span>
+    <div class="notificationWrapper">
+      <ButtonNotification/>
+    </div>
   </div>
   
 </button>
@@ -39,12 +42,24 @@ const { videoLink, text } = Astro.props as Props;
       &:hover{
         background-color: var(--custom-accent-2-10);
       }
-
-      svg{
-        position: relative;
-        top: 4px;
+      min-height: 36px;
+      span {
+        display: none;
+        // color: var(--theme-text-lighter);
       }
-
+      @media (min-width: 800px) {
+        padding: 0.25em 1.5em 0.25em 0.75em;
+        span {
+          display: block;
+        }
+        svg {
+          margin: 0 10px 0 0;
+        }
+      }
+      .AnnounceButton_inner {
+        display: flex;
+        align-items: center;
+      }
       .notificationWrapper{
         opacity: 0;
       }
