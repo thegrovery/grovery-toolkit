@@ -25,7 +25,11 @@
 /* ======================== */
 /* ===== Accent Colors ===== */
 /* ======================== */
-
+	$uiKit--black: 				#000000;
+	$uiKit--white: 				#FFFFFF;
+	$uiKit--gray: 					#A69F9F;
+	$uiKit--dark-gray: 	#595454;
+	$uiKit--light-gray: 	#EEE7E7;
 
 /* ======================= */
 /* ===== Named Colors ===== */
@@ -33,3 +37,22 @@
 	$uiKit--brand-color-1: 	$uiKit--burgundy;
 	$uiKit--brand-color-2: 	$uiKit--dark-blue;
 	$uiKit--brand-color-3: 	$uiKit--orange;
+
+
+/* ======================================= */
+/* ===== Component-Specific Variables ===== */
+/* ======================================= */
+	/* ===== Background Colors ===== */
+
+
+	/* ===== Sidebar Nav Colors ===== */
+		//Left Nav
+		$uiKit--component-left-sidebar-color-1: $uiKit--brand-color-1; 
+		$uiKit--component-left-sidebar-color-2: $uiKit--brand-color-2; 
+		//Right Nav
+		$uiKit--component-right-sidebar-color-1: $uiKit--brand-color-1; 
+		$uiKit--component-right-sidebar-color-2: $uiKit--brand-color-2; 
+
+	/* ===== Button Colors ===== */
+		$uiKit--component-button-color-1: $uiKit--brand-color-1; 
+		$uiKit--component-button-color-2: $uiKit--brand-color-2; 
