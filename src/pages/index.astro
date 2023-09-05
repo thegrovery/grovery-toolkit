@@ -88,7 +88,10 @@ import SimpleButton from '~/components/Buttons/SimpleButton.astro';
 		max-width: 1200px;
 
 		.cell{
-			width: 50%;
+			@media (min-width: 800px) {
+				width: 50%;
+			}
+			width: 100%;
 			position: relative;
 			//border: dashed 3px #000;
 			padding: 2rem;
