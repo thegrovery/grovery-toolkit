@@ -24,6 +24,9 @@ const { heading, body } = Astro.props as Props;
       font-size: 1rem;
       padding: 0.25em 0.5em;
       line-height: calc(1 / var(--theme-text-xs));
+      [astro-icon] {
+        color: var(--theme-text);
+      }
       &:hover{
         background-color: var(--custom-accent-2-10);
       }
