@@ -1,14 +1,16 @@
 /*========================================*/
-//	Big SCSS Comment
+//	Color Variables
 //	
-//	Put your notes here.
+//	Use this section to assign colors using the following heirarchy:
+//
+//		Base Colors > Brand Colors > Component Colors
 //	
 /*========================================*/
 
 
-/* ======================= */
-/* ===== Brand Colors ===== */
-/* ======================= */
+/* ====================== */
+/* ===== Base Colors ===== */
+/* ====================== */
 	$uiKit--burgundy: 		#054C62;
 	$uiKit--dark-blue: 	#81C051;
 	$uiKit--orange: 			#81C051;
@@ -20,39 +22,53 @@
 	$uiKit--white: 				#FFFFFF;
 	$uiKit--gray: 					#A69F9F;
 	$uiKit--dark-gray: 	#595454;
-	$uiKit--light-gray: 	#EEE7E7;
+	$uiKit--light-gray: 	#80808010;
 
 /* ======================== */
 /* ===== Accent Colors ===== */
 /* ======================== */
-	$uiKit--black: 				#000000;
-	$uiKit--white: 				#FFFFFF;
-	$uiKit--gray: 					#A69F9F;
-	$uiKit--dark-gray: 	#595454;
-	$uiKit--light-gray: 	#EEE7E7;
+	$uiKit--teal: #00DFC325;
+
+
+	$uiKit--background-gradient: 
+		linear-gradient(180deg,
+		var(--theme-bg-gradient-top) 0%,
+		var(--theme-bg-gradient-bottom) 100%)
+
 
 /* ======================= */
-/* ===== Named Colors ===== */
+/* ===== Brand Colors ===== */
 /* ======================= */
 	$uiKit--brand-color-1: 	$uiKit--burgundy;
 	$uiKit--brand-color-2: 	$uiKit--dark-blue;
 	$uiKit--brand-color-3: 	$uiKit--orange;
 
 
+/*========================================*/
+//	
+//	Component-Specific Variables
+//	
+//	Use this section to easily assign colors to 
+//	specific variables directly from this file
+//	
+/*========================================*/
+
 /* ======================================= */
 /* ===== Component-Specific Variables ===== */
 /* ======================================= */
 	/* ===== Background Colors ===== */
-
+		$uiKit--background-main: 					$uiKit--background-gradient;
+		$uiKit--background-dark: 				$uiKit--light-gray;
+		$uiKit--background-highlight: 	$uiKit--teal;
 
 	/* ===== Sidebar Nav Colors ===== */
 		//Left Nav
-		$uiKit--component-left-sidebar-color-1: $uiKit--brand-color-1; 
-		$uiKit--component-left-sidebar-color-2: $uiKit--brand-color-2; 
+		$uiKit--component-left-sidebar-color-1: 		$uiKit--brand-color-1; 
+		$uiKit--component-left-sidebar-color-2: 		$uiKit--brand-color-2; 
 		//Right Nav
-		$uiKit--component-right-sidebar-color-1: $uiKit--brand-color-1; 
-		$uiKit--component-right-sidebar-color-2: $uiKit--brand-color-2; 
+		$uiKit--component-right-sidebar-color-1: 	$uiKit--brand-color-1; 
+		$uiKit--component-right-sidebar-color-2: 	$uiKit--brand-color-2; 
 
 	/* ===== Button Colors ===== */
-		$uiKit--component-button-color-1: $uiKit--brand-color-1; 
-		$uiKit--component-button-color-2: $uiKit--brand-color-2; 
+		$uiKit--component-button-color-1: 		$uiKit--brand-color-1; 
+		$uiKit--component-button-color-2: 		$uiKit--brand-color-2; 
