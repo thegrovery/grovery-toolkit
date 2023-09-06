@@ -23,10 +23,13 @@ const { heading, body } = Astro.props as Props;
       &:hover{
         background-color: var(--custom-accent-2-10);
       }
-
+      [astro-icon] {
+        color: var(--theme-text);
+      }
       svg{
         position: relative;
         top: 4px;
+        fill: var(--theme-text);
       }
   }
 
