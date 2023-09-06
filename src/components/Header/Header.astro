@@ -4,7 +4,7 @@ import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
 import Search from './Search.astro';
 import ThemeToggleButton from './ThemeToggleButton';
-import FeedbackButtonNew from './FeedbackButtonNew.astro';
+import FeedbackButton from '~/components/Buttons/FeedbackButton.astro';
 import OptionsButton from './OptionsButton.astro';
 import AnnouncementButton from '~/components/Buttons/AnnouncementButton.astro';
 import Logo from '~/components/SVGs/Logo.astro';
@@ -37,7 +37,7 @@ const t = useTranslations(Astro);
 		<AnnouncementButton/>
 
 		{import.meta.env.PUBLIC_FEATURE_FEEDBACK=="true" &&
-			<FeedbackButtonNew/>
+			<FeedbackButton/>
 		}
 
 		{import.meta.env.PUBLIC_FEATURE_DARKMODE=="true" &&
