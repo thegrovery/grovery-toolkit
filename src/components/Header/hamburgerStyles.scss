@@ -3,7 +3,7 @@
 $hamburger-padding-x           : 6px;
 $hamburger-padding-y           : 5px;
 
-$hamburger-layer-width         : 18px;
+$hamburger-layer-width         : 16px;
 $hamburger-layer-height        : 2px;
 $hamburger-layer-spacing       : 4px;
 $hamburger-layer-color         : var(--theme-text);
@@ -36,10 +36,9 @@ $hamburger-hover-opacity       : 1;
 	--text-color-default: var(--text-color-hocus);
 	--border-color-default: var(--border-color-focus);
 }
-
+ */
 @media (min-width: 50em) {
 	#menu-toggle {
 		display: none;
 	}
 }
- */
