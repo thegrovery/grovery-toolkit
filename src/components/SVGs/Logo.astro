@@ -57,14 +57,24 @@ const { heading, body } = Astro.props as Props;
     transition: all .2s ease-in-out;
 	}
 	/* increase logo size on tablet & desktop */
-	@media (min-width: 800px) {
+	@media (min-width: 20em) {
 		.logo svg {
-		height: 80px;
+		height: 40px;
 		}
 	}
-	@media (min-width: 999px) {
+	@media (min-width: 23.5em) {
 		.logo svg {
-		height: 90px;
+		height: 50px;
+		}
+	}
+	@media (min-width: 30em) {
+		.logo svg {
+		height: 60px;
+		}
+	}
+	@media (min-width: 51em) {
+		.logo svg {
+		height: 80px;
 		}
 	}
 </style>

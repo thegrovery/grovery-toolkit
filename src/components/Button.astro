@@ -11,11 +11,11 @@ export let href; // optional href prop
   href={Astro.props.href}
   data-tag={Astro.props['data-tag']}
   {...(Astro.props.href && Astro.props.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+  {...Astro.props}
 >
   <slot></slot>
   {Astro.props.icon && <Icon name={Astro.props.icon} />}
 </a>
-
 
 
 <!-- Styles for the primary and secondary buttons -->
