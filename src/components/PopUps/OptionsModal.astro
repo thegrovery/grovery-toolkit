@@ -33,6 +33,15 @@ import UserInfo from '~/components/DynamicContent/UserInfo.astro';
           </div>
         </div>
 
+        <div class="optionCell" onClick="SessionManager.clearAll(); location.reload();">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.413-.588T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.588 1.413T17 21H7Zm2-4h2V8H9v9Zm4 0h2V8h-2v9Z"/></svg>
+          </div>
+          <div class="text">
+            Clear Data
+          </div>
+        </div>
+
       </div>
     </div>
   </ModalWrapper>  
@@ -94,12 +103,8 @@ import UserInfo from '~/components/DynamicContent/UserInfo.astro';
 
 
   function delayedFunction() {
-    console.log("Delayed function has been executed.");
-
     const user = netlifyIdentity.currentUser();
-    console.log(user);
     var elements = document.querySelectorAll('#userEmail');
-    
     elements.forEach(element => {
       //target all instances of ModalWrapper
       element.innerHTML = user.email; 
@@ -112,7 +117,6 @@ import UserInfo from '~/components/DynamicContent/UserInfo.astro';
 
   const delayInSeconds = 5; // Change this to the desired delay in seconds
   waitForDelay(delayInSeconds, delayedFunction);
-
 
   function modalClose(){
     var elements = document.querySelectorAll('.ModalWrapper');

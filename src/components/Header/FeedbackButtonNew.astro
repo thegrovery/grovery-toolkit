@@ -2,12 +2,16 @@
 // This is the frontmatter section where you can import other components or scripts if needed
 
 import Button from '~/components/Button.astro'
+import { Icon } from 'astro-icon';
 
 const { heading, body } = Astro.props as Props;
 ---
 
 <button class='FeedbackButton' onclick="modalOpenFeedback();">
-  Feedback
+  <div class="FeedbackButton_inner">
+    <Icon name="akar-icons:clipboard" />
+    <span>Feedback</span>
+  </div>
 </button>
 
 <style lang="scss">
@@ -23,10 +27,27 @@ const { heading, body } = Astro.props as Props;
       &:hover{
         background-color: var(--custom-accent-2-10);
       }
-
+      min-height: 36px;
+      span {
+        display: none;
+        // color: var(--theme-text-lighter);
+      }
+      @media (min-width: 800px) {
+        padding: 0.25em 1.5em 0.25em 0.75em;
+        span {
+          display: block;
+        }
+        svg {
+          margin: 0 10px 0 0;
+        }
+      }
+      .FeedbackButton_inner {
+        display: flex;
+        align-items: center;
+      }
       svg{
         position: relative;
-        top: 4px;
+        // top: 4px;
       }
   }
 

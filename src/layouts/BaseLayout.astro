@@ -14,6 +14,7 @@ import { getPageCategory } from '../util/getPageCategory';
 import { pwaInfo } from 'virtual:pwa-info';
 
 import SplashAnimation from '../components/SplashAnimation.astro';
+import SessionManager from '~/components/SessionManager.astro';
 
 /* Popups/Modals/Lightboxes/Dialogs/etc */
 import ReloadPrompt from '~/components/ReloadPrompt.astro';
@@ -49,6 +50,7 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 		<HeadCommon />
 		<HeadSEO content={content} canonicalURL={canonicalURL} />
 		<HeadAnalytics/>
+		<SessionManager/>
 		<title set:html={formatTitle(content)} />
 		<style>
 			body{
