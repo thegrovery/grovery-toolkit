@@ -43,6 +43,9 @@ const doneLabel = t('progress.done');
 <script>
 	import { ProgressStore } from './ProgressStore';
 
+	console.log("CheckMark HTML Element creation started");
+	console.log(ProgressStore);
+
 	class CheckMark extends HTMLElement {
 		private readonly loaded: boolean;
 		private readonly todoLabel: string;

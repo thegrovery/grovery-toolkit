@@ -45,6 +45,7 @@ const mainSection = id === "mainsection";
 						<ol class="lessons">
 							{unit.lessons.map(async (lesson, index) => {
 								const slugWithoutLang = stripLangFromSlug(lesson.slug);
+								console.log("units.map section in TutorialNav")
 								return (
 									<li>
 										<div>
