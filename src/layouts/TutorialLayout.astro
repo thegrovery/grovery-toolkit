@@ -9,6 +9,7 @@ import { getTutorialPages, getTutorialUnits } from '../util/getTutorialPages';
 import BaseLayout from './BaseLayout.astro';
 import type { TutorialEntry } from '~/content/config';
 import TutorialNav from '~/components/tutorial/TutorialNav.astro';
+import TutorialTracker from '~/components/tutorial/TutorialTracker.astro';
 
 export interface Props {
 	content: TutorialEntry['data'];
@@ -33,7 +34,10 @@ const { next } = getPreviousAndNext(
 <BaseLayout {...Astro.props}>
 	<RightSidebar slot="secondary-sidebar" />
 	<PageContent content={Astro.props.content} {...{ next }}>
-		<nav><TutorialNav id="mainsection" /></nav>
+		<nav>
+			<TutorialNav id="mainsection" />
+			<TutorialTracker text="tutorial-1"/>
+		</nav>
 		<MobileTutorialNav slot="before-article" />
 		<p class="unit" slot="before-title">
 			Section {currentUnitIndex + 1} • {currentUnit.title}

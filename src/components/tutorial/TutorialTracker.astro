@@ -1,0 +1,88 @@
+---
+import tutorials from '~/data/tutorials.json';
+
+const text = Astro.props.text;
+
+const processText = (text) => {
+  let segments = [text];
+  for (const [tutorialName, tutorialValue] of Object.entries(tutorials)) {
+    segments = segments.flatMap((segment) => {
+      if (typeof segment === 'string') {
+        const parts = segment.split(new RegExp(`\\b${tutorialName}\\b`));
+        const newSegments = [];
+        for (let i = 0; i < parts.length - 1; i++) {
+          newSegments.push(parts[i], { tutorialName, tutorialValue });
+        }
+        newSegments.push(parts[parts.length - 1]);
+        return newSegments;
+      }
+      return segment;
+    });
+  }
+  return segments;
+};
+
+
+const processedSegments = processText(text);
+const tutorialsFull = tutorials;
+---
+
+<div class="TutorialTracker">
+    <!-- {processedSegments.map((segment, index) => {
+      if (typeof segment === 'string') {
+        return segment;
+      }
+      return (
+        <span key={index} set:html={segment.tutorialName} />,
+        <span key={index} set:html={segment.tutorialValue} />
+      );
+    })} -->
+    <div id="tutorialTrackerContent">Full Tutorials Progress:</div>
+</div>
+
+
+
+<script>
+  // Parse the JSON string into an object
+  //const jsonObject = JSON.parse({tutorialsFull});
+
+  const response = await fetch("/data/tutorials.json");
+  const tutorials = await response.json();
+  console.log(tutorials);
+  const jsonObject = tutorials;
+
+  // Display specific top-level entries
+  const displaySpecificEntries = (jsonObject, keysToDisplay) => {
+    const outputDiv = document.getElementById("tutorialTrackerContent");
+
+    keysToDisplay.forEach((key) => {
+      if (jsonObject.hasOwnProperty(key)) {
+        const value = jsonObject[key];
+
+        let displayValue = "";
+
+        if (Array.isArray(value)) {
+          displayValue = `<ul>${value.map(v => `<li>${v}</li>`).join('')}</ul>`;
+        } else if (typeof value === "object") {
+          displayValue = `
+            <ul class="tutorialGroup">
+              ${Object.entries(value).map(([k, v]) => `
+              <li class="tutorialUnit">
+                <div class="checkbox" data-complete="${v}"></div>
+                <span class="sectionName">${k}: </span>
+                <span class="sectionValue">${v}</span>
+              </li>`).join('')}
+            </ul>`;
+        } else {
+          displayValue = value;
+        }
+
+        outputDiv.innerHTML += `<p><strong>${key}:</strong> ${displayValue}</p>`;
+      }
+    });
+  };
+
+  // Call the function and specify the top-level keys you want to display
+  displaySpecificEntries(jsonObject, ["tutorial-1", "tutorial-2", "tutorial-3"]);
+
+</script>
