@@ -165,9 +165,12 @@ export class ProgressStore {
 	private static load(): ProgressState {
 		try {
 			const state = JSON.parse(localStorage.getItem(ProgressStore.key) || '{}');
+			console.log("===== stored progress state detected =====")
+			console.log(state)
 			if (ProgressStore.validate(state)) return state;
 		} catch (e) {
 			/* assume no stored state */
+			console.log("===== no stored progress state detected =====")
 		}
 		return {};
 	}
