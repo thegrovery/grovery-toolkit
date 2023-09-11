@@ -10,11 +10,17 @@ const { text } = Astro.props as Props;
 ---
 
 <div class="LoadingPlaceholder">
-  <span class="text">
-    {text ? text : "Loading"}
-  </span>
+  <!-- <button id="simulateLogin">Simulate Login</button>
+  <button id="simulateInit">Simulate Init</button> -->
+
+  
   <div class="loading-bar-container">
-    <div class="loading-bar"></div>
+    <span class="text">
+      {text ? text : "Loading"}
+    </span>
+    <div class="loading-bar">
+      
+    </div>
   </div>
 </div>
 
@@ -22,27 +28,33 @@ const { text } = Astro.props as Props;
 
 const loadingBarContainer = document.querySelector(".loading-bar-container");
 const loadingBar = document.querySelector(".loading-bar");
-  
-// Start loading when login initiates
-netlifyIdentity.on("login", (user) => {
-    console.log("Login event triggered");
-  loadingBarContainer.style.display = "block";  // Show the loading bar
-  loadingBar.style.width = "50%"; // Set it to 50% to indicate it's in progress
-});
 
-netlifyIdentity.on("init", (user) => {
-  console.log("Init event triggered");
-  if (user) {
+// Logic to handle the loading bar animation
+function handleLogin() {
+    console.log("Simulated Login event triggered");
+    loadingBarContainer.style.display = "block";  // Show the loading bar
+    loadingBar.style.width = "50%"; // Set it to 50% to indicate it's in progress
+}
+
+function handleInit() {
+    console.log("Simulated Init event triggered");
     loadingBar.style.width = "100%"; // Fully loaded
 
     // Hide the loading bar after a delay
     setTimeout(() => {
-      loadingBarContainer.style.display = "none";
+        loadingBarContainer.style.display = "none";
     }, 1000);
-  }
-});
+}
 
-// Add other events if needed...
+// Start loading when login initiates
+netlifyIdentity.on("login", handleLogin);
+
+netlifyIdentity.on("init", handleInit);
+
+// Add event listeners for the simulation buttons
+// document.getElementById("simulateLogin").addEventListener("click", handleLogin);
+// document.getElementById("simulateInit").addEventListener("click", handleInit);
+
 
 </script>
 
@@ -51,28 +63,40 @@ netlifyIdentity.on("init", (user) => {
   position: relative;
 
   .text {
-    display: block;
-    margin-bottom: 10px; // Add some space between the text and the bar
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: .85rem;
+    // margin-bottom: 10px; // Add some space between the text and the bar
   }
 
   .text:after {
     content: ' .';
-    font-size: 2em;
+    color: var(--custom-dark-grey);
+    // font-size: 2em;
     animation: dots 1.5s steps(5, end) infinite;
   }
 
   .loading-bar-container {
-    width: 100%;
-    height: 4px;
-    background-color: #e0e0e0;
+    width: 80%;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--custom-teal-90);
+    background-color: var(--custom-grey);
     position: relative;
   }
 
   .loading-bar {
     height: 100%;
     width: 0%; // Initially, the bar will be hidden
-    background-color: #3498db;
+    background-color: var(--custom-teal);
     position: relative;
+    border-radius: 20px;
     transition: width 0.3s;
   }
 
