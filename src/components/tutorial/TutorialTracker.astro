@@ -67,10 +67,14 @@ const tutorialsFull = tutorials;
           displayValue = `
             <ul class="tutorialGroup">
               ${Object.entries(value).map(([k, v]) => `
-              <li class="tutorialUnit">
-                <div class="checkbox" data-complete="${v}"></div>
+              <li 
+                class="tutorialUnit"
+                data-complete="${v}"
+                data-tutorial-id="${key}-${k}"
+              >
+                <div class="checkbox"></div>
                 <span class="sectionName">${k}: </span>
-                <span class="sectionValue">${v}</span>
+                <span class="sectionValue">Loading...</span>
               </li>`).join('')}
             </ul>`;
         } else {

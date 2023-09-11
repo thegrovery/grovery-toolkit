@@ -9,7 +9,9 @@ import { getTutorialPages, getTutorialUnits } from '../util/getTutorialPages';
 import BaseLayout from './BaseLayout.astro';
 import type { TutorialEntry } from '~/content/config';
 import TutorialNav from '~/components/tutorial/TutorialNav.astro';
-import TutorialTracker from '~/components/tutorial/TutorialTracker.astro';
+
+
+
 
 export interface Props {
 	content: TutorialEntry['data'];
@@ -36,7 +38,7 @@ const { next } = getPreviousAndNext(
 	<PageContent content={Astro.props.content} {...{ next }}>
 		<nav>
 			<TutorialNav id="mainsection" />
-			<TutorialTracker text="tutorial-1"/>
+			
 		</nav>
 		<MobileTutorialNav slot="before-article" />
 		<p class="unit" slot="before-title">
@@ -57,3 +59,38 @@ const { next } = getPreviousAndNext(
 		border-radius: 30px;
 	}
 </style>
+
+<script type="text/javascript">
+	function TutorialTrackerUpdate(){
+		console.log("TutorialTrackerUpdate function started");
+		var elements = document.querySelectorAll('.tutorialUnit');
+		elements.forEach(element => {
+			console.log("TutorialTrackerUpdate forEach section");
+			//get tutorial id attr of current element
+			var tutorialId = element.getAttribute("data-tutorial-id");
+			var storageEntry = SessionManager.getItem(tutorialId)
+
+			//if tutorial id in session data is complete, update tracker display
+			console.log(tutorialId);
+			console.log(SessionManager.getItem(tutorialId));
+			if(storageEntry == "complete"){
+				console.log("TutorialTrackerUpdate session data section");
+				//do the thing
+			    element.setAttribute("data-complete","complete");
+			    //update text inside tracker
+			    var subElement = element.querySelector(".sectionValue");
+			    subElement.innerHTML = "Complete";
+			} else {
+				//update text inside tracker
+				var subElement = element.querySelector(".sectionValue");
+				subElement.innerHTML = "Incomplete";
+			}
+
+		});
+	}
+
+	setTimeout(() => {
+	  TutorialTrackerUpdate();
+	}, 3000);
+
+</script>
