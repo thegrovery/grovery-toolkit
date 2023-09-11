@@ -28,19 +28,13 @@ const tutorialsFull = tutorials;
 ---
 
 <div class="TutorialTracker">
-    <!-- {processedSegments.map((segment, index) => {
-      if (typeof segment === 'string') {
-        return segment;
-      }
-      return (
-        <span key={index} set:html={segment.tutorialName} />,
-        <span key={index} set:html={segment.tutorialValue} />
-      );
-    })} -->
-    <div id="tutorialTrackerContent">Full Tutorials Progress:</div>
+    <h2>Tutorial Tracker v2</h2>
+    <div id="tutorialTrackerContent"></div>
 </div>
 
-
+<style lang="scss">
+  
+</style>
 
 <script>
   // Parse the JSON string into an object
@@ -72,7 +66,9 @@ const tutorialsFull = tutorials;
                 data-complete="${v}"
                 data-tutorial-id="${key}-${k}"
               >
-                <div class="checkbox"></div>
+                <div class="checkbox">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#FFFFFF" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4L9.55 18Z"/></svg>
+                </div>
                 <span class="sectionName">${k}: </span>
                 <span class="sectionValue">Loading...</span>
               </li>`).join('')}

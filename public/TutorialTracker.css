@@ -1,7 +1,45 @@
 .TutorialTracker{
-   margin-top: 2rem;
+   background-color: var(--custom-teal-25);
+   padding: 1em;
 }
 
-.TutorialTracker .tutorialGroup{
-   padding-left: 2rem;
-}
+/*Tutorial Groups*/
+   .TutorialTracker .tutorialGroup{
+      padding-left: 1em;
+      margin-bottom: 2em;
+   }
+
+/*Individual Units*/
+ .TutorialTracker .tutorialUnit{
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+ }
+
+ .TutorialTracker .sectionValue{
+   margin-left: 0.5em;
+ }
+
+/*Checkbox design and status*/
+   .TutorialTracker .tutorialUnit .checkbox{
+      width: 2em;
+      height: 2em;
+      border: solid 1px #000;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0.5em;
+      background-color: transparent;
+   }
+   .TutorialTracker .tutorialUnit .checkbox svg{
+      opacity: 0;
+   }
+
+   /*Complete State*/
+   .TutorialTracker .tutorialUnit[data-complete="complete"] .checkbox{
+      border: solid 1px #000;
+      background-color: #81C051;
+   }
+   .TutorialTracker .tutorialUnit[data-complete="complete"] .checkbox svg{
+      opacity:1;
+   }
