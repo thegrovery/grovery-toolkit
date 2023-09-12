@@ -29,7 +29,9 @@ export let href; // optional href prop
 /* Global Btn Style */
   .button {
     display: inline-flex;
+    cursor: pointer;
 	  margin: 8px 0;
+    margin-right: 4px;
     padding: 16px 30px;
     border-radius: 10px;
     font-size: 16px;
@@ -38,7 +40,7 @@ export let href; // optional href prop
 	  font-weight: 500;
 	  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover {
-      transform: translateY(-2px);
+      // transform: translateY(-2px);
     }
   }
   .button [astro-icon] {
@@ -68,7 +70,7 @@ export let href; // optional href prop
    
 	  /* background-color: #005e73; */
 	  background-color: var(--custom-dark-blue-90);
-    box-shadow: -2px 2px 0px var(--custom-dark-blue);
+    
   }
 
   /* Secondary Btn */
@@ -81,7 +83,7 @@ export let href; // optional href prop
   }
   .secondary:hover,.secondary:focus {
 	background-color: var(--custom-green-90);
-  box-shadow: -2px 2px 0px var(--custom-green);
+  // box-shadow: -2px 2px 0px var(--custom-green);
   }
 
   /* Tertiary Btn */
@@ -89,14 +91,14 @@ export let href; // optional href prop
     border-color: var(--custom-green);
 	border-style: solid;
 	border-width: 1px;
-  box-shadow: -2px 2px 0px var(--custom-green);
+  // box-shadow: -2px 2px 0px var(--custom-green);
     color: var(--custom-green);
     background-color: transparent;
   }
   .tertiary:hover,.tertiary:focus {
 	background-color:var(--custom-green);
 	color: #fff;
-    box-shadow: -2px 2px 0px var(--custom-green-90);
+    // box-shadow: -2px 2px 0px var(--custom-green-90);
   }
   
   /* outline */
@@ -106,11 +108,11 @@ export let href; // optional href prop
 	border-width: 1px;
     color: var(--custom-teal);
     background-color: transparent;
-    box-shadow: -2px 2px 0px var(--custom-teal);
+    // box-shadow: -2px 2px 0px var(--custom-teal);
   }
   .outline:hover,.outline:focus, .button.outline.active {
     background-color:var(--custom-teal);
-    box-shadow: -2px 2px 0px var(--custom-teal-90);
+    // box-shadow: -2px 2px 0px var(--custom-teal-90);
 	color: #fff;
   }
 </style>

@@ -46,14 +46,14 @@ import Button from '~/components/Button.astro';
 				
 				<p class="welcome-intro">The Grovery’s CORE RMS (Resource Management System) is a software product that provides the framework to organize, manage and train Sales and Marketing teams. This Web App platform provides the environment for teams to work more efficiently, share information and provides easy access to relevant program materials.
 				</p>
-				<p class="small">The below section reacts to whether or not you are logged in.</p>
+				<!-- <p class="small">The below section reacts to whether or not you are logged in.</p> -->
 				
 				<div class="loading-wrapper"><LoadingPlaceholder/></div>
 				
 				<IfLoggedIn>
 					
 					<div slot="loggedIn">
-						<p>You're logged in.  Currently logged in as: <UserInfo info="email"/></p>
+						<p class="small">You're logged in.  Currently logged in as: <UserInfo info="email"/></p>
 						<div class="button-wrap">
 							<Button style="min-width: 300px; justify-content: center" variant="secondary" onClick="netlifyIdentity.logout();">Log out</Button>
 							<Button variant="primary" href="/en/getting-started">Get Started Now</Button>
@@ -61,7 +61,7 @@ import Button from '~/components/Button.astro';
 					</div>
 
 					<div slot="loggedOut">
-						<p>You're logged out</p>
+						<p class="small">You're logged out</p>
 						<div class="button-wrap">
 							<Button variant="secondary" onClick="netlifyIdentity.open('login');">Login</Button>
 							<Button variant="outline" onClick="netlifyIdentity.open('signup');">Sign up</Button>
@@ -123,7 +123,7 @@ import Button from '~/components/Button.astro';
 				margin-bottom: 1.5rem;
 			}
 			h1 {
-				font-size: 3.5rem;
+				// font-size: 3.5rem;
 			}
 			.welcome-intro {
 				margin-bottom: 1.5em;
@@ -141,7 +141,7 @@ import Button from '~/components/Button.astro';
 				// flex-direction: column;
 			}
 			.button {
-				width: 300px;
+				// width: 300px;
 				justify-content: center;
 			}
 		}
