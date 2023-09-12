@@ -1,21 +1,24 @@
 ---
 type: tutorial
 unitTitle: 'Tutorial Alt Test'
-title: Tutorial Page Template
+title: New Tutorial Tracker - pt1
 description: >-
   Learn the basics of Astro with a project-based tutorial. All the background
   knowledge you need to get started!
 i18nReady: true
 ---
-import TutorialTracker from '~/components/tutorial/TutorialTracker.astro';
+import TutorialTrackerWrapper from '~/components/tutorial/TutorialTrackerWrapper.astro';
 import TutorialConfirmButton from '~/components/Buttons/TutorialConfirmButton.astro';
+import ComponentName from '~/components/ComponentName.astro';
 
 <br/><br/>
 <hr/>
 <br/><br/>
-<TutorialTracker text="tutorial-1"/>
+<TutorialTrackerWrapper text="tutorial-1"/>
 
 This is a test page for the new tutorial tracker system that is both more simple and more usable.
+
+The new tutorials use the components <ComponentName name="TutorialTracker" /> and <ComponentName name="TutorialTrackerWrapper" />
 
 <TutorialConfirmButton 
 	tutorialUnit="tutorial-1-step-1"
