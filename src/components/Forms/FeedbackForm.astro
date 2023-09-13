@@ -23,7 +23,7 @@ const categories = [
 const instanceId = Math.round(Math.random() * 10e9).toString(36);
 ---
 
-<form>
+<form id="feedback-fish-form">
 	<!-- <h1><UIString key="feedback.formTitle" /></h1> -->
 	<fieldset class="category-options">
 		<legend class="sr-only"><UIString key={'feedback.categoryGroupLabel'} /></legend>
@@ -90,99 +90,56 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 		</a> -->
 	</div>
 </form>
-<div class="success-pane" hidden tabindex="-1">
-	<img src={houston} alt="" width="128" height="128" />
+<div class="success-pane" hidden tabindex="-1">>
+	<!-- <img src={houston} alt="" width="128" height="128" /> -->
+	<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="#054C62" d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32c0-.41-.17-.79-.44-1.06L14.17 1L7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2M1 21h4V9H1v12Z"/></svg>
 	<p>
 		<UIString key="feedback.success" />
 	</p>
 </div>
 
+
 <script>
-	class FeedbackForm extends HTMLElement {
-		constructor() {
-			super();
+	const openBtn = document.querySelector<HTMLButtonElement>('button[data-open-modal]')!;
+	const closeBtn = document.querySelector<HTMLButtonElement>('button[data-close-modal]')!;
+	const submitBtn = document.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+	const dialog = document.querySelector('dialog')!;
+	const dialogFrame = document.querySelector('.dialog-frame')!;
+	const form = document.querySelector('#feedback-fish-form')!;
+	const success = document.querySelector<HTMLDivElement>('div.success-pane')!;
+	const githubButton = document.querySelector<HTMLLinkElement>('a.github-button');
 
-			const openBtn = this.querySelector<HTMLButtonElement>('button[data-open-modal]')!;
-			const closeBtn = this.querySelector<HTMLButtonElement>('button[data-close-modal]')!;
-			const submitBtn = this.querySelector<HTMLButtonElement>('button[type="submit"]')!;
-			const dialog = this.querySelector('dialog')!;
-			const dialogFrame = this.querySelector('.dialog-frame')!;
-			const form = this.querySelector('form')!;
-			const success = this.querySelector<HTMLDivElement>('div.success-pane')!;
-			const githubButton = this.querySelector<HTMLLinkElement>('a.github-button');
+	const showSuccess = (show: boolean) => {
+		form.hidden = show;
+		success.hidden = !show;
+		if (show) success.focus();
+	};
 
-			const showSuccess = (show: boolean) => {
-				form.hidden = show;
-				success.hidden = !show;
-				if (show) success.focus();
-			};
-
-			/** Close the modal if a user clicks outside of the modal. */
-			/*const onWindowClick = (event: MouseEvent) => {
-				if (!dialogFrame.contains(event.target as Node)) closeModal();
-			};
-
-			const openModal = (event: MouseEvent) => {
-				showSuccess(false);
-				dialog.showModal();
-				form.querySelector<HTMLInputElement>('input:checked')?.focus();
-				// Prevent click bubbling up and immediately closing the modal again.
-				event.stopPropagation();
-				window.addEventListener('click', onWindowClick);
-			};
-
-			const closeModal = () => {
-				dialog.close();
-				window.removeEventListener('click', onWindowClick);
-			};
-
-			openBtn.addEventListener('click', openModal);
-			closeBtn.addEventListener('click', closeModal);*/
-
-			// Pre-fills the GitHub issue with any message a site visitor has already typed in the message box
-			/*githubButton?.addEventListener('click', () => {
-				const newIssueUrl = new URL('https://github.com/withastro/docs/issues/new');
-				const titles = { issue: '⚠️ Issue', idea: '💡 Idea', other: '🐠 Feedback' };
-				if (form.category.value in titles) {
-					const title = titles[form.category.value as keyof typeof titles];
-					newIssueUrl.searchParams.set('title', title);
-				}
-				if (form.text.value) newIssueUrl.searchParams.set('body', form.text.value);
-				githubButton.href = newIssueUrl.href;
-			});*/
-
-			form.addEventListener('submit', async (event) => {
-				event.preventDefault();
-				// Disable submit button while submitting to guard against re-submits.
-				submitBtn.disabled = true;
-				try {
-					const res = await fetch('https://api.feedback.fish/feedback', {
-						method: 'POST',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({
-							projectId: import.meta.env.PUBLIC_FEEDBACK_KEY,
-							text: form.text.value,
-							category: form.category.value,
-							metadata: { url: location.pathname.replace(/\/$/, '') },
-						}),
-					});
-					if (!res.ok) throw new Error(res.statusText);
-					const data = await res.json();
-					if (data.error) throw new Error(data.error);
-				} catch (e) {
-					console.error('Error submitting feedback form\n', e);
-				}
-				showSuccess(true);
-				submitBtn.disabled = false;
-				form.reset();
+	form.addEventListener('submit', async (event) => {
+		event.preventDefault();
+		// Disable submit button while submitting to guard against re-submits.
+		submitBtn.disabled = true;
+		try {
+			const res = await fetch('https://api.feedback.fish/feedback', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					projectId: import.meta.env.PUBLIC_FEEDBACK_KEY,
+					text: form.text.value,
+					category: form.category.value,
+					metadata: { url: location.pathname.replace(/\/$/, '') },
+				}),
 			});
-
-			// Enable the “Give us feedback” button once JS has loaded.
-			openBtn.disabled = false;
+			if (!res.ok) throw new Error(res.statusText);
+			const data = await res.json();
+			if (data.error) throw new Error(data.error);
+		} catch (e) {
+			console.error('Error submitting feedback form\n', e);
 		}
-	}
-
-	customElements.define('feedback-form', FeedbackForm);
+		showSuccess(true);
+		submitBtn.disabled = false;
+		form.reset();
+	});
 </script>
 
 <style>
@@ -370,6 +327,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 
 	.success-pane {
 		padding: 2rem;
+		text-align: center;
 	}
 
 	button[data-close-modal] {

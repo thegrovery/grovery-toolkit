@@ -4,7 +4,7 @@ import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
 import Search from './Search.astro';
 import ThemeToggleButton from './ThemeToggleButton';
-import FeedbackButtonNew from './FeedbackButtonNew.astro';
+import FeedbackButton from '~/components/Buttons/FeedbackButton.astro';
 import OptionsButton from './OptionsButton.astro';
 import AnnouncementButton from '~/components/Buttons/AnnouncementButton.astro';
 import Logo from '~/components/SVGs/Logo.astro';
@@ -37,7 +37,7 @@ const t = useTranslations(Astro);
 		<AnnouncementButton/>
 
 		{import.meta.env.PUBLIC_FEATURE_FEEDBACK=="true" &&
-			<FeedbackButtonNew/>
+			<FeedbackButton/>
 		}
 
 		{import.meta.env.PUBLIC_FEATURE_DARKMODE=="true" &&
@@ -87,23 +87,6 @@ const t = useTranslations(Astro);
 		overflow: visible;
 	}
 
-	/* Logo Dark Theme color changes */
-	html.theme-dark header svg {
-		overflow: visible;
-	}
-	html.theme-dark header svg path {
-		fill: var(--theme-text);
-	}
-	html.theme-dark header svg #Path_1072 {
-		fill: var(--theme-text);
-	}
-	html.theme-dark header svg #Path_1071 {
-		fill: transparent;
-		/* stroke: var(--theme-accent); */
-		stroke: var(--theme-text-lighter);
-		stroke-width: 3px;
-	}
-	
 	ul,
 	li {
 		all: inherit;

@@ -19,7 +19,7 @@ export let href; // optional href prop
 
 
 <!-- Styles for the primary and secondary buttons -->
-<style>
+<style lang="scss">
 
 :root {
   --blue: #007B98;
@@ -29,7 +29,9 @@ export let href; // optional href prop
 /* Global Btn Style */
   .button {
     display: inline-flex;
+    cursor: pointer;
 	  margin: 8px 0;
+    margin-right: 4px;
     padding: 16px 30px;
     border-radius: 10px;
     font-size: 16px;
@@ -37,6 +39,9 @@ export let href; // optional href prop
     text-decoration: none;
 	  font-weight: 500;
 	  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      // transform: translateY(-2px);
+    }
   }
   .button [astro-icon] {
     font-size: 1.45rem;
@@ -56,49 +61,58 @@ export let href; // optional href prop
   }
   /* Primary Button */
   .primary {
-    background-color: var(--theme-accent);
+    background-color: var(--custom-dark-blue);
     color: white;
     border: none;
+    // box-shadow: -2px 2px 0px var(--custom-dark-blue-50);
   }
   .primary:hover,.primary:focus {
+   
 	  /* background-color: #005e73; */
 	  background-color: var(--custom-dark-blue-90);
+    
   }
 
   /* Secondary Btn */
   .secondary {
     /* background-color: var(--teal); */
-    background-color: var(--theme-accent-secondary);
+    background-color: var(--custom-green);
     color: white;
     border: none;
+    // box-shadow: -2px 2px 0px var(--custom-green-90);
   }
   .secondary:hover,.secondary:focus {
-	background-color: #00b39b;
+	background-color: var(--custom-green-90);
+  // box-shadow: -2px 2px 0px var(--custom-green);
   }
 
   /* Tertiary Btn */
   .tertiary {
-    border-color: var(--theme-accent-secondary);
+    border-color: var(--custom-green);
 	border-style: solid;
 	border-width: 1px;
-    color: var(--theme-accent-secondary);
+  // box-shadow: -2px 2px 0px var(--custom-green);
+    color: var(--custom-green);
     background-color: transparent;
   }
   .tertiary:hover,.tertiary:focus {
-	background-color:var(--theme-accent-secondary);
+	background-color:var(--custom-green);
 	color: #fff;
+    // box-shadow: -2px 2px 0px var(--custom-green-90);
   }
   
   /* outline */
   .outline {
-    border-color: var(--theme-accent-secondary);
+    border-color: var(--custom-teal);
 	border-style: solid;
 	border-width: 1px;
-    color: var(--theme-accent-secondary);
+    color: var(--custom-teal);
     background-color: transparent;
+    // box-shadow: -2px 2px 0px var(--custom-teal);
   }
   .outline:hover,.outline:focus, .button.outline.active {
-    background-color:var(--theme-accent-secondary);
+    background-color:var(--custom-teal);
+    // box-shadow: -2px 2px 0px var(--custom-teal-90);
 	color: #fff;
   }
 </style>

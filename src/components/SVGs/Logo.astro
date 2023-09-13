@@ -42,7 +42,24 @@ const { heading, body } = Astro.props as Props;
     </g>
     </svg>              
   </div>
-
+<style is:global>
+  /* Logo Dark Theme color changes */
+	html.theme-dark #CORELOGO svg {
+		overflow: visible;
+	}
+	html.theme-dark #CORELOGO path {
+		fill: var(--theme-text);
+	}
+	html.theme-dark #CORELOGO #Path_1072 {
+		fill: var(--theme-text);
+	}
+	html.theme-dark #CORELOGO #Path_1071 {
+		fill: transparent;
+		/* stroke: var(--theme-accent); */
+		stroke: var(--theme-text-lighter);
+		stroke-width: 3px;
+	}
+</style>
 <style lang="scss">
   /* Logo height as image -- still commented out above btw */
 	.logo img {
