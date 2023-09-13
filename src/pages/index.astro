@@ -30,83 +30,121 @@ import IfLoggedIn from '~/components/DynamicContent/IfLoggedIn.astro';
 import UserInfo from '~/components/DynamicContent/UserInfo.astro';
 import LoadingPlaceholder from '~/components/DynamicContent/LoadingPlaceholder.astro';
 import SimpleButton from '~/components/Buttons/SimpleButton.astro';
+import Button from '~/components/Button.astro';
 
 ---
 
 <!-- <meta http-equiv="refresh" content="0;url=/en/getting-started" /> -->
 
 <SplashLayout title="CORE RMS">
-	<h1>Welcome to CORE RMS</h1>
-	<br/><br/>
-	<div class="content">
+	<div class="content-wrapper">
 		
-		<div class="cell border">
-			<h2>Log In, Sign Up, or Log Out</h2>
-			<p>The below section reacts to whether or not you are logged in.</p>
-			<!-- <br/><br/>
-			<LoadingPlaceholder/> -->			
-			<hr/>
-			<IfLoggedIn>
+		<div class="content">
+			<h1>Welcome to CORE RMS</h1>
+			
+			<div class="cell border">
 				
-				<div slot="loggedIn">
-					<p>You're logged in.  Currently logged in as: <UserInfo info="email"/></p>
-					<SimpleButton text="Log Out" onClick="netlifyIdentity.logout();" />
-				</div>
+				<p class="welcome-intro">The Grovery’s CORE RMS (Resource Management System) is a software product that provides the framework to organize, manage and train Sales and Marketing teams. This Web App platform provides the environment for teams to work more efficiently, share information and provides easy access to relevant program materials.
+				</p>
+				<!-- <p class="small">The below section reacts to whether or not you are logged in.</p> -->
+				
+				<div class="loading-wrapper"><LoadingPlaceholder/></div>
+				
+				<IfLoggedIn>
+					
+					<div slot="loggedIn">
+						<p class="small">You're logged in.  Currently logged in as: <UserInfo info="email"/></p>
+						<div class="button-wrap">
+							<Button style="min-width: 300px; justify-content: center" variant="secondary" onClick="netlifyIdentity.logout();">Log out</Button>
+							<Button variant="primary" href="/en/getting-started">Get Started Now</Button>
+						</div>
+					</div>
 
-				<div slot="loggedOut">
-					<p>You're logged out</p>
-					<SimpleButton text="Log In" onClick="netlifyIdentity.open('login');" />
-					<SimpleButton text="Sign Up" onClick="netlifyIdentity.open('signup');" />
-				</div>
+					<div slot="loggedOut">
+						<p class="small">You're logged out</p>
+						<div class="button-wrap">
+							<Button variant="secondary" onClick="netlifyIdentity.open('login');">Login</Button>
+							<Button variant="outline" onClick="netlifyIdentity.open('signup');">Sign up</Button>
+							<Button variant="primary" href="/en/getting-started">Get Started Now</Button>
 
-			</IfLoggedIn>
+						</div>
+					</div>
+					
+					
+
+				</IfLoggedIn>
+
+				
+			</div>
+			
+			<!-- <div class="cell">
+				<NavBlock
+					icon="gala:brochure"  
+					title="Getting Started" 
+					description="Learn how to use CORE and where to find the information you need." 
+					viewDetailsButtonText="Explore Resources" 
+					width="half" 
+					resourceDetailsLink="/en/getting-started/" 
+				/>
+			</div> -->
+
 		</div>
-		
-		<div class="cell">
-			<NavBlock
-				icon="gala:brochure"  
-				title="Getting Started" 
-				description="Learn how to use CORE and where to find the information you need." 
-				viewDetailsButtonText="Explore Resources" 
-				width="half" 
-				resourceDetailsLink="/en/getting-started/" 
-			/>
-		</div>
-
 	</div>
-	
 </SplashLayout>
 
 <style lang="scss">
-	.content{
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
+	article {
 		width: 100%;
-		max-width: 1200px;
-
-		.cell{
-			@media (min-width: 800px) {
-				width: 50%;
-			}
-			width: 100%;
+	}
+	.content-wrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: flex-start;
+		
+		.content {
 			position: relative;
-			//border: dashed 3px #000;
-			padding: 2rem;
-
-			&.border:after{
-				content: "";
-				position: absolute;
-				top: 50%;
-				right: 0px;
-				transform: translate(0px, -50%);
-				height: 300px;
-				width: 1px;
-				border-right: solid 1px #000;
+			z-index: 1;
+			padding-top: calc(var(--theme-navbar-height) + var(--doc-padding-block));
+			padding-bottom: var(--doc-padding-block);
+			padding-inline: var(--min-spacing-inline);
+			width: 100%;
+			height: 100%;
+			margin-inline: auto;
+			display: flex;
+			flex-direction: column;
+			overflow-x: hidden;
+			// max-width: 80vw;
+			@media (min-width: 50em) {
+				max-width: 50vw;
+			}
+			margin-right: auto;
+			.loading-wrapper {
+				margin-bottom: 1.5rem;
+			}
+			h1 {
+				// font-size: 3.5rem;
+			}
+			.welcome-intro {
+				margin-bottom: 1.5em;
+				padding-right: 10%;
+				@media (min-width: 50em) {
+					padding-right: 20%;
+				}	
+			}
+			.small {
+				font-size: .9rem;
+				margin-bottom: 1.5em;
+			}
+			.button-wrap {
+				// display: flex;
+				// flex-direction: column;
+			}
+			.button {
+				// width: 300px;
+				justify-content: center;
 			}
 		}
-
 	}
+	
 </style>
