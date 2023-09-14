@@ -3,11 +3,20 @@
 import Button from '../components/Button.astro'
 import { Icon } from 'astro-icon'
 
+import CMSIcon from '../components/CMSIcon.astro';
+
+
 ---
 
-<div class={`resource-card ${Astro.props.width ?? 'third'} ${Astro.props.tags.join(' ')}`} data-tags={Astro.props.tags.join(',')}>  <div class="icon-container">
-    <Icon name={Astro.props.icon} />
+<div class={`resource-card ${Astro.props.width ?? 'third'} ${Astro.props.tags.join(' ')}`} data-tags={Astro.props.tags.join(',')}>  
+  <div class="icon-container">
+    <Icon name={Astro.props.astroicon} />
   </div>
+  <!-- <div class="icon-container">
+    <CMSIcon name={sanityData.name} provider={sanityData.provider} />
+  </div> -->
+
+  <!-- {Astro.props.image} -->
   <h3>{Astro.props.title}</h3>
   <p>{Astro.props.description}</p>
   <div class="tags">

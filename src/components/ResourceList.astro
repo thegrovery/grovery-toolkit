@@ -1,0 +1,29 @@
+---
+import { fetchResources } from './fetchResources';
+import ResourceCard from './ResourceCard.astro';
+const resources = await fetchResources();
+---
+
+<div class="resource-card-container">
+  {resources?.map(resource => {
+    console.log(resource); // Add this line
+    return (
+       <ResourceCard 
+      
+      cmsicon={resource.cmsicon}
+      astroicon={resource.astroicon}
+      image={resource.image}
+      title={resource.title}
+      description={resource.description} 
+      tags={['Guidelines']} 
+      viewDetailsButtonText="View Details" 
+      shareButtonText="Share" 
+      resourceDetailsLink={`/${resource.slug.current}`}
+
+
+      />
+   )
+})}
+ </div>
+ 
+ 

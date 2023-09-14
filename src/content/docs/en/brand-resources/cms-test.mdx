@@ -1,0 +1,31 @@
+---
+title: Brand Resources
+description: A basic intro to Astro.
+i18nReady: true
+type: base
+---
+import Button from '~/components/Button.astro'
+import ContributorList from '~/components/ContributorList.astro'
+import PackageManagerTabs from '~/components/tabs/PackageManagerTabs.astro'
+import ResourceCard from '~/components/ResourceCard.astro'
+// import TagFilter from '~/components/TagFilter.astro'
+import Resourcelist from '~/components/ResourceList.astro';
+import TestFetch from '~/components/TestFetch.astro'
+
+Use this page template when you need to display a list of resources - they can either be other pages in the toolkit, or third-party resources hosted offsite.  Click "View Details" to navigate to the resource, or click "Share" to open a popup with a sharable link and a QR code
+
+:::tip[Recent updates]
+
+**What’s new Product Training Module: Part 1** has been updated 4-19-2023 at 4:39pm EST.
+
+::: 
+
+{/* <div class="tag-filter-container">
+	<TagFilter tags={['Guidelines', 'Training', 'Support', 'Customer', 'Pricing']} />
+</div> */}
+
+
+  {/* <TestFetch /> */}
+
+	<Resourcelist />
+
