@@ -77,9 +77,8 @@ import { Icon } from 'astro-icon'
     --teal: #00DFC3;
     }
     .icon-container {
-        // background-color: var(--theme-bg-gradient);
-        // background-color: var(--theme-dim-lighter);
-        background-color: var(--theme-bg-gradient-top);
+        
+        background-color: var(--custom-dark-blue-10);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -102,15 +101,15 @@ import { Icon } from 'astro-icon'
       border-radius: 12px;
       border: 1px solid var(--theme-dim);
       box-shadow: -2px 2px 0px var(--theme-dim-light);
-      transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-      animation: fadeInUp 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: all 200ms ease-in;
+      animation: fadeInUp 1s ease-in;
     }
     .resource-card:hover,.resource-card:focus {
         border-color: var(--theme-accent);
         background-color: var(--theme-bg-gradient-top);
         box-shadow: -2px 2px 0px var(--theme-accent);
         .icon-container {
-          background-color: var(--theme-bg-gradient-bottom);
+          // background-color: var(--custom-teal-50);
           [astro-icon] {
             // color: var(--custom-white);
           }
