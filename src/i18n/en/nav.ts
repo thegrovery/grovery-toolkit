@@ -52,6 +52,7 @@ export default [
 
 	//RESOURCES TAB
 	{ text: 'Brand Resources', header: true, type: 'api', key: 'brand-resources' },
+		{ text: 'CMS Test', slug: 'brand-resources/cms-test', key: 'brand-resources/cms-test' },
 		{ text: 'View All', slug: 'brand-resources/view-all', key: 'brand-resources/view-all' },
 		{ text: 'Style Guide', slug: 'brand-resources/style-guide', key: 'brand-resources/style-guide' },
 		{ text: 'Icon Library', slug: 'brand-resources/icon-library', key: 'brand-resources/icon-library' },

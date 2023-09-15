@@ -1,0 +1,11 @@
+---
+import { fetchResourceBySlug } from '~/components/fetchResources';
+const slug = Astro.request.params.slug;
+const resource = await fetchResourceBySlug(slug);
+---
+
+<div>
+    <h1>{resource.title}</h1>
+    <p>{resource.description}</p>
+    <!-- Add other fields here -->
+</div>
