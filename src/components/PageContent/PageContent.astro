@@ -98,6 +98,8 @@ const direction = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 	.next-previous-nav {
 		justify-content: flex-end;
 		a {
+			transition: all .1s ease-in;
+			border-radius: 12px;
 			@media (min-width: 50em) {
 				max-width: 50%;
 			}
