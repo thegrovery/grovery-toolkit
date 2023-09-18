@@ -20,9 +20,13 @@ import { Icon } from 'astro-icon'
 
 <style lang="scss">
     .thumbnail-wrapper {
+        max-width: 50%;
+            @media (min-width: 50em) {
+                max-width: 33%;
+            }
         .thumbnail {
             // height: 400px;
-            max-width: 33%;
+            width: 100%;
             // width: 320px;
            
         }
