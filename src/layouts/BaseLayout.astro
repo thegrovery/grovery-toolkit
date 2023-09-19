@@ -198,5 +198,11 @@ if (isFallback) canonicalURL.pathname = canonicalURL.pathname.replace(`/${lang}/
 			})();
 		</script>
 		<!--End of Tawk.to Script-->
+
+		<!-- Refresh on login/logout -->
+		<script type="text/javascript">
+			//netlifyIdentity.on('login', user => location.reload());
+			//netlifyIdentity.on('logout', () => location.reload());
+		</script>
 	</body>
 </html>
