@@ -22,6 +22,20 @@
 	.toc-mobile-container {
 		--header-bottom-padding: 0.5rem;
 	}
+	/* Right Sidebar Current Heading Link Styles */
+	a.current-header-link {
+		cursor: pointer;
+		background-color: var(--custom-dark-blue-10);
+		border-inline-start: 0.5rem solid var(--custom-dark-blue);
+		outline: 1px solid transparent;
+	}
+
+	a.current-header-link:hover,  a.current-header-link:focus {
+		background-color: var(--custom-dark-blue-10);
+		border-inline-start: 0.5rem solid var(--custom-dark-blue);
+		outline: 1px solid transparent;
+	}
+	/* End Links Styles */
 }
 
 /*
@@ -70,23 +84,8 @@
 	unicode-bidi: plaintext;
 }
 
-/* Right Sidebar Current Heading Link Styles */
-a.current-header-link {
-	cursor: pointer;
-    background-color: var(--custom-dark-blue-10);
-    border-inline-start: 0.5rem solid var(--custom-dark-blue);
-    outline: 1px solid transparent;
-}
-
-a.current-header-link:hover,  a.current-header-link:focus {
-    background-color: var(--custom-dark-blue-10);
-    border-inline-start: 0.5rem solid var(--custom-dark-blue);
-    outline: 1px solid transparent;
-}
-/* End Links Styles */
-
 .toc-mobile-container[open] .toc-toggle {
-	background-color: var(--custom-teal-25);
+	background-color: var(--custom-dark-blue-10);
 }
 
 .toc-mobile-header h2 {
