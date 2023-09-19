@@ -3,6 +3,9 @@ import algoliasearch from 'algoliasearch/lite';
 // import Modal from './Modal'; // Import the Modal component
 import './SimpleSearch.scss';
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 interface SimpleSearchProps {
     onClose: () => void;
   }
@@ -15,8 +18,12 @@ const Search = ({ onClose }: SimpleSearchProps) => {
     const [errorMessage, setErrorMessage] = useState(null);
     const modalContentRef = useRef(null);
 
-    const searchClient = algoliasearch('7CDE1498H2', '559f06160d974e0a17e99a6f8de4f5c0');
-    const index = searchClient.initIndex('core_rms');
+    const searchClient = algoliasearch(
+        process.env.ALGOLIA_APP_ID,
+        process.env.ALGOLIA_WRITE_API_KEY
+    );
+
+    const index = searchClient.initIndex('eliquis-core');
 
     const [recentSearches, setRecentSearches] = useState(() => {
         return JSON.parse(localStorage.getItem('recentSearches') || '[]');
