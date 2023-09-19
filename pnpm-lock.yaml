@@ -35,6 +35,12 @@ dependencies:
   css-loader:
     specifier: ^6.8.1
     version: 6.8.1(webpack@5.88.2)
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
+  gray-matter:
+    specifier: ^4.0.3
+    version: 4.0.3
   hamburgers:
     specifier: ^1.2.1
     version: 1.2.1
@@ -65,6 +71,9 @@ dependencies:
   remark-smartypants:
     specifier: ^2.0.0
     version: 2.0.0
+  remove-markdown:
+    specifier: ^0.5.0
+    version: 0.5.0
   rollup:
     specifier: ^3.23.1
     version: 3.23.1
@@ -4091,6 +4100,11 @@ packages:
       domelementtype: 2.3.0
       domhandler: 4.3.1
 
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
+    dev: false
+
   /dset@3.1.2:
     resolution: {integrity: sha512-g/M9sqy3oHe477Ar4voQxWtaPIFw1jTdKZuomOjhCcBx9nHUNn0pu6NopuFFrTh/TRZIKEj+76vLWFu9BNKk+Q==}
     engines: {node: '>=4'}
@@ -7817,6 +7831,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /remove-markdown@0.5.0:
+    resolution: {integrity: sha512-x917M80K97K5IN1L8lUvFehsfhR8cYjGQ/yAMRI9E7JIKivtl5Emo5iD13DhMr+VojzMCiYk8V2byNPwT/oapg==}
+    dev: false
 
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
