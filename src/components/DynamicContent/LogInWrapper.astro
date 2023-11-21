@@ -6,11 +6,11 @@
 import LoadingBlock from '~/components/DynamicContent/LoadingBlock.astro';
 import LoadingBar from '~/components/DynamicContent/LoadingBar.astro';
 
-const { info } = Astro.props as Props;
+const { active, inactive } = Astro.props as Props;
 ---
 
 <div class="LogInWrapper">
-
+  
   <div class="placeholder">
     <!-- <LoadingBlock/> -->
     <p>Checking Permissions...</p>
@@ -18,7 +18,7 @@ const { info } = Astro.props as Props;
   </div>
   
   <div class="loggedIn">
-    <slot/>
+    <slot />
   </div>
 
   <div class="loggedOut">
@@ -28,7 +28,6 @@ const { info } = Astro.props as Props;
       <br/>
       Redirecting you to the home page in 5 seconds. 
     </p>
-    
   </div>
 
 </div>
@@ -90,49 +89,64 @@ const { info } = Astro.props as Props;
     }
   }
 </style>
-<script type="text/javascript">
-  console.log("LogInWrapper functions started.");
-  function LogInWrapperFunctions() {
-    setTimeout(() => {
-      console.log("LogInWrapper functions triggered.");
-      console.log("LogInWrapper functions executed.");
 
-      //grab all user info
-      var loggedIn = SessionManager.getItem('loggedIn');
-      console.log("Netlify Login Status: ",loggedIn);
-      console.log(loggedIn);
-      //var user = netlifyIdentity.currentUser();
+
+{active ? 
+  <!-- active --> 
+  <script type="text/javascript">
+    console.log("LogInWrapper functions started.");
+    function LogInWrapperFunctions() {
+      setTimeout(() => {
+        console.log("LogInWrapper functions triggered.");
+        console.log("LogInWrapper functions executed.");
+
+        //grab all user info
+        var loggedIn = SessionManager.getItem('loggedIn');
+        console.log("Netlify Login Status: ",loggedIn);
+        console.log(loggedIn);
+        //var user = netlifyIdentity.currentUser();
+        
+        var elements = document.querySelectorAll('.LogInWrapper');
+
+        if( loggedIn == true){
+          //logged in
+          console.log("LogInWrapper --- Logged In | cookie");
+          elements.forEach(element => {
+            element.classList.add("currentlyLoggedIn"); 
+          });
+        /*}else if(user != null){
+          //logged in
+          console.log("LogInWrapper --- Logged In | direct");
+          elements.forEach(element => {
+            element.classList.add("currentlyLoggedIn"); 
+          });*/
+        } else {
+          //logged out
+          console.log("LogInWrapper --- Logged Out");
+          elements.forEach(element => {
+            element.classList.add("currentlyLoggedOut"); 
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 5000); //time in ms
+          });
+        }
+        //end
+      }, 2000); //time in ms
       
-      var elements = document.querySelectorAll('.LogInWrapper');
+    }
 
-      if( loggedIn == true){
-        //logged in
-        console.log("LogInWrapper --- Logged In | cookie");
-        elements.forEach(element => {
-          element.classList.add("currentlyLoggedIn"); 
-        });
-      /*}else if(user != null){
-        //logged in
-        console.log("LogInWrapper --- Logged In | direct");
-        elements.forEach(element => {
-          element.classList.add("currentlyLoggedIn"); 
-        });*/
-      } else {
-        //logged out
-        console.log("LogInWrapper --- Logged Out");
-        elements.forEach(element => {
-          element.classList.add("currentlyLoggedOut"); 
-          setTimeout(() => {
-            window.location.href = "/";
-          }, 5000); //time in ms
-        });
-      }
-      //end
-    }, 2000); //time in ms
     
-  }
 
-  
+    LogInWrapperFunctions();
+  </script>
+: 
+  <!-- inactive -->
+}
 
-  LogInWrapperFunctions();
+<script type="text/javascript">
+  console.log("LogInWrapper --- Login-only disabled");
+  var elements = document.querySelectorAll('.LogInWrapper');
+  elements.forEach(element => {
+    element.classList.add("currentlyLoggedIn"); 
+  });
 </script>
