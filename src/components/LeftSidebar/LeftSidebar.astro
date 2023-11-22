@@ -5,7 +5,7 @@ import { getNav } from '../../util/getNav';
 import { useTranslations } from '../../i18n/util';
 import SidebarContent from './SidebarContent.astro';
 import SidebarToggleTabGroup from '../TabGroup/SidebarToggleTabGroup';
-import CommunityMenu from '../RightSidebar/CommunityMenu.astro';
+// import CommunityMenu from '../RightSidebar/CommunityMenu.astro';
 import ThemeToggleButton from '../Header/ThemeToggleButton';
 import { getPageCategory } from '~/util/getPageCategory';
 
@@ -70,7 +70,7 @@ if (isReference) {
 			currentPageMatch={currentPageMatch}
 		/>
 		<li>
-			<CommunityMenu hideOnLargerScreens={true} />
+			<!-- <CommunityMenu hideOnLargerScreens={true} /> -->
 		</li>
 		<li style="text-align: center;">
 			<ThemeToggleButton
@@ -107,7 +107,7 @@ if (isReference) {
 	}
 	.nav-groups {
 		padding-top: 1rem;
-		padding-left: 1rem;
+		padding-left: 0rem;
 		max-height: 100%;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -118,7 +118,8 @@ if (isReference) {
 	@media (min-width: 50em) {
 		.nav-groups {
 			position: fixed;
-			top: calc(var(--theme-navbar-height) + 3rem);
+			padding-left: 1rem;
+			top: calc(var(--theme-navbar-height) + 3.4rem);
 			bottom: 0;
 			width: calc(var(--theme-left-sidebar-width) - var(--min-spacing-inline) * 1.6);
 		}

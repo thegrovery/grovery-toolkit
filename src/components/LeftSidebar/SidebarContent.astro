@@ -1,6 +1,7 @@
 ---
 import { getLanguageFromURL } from '~/util';
 import { isSubPage } from '~/util/isSubPage';
+import { Icon } from 'astro-icon';
 
 export interface Props {
 	type: TabType;
@@ -24,20 +25,9 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 			<details open>
 				<summary class="nav-group-title">
 					<h2>
-						{section.text}
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 1 16 16"
-							width="16"
-							height="16"
-							aria-hidden="true"
-						>
-							<path
-								fill-rule="evenodd"
-								d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"
-							/>
-						</svg>
+						{section.text}		
 					</h2>
+					<Icon name="mdi:chevron-right" />
 				</summary>
 				<ul>
 					{section.children.map(({ slug, text, isFallback }) => (
@@ -83,40 +73,61 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 	}
 	.nav-group-title {
 		font-size: 1em;
-		font-weight: 600;
-		padding: 0.3rem 2rem;
-		background-color: var(--custom-dark-blue);
-		border-radius: 1em 0 0 1em;
+		font-weight: 700;
+		padding: 0.5rem 2rem;
+		transition: all .1s ease-in;
+		background-color: var(--custom-green-25);
+		&:hover, &:focus {
+			background-color: var(--custom-green-50);
+		}
+		@media (min-width: 50em) {
+			border-radius: 1em 0 0 1em;
+			font-size: 1.1em;
+			padding: 0.3rem 2rem;
+		}
+		border-radius: 0em 0 0 0em;
+		padding: 0.5rem 1rem;
+		display: flex;
+		justify-content: space-between;
 		h2{
 			background: none;
-			color: var(--custom-white)
+			color: var(--theme-text-light)
 		}
 	}
 
 	.nav-link a {
 		margin: 1px;
-		padding: 0.3rem 2rem;
+		padding: 0.5rem 1rem;
+		@media (min-width: 50em) {
+			padding: 0.3rem 2rem;
+			border-radius: 1em 0 0 1em;
+		}
 		font: inherit;
-		color: var(--theme-text-lighter);
+		color: var(--theme-text-light);
 		text-decoration: none;
 		display: block;
 		$indent: 0em;
 		width: calc(100% - #{$indent});
 		position: relative;
+		cursor:pointer;
 		left: $indent;
-		border-radius: 1em 0 0 1em;
-
+		border-radius: 0em 0 0 0em;
+		&:hover {
+			// font-weight: 700;
+			// border-bottom: 1px dotted var(--custom-dark-blue);
+		}
 		&:hover,
 		&:focus {
-			background-color: var(--custom-teal-25);
+			background-color: var(--custom-grey-1-10);
 		}
 
 		&[aria-current='page'],
 		&[data-current-parent='true'] {
-			color: var(--theme-text);
-			background-color: var(--custom-teal-25);
+			color: var(--theme-text-light);
+			// background-color: var(--custom-teal-25);
 			
 			font-weight: 500;
+			font-style: italic;
 			/* Indicates the current page for forced colors users in older browsers */
 			outline: 1px solid transparent;
 

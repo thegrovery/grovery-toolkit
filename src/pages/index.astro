@@ -21,6 +21,143 @@ if (KNOWN_LANGUAGES.includes(newLangWithRegion)) {
 }
 
 */
+
+
+import SplashLayout from '../layouts/SplashLayout.astro';
+import Logo from '~/components/SVGs/Logo.astro';
+import NavBlock from '~/components/NavBlock.astro';
+import IfLoggedIn from '~/components/DynamicContent/IfLoggedIn.astro';
+import IfLoggedInDisabled from '~/components/DynamicContent/IfLoggedInDisabled.astro';
+import UserInfo from '~/components/DynamicContent/UserInfo.astro';
+import LoadingPlaceholder from '~/components/DynamicContent/LoadingPlaceholder.astro';
+import SimpleButton from '~/components/Buttons/SimpleButton.astro';
+import Button from '~/components/Button.astro';
+
 ---
 
-<meta http-equiv="refresh" content="0;url=/en/getting-started" />
+<!-- <meta http-equiv="refresh" content="0;url=/en/getting-started" /> -->
+
+<SplashLayout title="Welcome">
+	<div class="content-wrapper">
+		
+		<div class="content">
+			
+			
+			<div class="cell border">
+				<h1>Welcome</h1>
+				<p class="welcome-intro">
+					Explore our newly launched platform to navigate through a variety of resources, program practices, and online support tailored to assist you effectively.
+
+					Your feedback is valuable! If you have suggestions for new scenarios or improvements, please use our feedback form to help us enhance the platform continuously.
+				</p>
+				<!-- <p class="small">The below section reacts to whether or not you are logged in.</p> -->
+			</div>
+			
+			<div class="cell flexCenter">
+				
+				<IfLoggedIn>
+					<div slot="loggedIn">
+						<p>
+							You're currently logged in as: <strong><UserInfo info="email"/></strong>
+							<br/>
+							Click below to enter the site, or to log out.
+						</p>
+						<br/>
+						<div class="button-wrap">
+							<Button variant="secondary wide" href="/en/getting-started">Enter Site</Button>
+							<Button variant="primary wide" onClick="netlifyIdentity.logout();">Log out</Button>
+						</div>
+					</div>
+
+					<div slot="loggedOut">
+						<p>
+							You're currently logged out.  Click below to log in.
+							<br/>
+							If you do not currently have an account, contact your manager to get started.
+						</p>
+						<br/>
+						<div class="button-wrap">
+							<Button variant="secondary wide" onClick="netlifyIdentity.open('login');">Log In</Button>
+							<!-- <Button variant="primary" onClick="netlifyIdentity.open('signup');">Sign up</Button> -->
+						</div>
+					</div>
+					
+				</IfLoggedIn>
+
+			</div>
+			<!-- end cell | cell layout -->
+		</div>
+	</div>
+</SplashLayout>
+
+<style lang="scss">
+	article {
+		width: 100%;
+	}
+	.content-wrapper {
+		width: 100%;
+		height: 100%;
+		max-width: var(--page-width-1);
+		display: flex;
+		justify-content: flex-start;
+		
+		.content {
+			position: relative;
+			z-index: 1;
+			padding-top: calc(var(--theme-navbar-height) + var(--doc-padding-block));
+			padding-bottom: var(--doc-padding-block);
+			padding-inline: var(--min-spacing-inline);
+			width: 100%;
+			height: 100%;
+			margin-inline: auto;
+			display: flex;
+			flex-direction: row;
+			/* overflow-x: hidden; */
+			// max-width: 80vw;
+			
+			.cell{
+				width: 50%;
+				padding: 1rem;
+				&.border{
+					border-right: solid 1px var(--theme-text);
+				}
+				&.flexCenter{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+				}
+			}
+
+			@media (max-width: 800px) {
+				display: flex;
+				flex-direction: column;
+
+				.cell{
+					width: 100%;
+					padding: 1rem;
+					&.border{
+						border-right: none;
+						border-bottom: solid 1px var(--theme-text);
+					}
+					
+				}
+			}
+
+			.welcome-intro {
+				margin-bottom: 1.5em;
+				padding-right: 10%;
+				@media (min-width: 50em) {
+					padding-right: 20%;
+				}	
+			}
+
+			.button-wrap{
+				display: flex;
+				flex-direction: column;
+			}
+
+		}
+	}
+	
+</style>

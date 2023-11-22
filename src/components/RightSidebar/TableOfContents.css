@@ -22,6 +22,20 @@
 	.toc-mobile-container {
 		--header-bottom-padding: 0.5rem;
 	}
+	/* Right Sidebar Current Heading Link Styles */
+	a.current-header-link {
+		cursor: pointer;
+		background-color: var(--custom-dark-blue-10);
+		border-inline-start: 0.5rem solid var(--custom-dark-blue);
+		outline: 1px solid transparent;
+	}
+
+	a.current-header-link:hover,  a.current-header-link:focus {
+		background-color: var(--custom-dark-blue-10);
+		border-inline-start: 0.5rem solid var(--custom-dark-blue);
+		outline: 1px solid transparent;
+	}
+	/* End Links Styles */
 }
 
 /*
@@ -53,7 +67,7 @@
 .toc-toggle {
 	margin-inline-end: 0.5rem;
 	border-radius: 0.5rem;
-	border: 1px solid var(--theme-shade-subtle);
+	border: 1px solid var(--custom-teal-90);
 	padding: 0.25rem 0.75rem;
 	padding-inline-end: 0.5rem;
 	font-size: var(--theme-text-sm);
@@ -71,7 +85,7 @@
 }
 
 .toc-mobile-container[open] .toc-toggle {
-	background-color: var(--theme-bg-offset);
+	background-color: var(--custom-dark-blue-10);
 }
 
 .toc-mobile-header h2 {
@@ -104,11 +118,11 @@
 		var(--cur-viewport-height) - var(--theme-navbar-height) - var(--theme-mobile-toc-height) - 1rem
 	);
 	overflow-y: auto;
-	border: 1px solid var(--theme-shade-subtle);
+	border: 1px solid var(--custom-teal-90);
 	border-radius: 0.5rem;
 	padding: 0.5rem 0;
 	font-size: var(--theme-text-sm);
-	background: linear-gradient(var(--theme-bg-offset), var(--theme-bg-offset)),
+	background: linear-gradient(var(--theme-bg-gradient-top), var(--theme-bg-gradient-top)),
 		var(--theme-bg-gradient);
 	transform: translateY(calc(-0.5rem - 0.5 * var(--header-bottom-padding)));
 }

@@ -71,14 +71,14 @@ import { Icon } from 'astro-icon'
     }
   }
   </style>
-  <style>
+  <style type="scss">
     :root {
     --blue: #007B98;
     --teal: #00DFC3;
     }
     .icon-container {
-        /* background-color: var(--theme-bg-gradient); */
-        background-color: var(--theme-dim-lighter);
+        
+        background-color: var(--custom-dark-blue-10);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -93,7 +93,7 @@ import { Icon } from 'astro-icon'
     .resource-card {
       /* styles for the card container */
       /* background-color: var(--theme-code-inline-bg); */
-      background-color: var(--theme-bg-gradient);
+      background-color: var(--theme-bg-gradient-bottom);
       box-sizing: border-box;
       /* margin: 0rem 2% 2% 0rem; */
       /* max-width: 31%; */
@@ -101,12 +101,19 @@ import { Icon } from 'astro-icon'
       border-radius: 12px;
       border: 1px solid var(--theme-dim);
       box-shadow: -2px 2px 0px var(--theme-dim-light);
-      transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-      animation: fadeInUp 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: all 100ms ease-in;
+      animation: fadeInUp .3s ease-in;
     }
     .resource-card:hover,.resource-card:focus {
         border-color: var(--theme-accent);
+        background-color: var(--theme-bg-gradient-top);
         box-shadow: -2px 2px 0px var(--theme-accent);
+        .icon-container {
+          background-color: var(--custom-grey-1-20);
+          [astro-icon] {
+            // color: var(--custom-white);
+          }
+        }
     }
     .resource-card h3 {
         margin-top: 1.5rem;

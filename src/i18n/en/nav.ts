@@ -30,6 +30,7 @@ export default [
 		{ text: 'Directory Page Template', slug: 'page-templates/directory-page-template', key: 'page-templates/directory-page-template' },
 		{ text: 'Resource Page Template', slug: 'page-templates/resource-page-template', key: 'page-templates/resource-page-template' },
 		{ text: 'Tutorial Page Template', slug: 'page-templates/tutorial-page-template/1-step-1', key: 'page-templates/tutorial-page-template/1-step-1' },
+		{ text: 'Tutorial Page Template - New', slug: 'page-templates/tutorial-alt/step-1', key: 'page-templates/tutorial-alt/step-1' },
 
 		{ text: 'Integrations', header: true, type: 'learn', key: 'integrations' },
 			{ text: 'Salesforce', slug: 'page-templates/basic-page-template', key: 'page-templates/basic-page-template' },
